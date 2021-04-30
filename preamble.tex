@@ -1,0 +1,84 @@
+% PREAMBLE FOR PARTICLE PHYSICS NOTES
+
+% ----------------------------------------------------------
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[bf,sf,small,pagestyles]{titlesec}
+\usepackage{titling}
+\usepackage[font={footnotesize, sf}, labelfont=bf]{caption} 
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage[sort]{cleveref}
+\usepackage{amsthm,thmtools}
+\usepackage[shortlabels]{enumitem}
+
+% ----------------------------------------------------------
+% Geometry setup
+\geometry{
+	a4paper,
+	right = 3cm,
+	left = 3cm,
+	bottom = 3cm,
+	top = 3cm
+}
+% Wider space between lines
+\renewcommand{\baselinestretch}{1.3}
+
+% ----------------------------------------------------------
+% Hyperref setup
+\hypersetup{
+	colorlinks,
+	linkcolor = {red!50!blue},
+	linktoc = page
+}
+\numberwithin{table}{section}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+% ----------------------------------------------------------
+% Siunitx setup
+\sisetup{
+	allow-number-unit-breaks = true,
+	math-celsius = {}^{\circ}\kern-\scriptspace C,
+	detect-family = true,
+	mode = text,
+	list-final-separator = { and },
+	list-pair-separator = { and },
+	list-units = single,
+	separate-uncertainty = true
+}
+
+% ----------------------------------------------------------
+% Definition of theorem, example, etc environments
+\newcommand{\qedtriangle}{\ensuremath{\triangle}}
+\newcommand{\qedtriangledown}{\ensuremath{\bigtriangledown}}
+\declaretheoremstyle[spaceabove=6pt, spacebelow=6pt, headfont=\bfseries, notefont=\normalfont, notebraces={(}{)}, qed=\qedtriangle]{definition}
+\declaretheoremstyle[spaceabove=6pt, spacebelow=6pt, headfont=\bfseries, notefont=\normalfont, notebraces={(}{)}, qed=\qedtriangledown]{example}
+
+
+% ----------------------------------------------------------
+% Definition of custom list style
+\newlist{points}{enumerate}{1}
+\setlist[points,1]{label=\textup{(}{\itshape \roman*}\textup{)}, wide}
+
+% ----------------------------------------------------------
+% Definition of page styles
+\renewpagestyle{plain}[\sffamily \footnotesize]{
+	\footrule
+	\setfoot*{}{}{\thepage}
+}
+
+% ----------------------------------------------------------
+% Format of chapter titles
+\titleformat{\chapter}[block]{\sffamily \bfseries \Huge}{\filleft \large Kapitel \Huge \thechapter\\}{0pt}{\Huge \titlerule[1pt] \vspace{1ex} \filleft}
+
+

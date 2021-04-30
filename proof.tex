@@ -1,0 +1,127 @@
+\documentclass[12pt]{article}
+\input{preamble.tex}
+\input{commands.tex}
+
+\newpagestyle{pagina}{
+\headrule
+\sethead*{\sffamily {\bfseries TC1.} Problem sheet 1}{}{\theauthor}
+\footrule
+\setfoot*{}{}{\sffamily \thepage}
+}
+\renewpagestyle{plain}{
+\footrule
+\setfoot*{}{}{\sffamily \thepage}
+}
+\pagestyle{plain}
+
+\begin{document}
+Consider a contact Lagrangian of the form
+\begin{equation}
+	L(\phi, \partial_\mu \phi, z^\mu). 
+\end{equation}
+Given a scalar field \( \phi \colon M \to \R \), consider the vector field \( z^\mu(\phi) \) which solves the PDE
+\begin{equation}
+	\partial_\mu z^\mu(\phi) = L(\phi, \partial_\mu \phi, z^\mu(\phi)).
+\end{equation}
+We define the action functional as
+\begin{equation}
+	A(\phi) = \int_M \partial_\mu z^\mu(\phi) (x^\nu) \ud^4 x =
+	\int_{\partial M} z^\mu(\phi)(x^\nu) \ud n_\mu.
+\end{equation}
+We wish to compute the variation of \( A \) to determine which is a necessary and
+sufficient condition \( \phi \) must satisfy in order to be an extremum of \( A \) (which
+will turn out to be the Herglotz equations). 
+
+Consider a variation about a field \( \phi \), i.e. a parameterised family of fields \(
+\phi_\epsilon \) such that \( \phi_0 = \phi \) and \( \phi_\epsilon \vert_{\partial M} =
+\phi\vert_{\partial M} \), for \( \epsilon \in (-\delta, \delta) \). Then \( \phi \) is by
+definition an extremum of \( A \) if and only if
+\begin{equation}
+	\deriv{\epsilon} A(\phi_\epsilon) = 0
+\end{equation}
+for any variation about \( \phi \). And
+\begin{equation}
+	\deriv{\epsilon} A(\phi_\epsilon) = \int_{\partial M} \deriv{\epsilon}
+	z^\mu(\phi_\epsilon)(x^\nu) \ud n_\mu.
+\end{equation}
+We write \( \zeta^\mu(\phi_0) \) for \( \deriv{\epsilon}z^\mu(\phi_\epsilon) \) and \(
+\eta \) for \( \deriv{\epsilon}\phi_\epsilon \). From the
+definition of \( z \), we have, introducing the shorthand \( \Phi_\epsilon(x^\nu) =
+(\phi_\epsilon(x^\nu), \partial_\mu \phi_\epsilon(x^\nu), z^\mu(\phi_\epsilon)(x^\nu)) \),
+\begin{align}
+	\partial_\mu \zeta^\mu(\phi_0)
+	& = \deriv{\epsilon} \partial_\mu z^\mu(\phi_\epsilon) \\
+	& = \deriv{\epsilon} L(\Phi_\epsilon) \\
+	& = \frac{\partial L}{\partial \phi}(\Phi_0) \deriv{\epsilon} \phi_\epsilon
+	+ \frac{\partial L}{\partial(\partial_\mu \phi)}(\Phi_0) \deriv{\epsilon} \partial_\mu
+	\phi_\epsilon 
+	+ \frac{\partial L}{\partial z^\mu}(\Phi_0) \zeta^\mu(\phi_0) \\
+	& = \frac{\partial L}{\partial \phi}(\Phi_0) \eta
+	+ \frac{\partial L}{\partial(\partial_\mu \phi)}(\Phi_0) \partial_\mu \eta
+	+ \frac{\partial L}{\partial z^\mu}(\Phi_0) \zeta^\mu(\phi_0)
+\end{align}
+This gives a PDE for \( \zeta^\mu(\phi_0) \). If \( \frac{\partial L}{\partial
+z^\mu} (\Phi_0) \) is the gradient of some function, i.e. there is a function \( f
+\) such that \( \partial_\mu f = \frac{\partial L}{\partial z^\mu} (\Phi_0) \),
+in which case we say the dependence of \( L \) on \( z \) is \emph{exact}, then we can
+solve this equation for \( \zeta^\mu(\phi_0) \). Indeed, following the 1-dimensional case,
+if we try the ansatz
+\begin{equation}
+	\zeta^\mu(\phi_0)(x^\nu) = M^\mu(x^\nu) e^{f(x^\nu)}
+\end{equation}
+then (writing \( \zeta^\mu \) for \( \zeta^\mu(\phi_0) \))
+\begin{equation}
+	\partial_\mu \zeta^\mu(x^\nu) = \partial_\mu f(x^\nu) M^\mu(x^\nu) e^{f(x^\nu)} +
+	\partial_\mu M^\mu(x^\nu) e^{f(x^\nu)}
+\end{equation}
+so it must be
+\begin{equation}
+	\partial_\mu M^\mu = e^{-f}\left(\frac{\partial L}{\partial \phi}(\Phi_0) \deriv{\epsilon}
+	\phi_\epsilon + \frac{\partial L}{\partial(\partial_\mu \phi)}(\Phi_0) \deriv{\epsilon}
+	\partial_\mu \phi_\epsilon\right). 
+\end{equation}
+
+Now
+\begin{equation}
+	\deriv{\epsilon} A(\phi_\epsilon) = \int_{\partial M} \zeta^\mu \ud n_\mu =
+	\int_{\partial M} e^{f}M^\mu \ud n_\mu.
+\end{equation}
+The field \( \phi \) will be an extremum if and only if this integral vanishes for all
+variations about \( \phi \). 
+
+PAS MISTERIÓS: equival a veure que s'anu\l.la la integral sense l'exponencial. 
+
+We rewrite the integral using integration by parts:
+\begin{align}
+	\int_{\partial M} M^\mu \ud n_\mu 
+	& = \int_M \partial_\mu M^\mu \\
+	& = \int_M e^{-f}\left(\frac{\partial L}{\partial \phi}(\Phi_0) \eta + \frac{\partial
+		L}{\partial(\partial_\mu \phi)}(\Phi_0) \partial_\mu \eta \right) \\
+	& = \int_M e^{-f} \frac{\partial L}{\partial \phi}(\Phi_0) \eta
+	+ \int_{\partial M} e^{-f} \frac{\partial L}{\partial(\partial_\mu \phi)} \eta
+	- \int_M \partial_\mu\left(e^{-f} \frac{\partial L}{\partial(\partial_\mu
+	\phi)}\right)\eta
+\end{align}
+The second integral vanishes because \( \eta \) vanishes on \( \partial M \), since \(
+\phi_\epsilon \vert_{\partial M} = \phi\vert_{\partial M} \) for all \( \epsilon \). Using
+the product rule for the third integral and recalling that \( \partial_\mu f =
+\frac{\partial L}{\partial z^\mu}(\Phi_0) \) we arrive at
+\begin{equation}
+	\int_{\partial M} M^\mu \ud n_\mu = \int_M \eta e^{-f} \left(\frac{\partial
+			L}{\partial \phi}(\Phi_0) - \partial_\mu\left(\frac{\partial L}{\partial(\partial_\mu
+	\phi)}(\Phi_0)\right) + \frac{\partial L}{\partial z^\mu}
+\frac{\partial L}{\partial(\partial_\mu \phi)} \right).
+\end{equation}
+So, \( \phi \) will be an extremum of the action if and only if this last integral
+vanishes for any variation. And, if it is to vanish for any variation, it must vanish for
+any \( \eta \), thus the whole integrand must vanish. Since \( e^{-f} \) is nonzero, this
+is equivalent to the Herglotz equation,
+\begin{equation}
+	\frac{\partial L}{\partial \phi}(\Phi_0) - \partial_\mu\left(\frac{\partial
+	L}{\partial(\partial_\mu \phi)}(\Phi_0)\right) + \frac{\partial L}{\partial z^\mu}
+	\frac{\partial L}{\partial(\partial_\mu \phi)} = 0
+\end{equation}
+
+
+
+\end{document}

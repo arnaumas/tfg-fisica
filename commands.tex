@@ -1,0 +1,101 @@
+% CUSTOM COMMANDS FOR ALGEBRAIC TOPOLOGY
+% ----------------------------------------------------------
+
+% Restriction of a function
+\newcommand{\rest}[1]{\raisebox{-.5ex}{$|$}_{#1}}
+
+% Real numbers
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\PR}{\mathbb{PR}}
+
+% Rational numbers
+\newcommand{\Q}{\mathbb{Q}}
+
+% Complex numbers
+\newcommand{\C}{\mathbb{C}}
+
+% Natural numbers
+\newcommand{\N}{\mathbb{N}}
+
+% Integers
+\newcommand{\Z}{\mathbb{Z}}
+
+% Vector bold
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+% Span
+\newcommand{\gen}[1]{\langle #1 \rangle}
+
+% Set
+\newcommand{\set}[1]{\{ #1 \}}
+
+% Script A, B, M, P
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\M}{\mathcal{M}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\S}{\mathfrak{S}}
+
+% Identity
+\newcommand{\id}{\mathrm{id}}
+
+% Kernel and image
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
+
+% Absolute value
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+
+% Norm
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+\newcommand{\inn}[2]{\left\langle #1, #2 \right\rangle}
+
+% Category of Vector Spaces
+\newcommand{\Vect}{\mathsf{Vect}}
+\newcommand{\VectK}{\Vect_{K}}
+\newcommand{\VectR}{\Vect_{\R}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Bil}{Bil}
+\newcommand{\dual}{^{\vee}}
+\DeclareMathOperator{\tr}{tr}
+
+% Category of Manifolds
+\DeclareMathOperator{\Diff}{Diff}
+
+% Epi and monomorphisms
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\into}{\tailrightarrow}
+
+\newcommand{\parbreak}{
+	\begin{center}
+		--- $\ast$ ---
+	\end{center} 
+}
+
+% Defined as
+\makeatletter
+\newcommand*{\defeq}{\mathrel{\rlap{%
+    \raisebox{0.3ex}{$\m@th\cdot$}}%
+  \raisebox{-0.3ex}{$\m@th\cdot$}}%
+	=
+}
+\makeatother
+
+% Support
+\DeclareMathOperator{\supp}{supp}
+
+% Categories
+\newcommand{\Top}{\mathsf{Top}}
+
+\newcommand{\ud}{\, \mathrm{d}}
+\renewcommand{\d}{\mathrm{d}}
+
+\newcommand{\basisAt}[3]{\frac{\partial}{\partial #1^{#2}}\Big |_{#3}}
+\newcommand{\basis}[2]{\frac{\partial}{\partial #1^{#2}}}
+\newcommand{\at}[1]{\Big |_{#1}}
+
+\newcommand{\phant}{\phantom{\alpha}}
+\renewcommand{\L}{\mathcal{L}}
+
+\newcommand{\deriv}[1]{\left.\tfrac{\ud}{\ud #1}\right\vert_{#1=0}}
