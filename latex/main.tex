@@ -1,0 +1,64 @@
+\documentclass[12pt, oneside]{book}
+\input{preamble.tex}
+\input{commands.tex}
+
+\title{}
+\author{Arnau Mas}
+\date{}
+
+\begin{document}
+\begin{titlepage}
+	\setstretch{2.0}
+	\centering \sffamily
+
+	\vspace*{2cm}
+
+	\includegraphics[width = 8cm]{logo-uab}
+
+	\vspace{2cm}
+
+	{\Large \itshape Physics BSc. Undergraduate Thesis} \\
+	{\large \itshape June 2021}
+
+	\vspace{10pt}
+	\hrule
+	\vspace{10pt}
+	{\bfseries \LARGE Title}
+
+	{\Large Subtitle}
+	\vspace{10pt}
+	\hrule		
+	\vspace{2cm}
+
+	{\LARGE Arnau Mas Dorca}
+
+	\vspace{1cm}
+	{\large \itshape Supervised by}
+
+	{\Large Dr Jordi Gaset}
+\end{titlepage}
+\thispagestyle{empty}
+
+\pagestyle{plain}
+\frontmatter
+{\footnotesize \sffamily \tableofcontents}
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Preface}
+\section*{Preface}
+Preface
+
+\paragraph{Acknowledgements}
+Acknowledgements
+
+\mainmatter
+\pagestyle{main}
+
+\chapter{Chapter 1}\label{ch:problem}
+\subfile{chapters/chapter-1}
+
+\backmatter
+\pagestyle{plain}
+\printbibliography
+
+\end{document}
