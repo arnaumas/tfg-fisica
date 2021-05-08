@@ -1,4 +1,40 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
+
+In classical mechanics, the Lagrangian is defined as a function on the velocity phase
+space of the system, i.e. the tangent bundle of the configuration space \( TM \), \( L
+\colon TM \to \R \). With the Lagrangian in hand, one defines the action functional as
+\begin{equation*}
+	S[\gamma] = \int_a^b L(\gamma(t), \dot{\gamma}(t)) \ud t. 
+\end{equation*}
+
+The precise generalisation of the Lagrangian to classical field theory is a bit more
+difficult. For one, whatever the Lagrangian is, it has to be something we can integrate
+over our parameter space, which in general will be a manifold. In the case of general
+relativity, the parameter space is space-time, for example. This  means it has to be
+related to a top form on the parameter space. The precise language to formulate this idea
+is the language of jet bundles. In general, a suitable way to think of fields is as
+sections of some bundle \( E \xrightarrow{\pi} M \), where \( M \) is the parameter space
+and the typical fibre of the bundle is the space in which the field takes values. Then,for
+a first order theory, the Lagrangian \( \L \) is a bundle morphism from the first jet bundle \(
+J^1\pi \) to the bundle \( \ext^n T^\ast M \). Then, for a section \( \phi \) of \( \pi
+\), \( \L \circ j^1 \phi \) is a section of \( \ext^n T^\ast M \), i.e., a top form over
+\( M \). We can then define the action functional as
+\begin{equation*}
+	S[\phi] = \int_M \L \circ j^1 \phi
+\end{equation*}
+
+
+
+In field theory, the Lagrangian is no longer just a real-valued function, since it is
+something we have to integrate over the parameter space, which is spacetime in the context
+of general relativity. The object we need is going to be a top form. Specifically, if we
+are studying the dynamics of sections of some bundle \( E \xrightarrow{\pi} M \), the
+Lagrangian density \( \L \), or sometimes just the Lagrangian, is a bundle morphism \( \L
+\colon J^1\pi \to \ext^n T^\ast M \), where \( n \) is the dimension of the parameter
+space \( M \). That \( \L \) is a bundle morphism means that for any \( j_p^1 \phi \in
+J^1_p \pi \), \( \L(j_p^1 \phi) \in \wedge^n T^\ast_p M \), or, more succintly, that \(
+\wedge^n \tau_M^\ast \circ \L = \pi_1 \). 
+
 \end{document}
