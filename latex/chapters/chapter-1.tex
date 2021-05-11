@@ -2,6 +2,49 @@
 
 \begin{document}
 
+\section{Bundles, sections and jets}
+Field theory studies the dynamics of fields, which are, in the broadest sense, quantities
+that vary from point to point in space (or spacetime). The fundamental example is a scalar
+field, which is the assignment of a real value to each point in space (or spacetime). In
+more precise mathematical terms, if \( M \) denotes spacetime (thought of as a manifold with a
+pseudo-Riemannian metric, as is standard in general relativity), then a scalar field is a
+smooth map \( \phi \colon M \to \R \). However, if we think of a field with vector values,
+for instance, it is not enough to define it as a map \( X \colon M \to \R^4 \), at
+least not if we want our theory to be covariant. Indeed, we think of a vector field as an
+assignment of a vector at each point in spacetime which is tangent to that point. Thus,
+the proper definition of a vector field is as a map \( X \colon M \to TM \), where \( TM
+\) is the tangent bundle of \( M \), together with the condition \( X(p) \in T_pM \),
+which is just the requirement that \( X(p) \) be tangent to \( p \). This condition makes
+\( X \) a \emph{section} of \( TM \). If \( \tau_M \colon TM \to M \) is the map which
+takes a tangent vector to its basepoint, then \( X \) being a section of \( TM \) is
+equivalent to \( \tau_{TM} \circ X = \id_M \). 
+
+This idea points us in the right direction for a more appropriate definition of fields. We
+introduce the idea of a \emph{fiber bundle}, which is a projection map \( E
+\xrightarrow{\pi} M \), such that for every \( p \in M \), \( \pi^{-1}(p) \) is
+diffeomorphic to some fixed manifold \( F \). \( \pi^{-1}(p) \) is called the fibre over
+\( p \), and \( F \) is the typical fibre of the bundle. What is happening here is that \(
+E \) is the result of attaching a copy of \( F \) at each point of \( M \). If one
+attempts to draw this, taking \( M  \) to be 2 dimensional and \( F \) 1 dimensional, the
+result is something that looks much like a hair brush, where the copies of \( F \) are the
+bristles, or fibres, hence the terminology. \( M \) is known as the \emph{base space}, \( E \)
+receives the name \emph{total space}. 
+
+For a more concrete picture, let's see what this looks like in coordinates. Consider a
+coordinate system \( x^\mu \) for \( M \), where \( \mu \) runs over the dimension of
+\( M \) ---which will be 4 if \( M \) is spacetime---, and a coordinate system \( u^\alpha
+\) for the typical fibre \( F \), where \( \alpha \) runs over the dimension of \( F \).
+Then points in the total space \( E \) can be labeled by \( (x^\mu, u^\alpha) \). For
+example, in the tangent bundle, these coordinates label the base point of a vector and its
+components with respect to a basis (which is generally taken to be basis induced by the
+coordinates in physics). 
+
+\subsection{Fields as sections of bundles}
+
+\subsection{}
+
+
+
 In classical mechanics, the Lagrangian is defined as a function on the velocity phase
 space of the system, i.e. the tangent bundle of the configuration space \( TM \), \( L
 \colon TM \to \R \). With the Lagrangian in hand, one defines the action functional as
@@ -36,5 +79,28 @@ Lagrangian density \( \L \), or sometimes just the Lagrangian, is a bundle morph
 space \( M \). That \( \L \) is a bundle morphism means that for any \( j_p^1 \phi \in
 J^1_p \pi \), \( \L(j_p^1 \phi) \in \wedge^n T^\ast_p M \), or, more succintly, that \(
 \wedge^n \tau_M^\ast \circ \L = \pi_1 \). 
+
+When we introduce contact geometry into the picture one has to enlarge the source space
+for the Lagrangian, it is now a bundle morphism of the form
+\begin{equation*}
+	\L \colon J^1\pi \oplus_M \ext^{n-1}T^\ast M \to \ext^{n} T^\ast M. 
+\end{equation*}
+The domain is the Whitney sum of the first jet bundle, where the field and its first
+derivatives live, and of the bundle of \( n-1 \) forms over \( M \), where the action
+density lives. In coordinates, the points in \( J^1\pi \) can be described as \( (x^\mu,
+u^\alpha, u^\alpha_\mu) \). The points of \( \ext^{n-1}T^\ast M \) can be described in
+coordinates by \( z^\mu \). Indeed, \( \ext^{n-1} T^\ast M \) and \( T^\ast M \) both are
+vector bundles of dimension \( n \) over \( M \), so they are isomorphic. Indeed, writing
+\( \d^n x \) for \( \d^1x \wedge \cdots \wedge \d^n x \), we define
+\begin{equation*}
+	\ast \ud x_\mu = (-1)^\mu \frac{\partial}{\partial x^\mu} \iprod \d^n x
+\end{equation*}
+where no summation is implied over \( \mu \). The \( \ast \ud x_\mu \) are a basis of the
+\( n-1 \) forms. Then we can write for any \( z \in \ext^{n-1} T^\ast M \), \( z = z^\mu
+\ast \d x_\mu \). 
+
+For general relativity, we are interested in sections of the bundle \( \Sym^2 T^\ast M \)
+of symmetric 2-forms over \( M \), specifically the subbundle of nondegenerate symmetric
+2-forms, also known as pseudo-Riemannian metrics. The 
 
 \end{document}
