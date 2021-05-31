@@ -103,4 +103,65 @@ For general relativity, we are interested in sections of the bundle \( \Sym^2 T^
 of symmetric 2-forms over \( M \), specifically the subbundle of nondegenerate symmetric
 2-forms, also known as pseudo-Riemannian metrics. The 
 
+\section{Action dependent Lagrangian}
+The standard formulations of classical mechanics, the Lagrangian and Hamiltonian
+formalisms, can be used to describe and study a great variety of physical systems.
+Nevertheless, all of them exhibit \emph{conservative} behaviour. Even the simplest non
+conservative systems, i.e. dissipative, cannot be described by means of a standard Lagrangian or
+Hamiltonian. One way of describing non conservative systems by means of a variational
+principle is through \emph{action-dependent lagrangians}. This theory was originally
+studied by Herglotz.
+
+Recall that in ordinary classical mechanics, one models particle trajectories as
+smooth paths in some configuration manifold, \( M \), which generally represents space in
+Newtonian mechanics and spacetime in relativity, i.e. trajectories are of the
+form \( q \colon [t_0, t_1] \to M \). The Lagrangian \( L \) is introduced as a function on the
+velocity phase space, \( TM \), i.e. \( L \colon TM \to \R \), with which the action
+functional is defined as the integral
+\begin{equation*}
+	S[q] = \int_{t_0}^{t_1} L(q^\mu(t) , \dot{q}^\mu(t)) \ud t. 
+\end{equation*}
+The Principle of Least Action is the statement that physical trajectories correspond to
+extrema of the action functional. The condition of being an extremum of the action can be
+equivalently formulated, by means of the calculus of variations, in terms of the
+well-known Euler-Lagrange equations. 
+
+In this new framework we expand the configuration space with a new variable, and consider
+paths \( (q,z) \colon [t_0, t_1] \to M \times \R \). The new action functional is 
+\begin{equation}\label{eq:contact action 1}
+	S[q,z] = z(t_1) - z(t_0).
+\end{equation}
+Physical trajectories will be those that extremise \( S \) \emph{subject to the
+constraint} \( \dot{z}(t) = L(q^\mu(t), \dot{q(t)}, z(t)) \). We see that if a path
+satisfies this constraint then \cref{eq:contact action 1} becomes
+\begin{equation}\label{eq:contact action 2}
+	S[q,z] = z(t_1) - z(t_0) = \int_{t_0}^{t_1} \dot{z}(t) = \int_{t_0}^{t_1} L(q^\mu(t),
+	\dot{q}^\mu(t), z(t))
+\end{equation}
+which makes clear why this is an action dependent Lagrangian: \( z \) represents the
+change in action along the path. And if \( L \) is independent of \( z \) then
+\cref{eq:contact action 2} just reduces to the usual action from Lagrangian mechanics. 
+
+Now, it is not obvious how to solve this variational problem, since it is now a
+constrained optimisation problem. However, using Lagrange multipliers, it can be shown
+that extrema of this action will satisfy the so-called Herglotz equations:
+\begin{equation}\label{eq:herglotz}
+ 	\frac{\d}{\d t}\frac{\partial L}{\partial \dot{q}^\mu} - \frac{\partial L}{\partial
+ 	q^\mu} - \frac{\partial L}{\partial z} \frac{\partial L}{\partial \dot{q}^\mu} = 0
+\end{equation}
+These differential equations are the action dependent analog to the Euler-Lagrange
+equations, and notice that, as expected, if \( L \) is independent of \( z \) then the
+Herglotz equations reduce to Euler-Lagrange. 
+
+To see that this is useful to describe physical phenomena, consider the following action
+dependent Lagrangian:
+\begin{equation*}
+	L(q, \dot{q}, z) = \frac{1}{2}m\dot{q}^2 - \frac{1}{2}m\omega^2 q^2 - \gamma z. 
+\end{equation*}
+The Herglotz equation for this Lagrangian is
+\begin{equation*}
+	m\ddot{q} + m\omega^2 q + \gamma m \dot{q} = 0  
+\end{equation*}
+which one recognises as the equation of motion of a damped harmonic oscillator. 
+
 \end{document}
