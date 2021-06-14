@@ -1,32 +1,33 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-We claim that a way of describing non-conservative systems with a variational principle is
-by what we will call an action-dependent Lagrangian. In all of the standard examples from
-classical mechanics, the Lagrangian is assumed to be a function of the positions and
-velocities of the particle. An \emph{action-dependent Lagrangian} is a Lagrangian that is
-also allowed to depend on the action of the path. However, recall that the action is
-defined as the integral of the Lagrangian function along the path so this seems awfully
-circular! Thus, great care has to be taken when formulating the theory of action-dependent
-Lagrangians, in order to circumvent issues of circularity. The problem of finding the
-stationary paths of the action functional corresponding to an action-dependent Lagrangian
-is known as the Herglotz variational problem. In this chapter we will first discuss an
-\emph{implicit approach} to this problem and some of its shortcomings. Then we will
-frame the Herglotz problem as a constrained optimisation problem and show how this
-different approach generalises to field theory. 
+In this chapter we develop the theory of \emph{action-dependent Lagrangians}. The main appeal of
+this formalism is that it allows the description of non-conservative systems in terms of a
+variational principle, which is in general not possible with standard Lagrangian
+mechanics. The problem of finding the stationary paths of the action given by a Lagrangian
+of this sort is known as the Herglotz problem. The main difficulty of this variational
+problem is that, as opposed to the standard variational problem of Lagrangian mechanics,
+is a constrained optimisation problem. One way to approach this problem is the use of
+Lagrange multipliers. We show how this leads to the equations of motions for this kind of
+systems, the Herglotz equations, and how it can also be applied to field theory to derive
+the field theoretical Herglotz equations. 
 
 \section{The implicit formulation of the Herglotz problem}
 Let's briefly describe what we will refer to as the \emph{implicit formulation of the
-Herglotz problem}, as presented in \cite{Lazo2018}. We start by writing down a naive
-equation for the action corresponding to an action dependent Lagrangian. Namely, given a
-path \( q^\mu \colon [a,b] \to M \) we would write something like
+Herglotz problem}, as presented in \cite{Lazo2018}. Let us first clarify what we mean by
+an action-dependent Lagrangian. The idea is to consider the action as a dynamical quantity
+that changes along the path, and then allow the Lagrangian to depend on it. Naively, we
+would write the following. Starting with some path \( q^\mu \colon [a,b] \to M \) in some
+configuration space \( M \)\footnote{\( M \) could be space in the context of classical
+mechanics or spacetime in the context of relativity} we would
+write something like
 \begin{equation*}
 	S[q^\mu] = \int_a^b L(q^\mu(t), \dot{q}^\mu(t), S(t)) \ud t
 \end{equation*}
 where \( S(t) \) is the action of the path until time \( t \). Of course this makes no
 sense since we are defining \( S \) on the left-hand side, and it appears on the
-right-hand side! However, if, given a path then we define its action as a function of time
-then we could write something like
+right-hand side! We can turn this expression into something sensible if we add the time
+dependence of the action on the left-hand side, so that we write
 \begin{equation}\label{eq:action integral equation}
 	S[q^\mu](t) = \int_a^t L(q^\mu(s), \dot{q}^\mu(s), S[q^\mu](s)) \ud s
 \end{equation}
@@ -59,13 +60,14 @@ dependence. These equations differ from the Euler-Lagrange equations only by one
 in fact, if \( L \) is action-independent, thus \( \frac{\partial L}{\partial z} = 0 \),
 we recover exactly the Euler-Lagrange equations. 
 
-See \cite{Lazo2018} \S 3.2 of \cite{Leon2021} or for a derivation of the Herglotz
+See \cite{Lazo2018} or \S 3.2 of \cite{Leon2021} for a detailed derivation of the Herglotz
 equations following the implicit approach. 
 
 \subsection{Example: the damped harmonic oscillator}
 Before we move forward, let's see what kind of equations of motion we get from the
 Herglotz equations. The simplest action-dependence we can introduce ---other than no
-action-dependence at all, of course--- is a term linear in \( z \). Let's see what happens
+action-dependence at all, of course--- is a term linear in \( z \). We will call this
+linear dissipation for reasons that will become clear in a moment. Let's see what happens
 when we add this term to the simple harmonic oscillator. Explicitly, consider the
 Lagrangian
 \begin{equation*}
@@ -77,14 +79,17 @@ mechanics} becomes
 	-m\omega^2 q - m\ddot{q} - \gamma m \dot{q} = 0
 \end{equation*}
 which after some rearranging can be turned into
-\begin{equation}\cref{eq:damped harmonic oscillator}
+\begin{equation}\label{eq:damped harmonic oscillator}
 	\ddot{q} + \gamma\dot{q} + \omega^2 q = 0,
 \end{equation}
 which one recognises as the equation of motion of the damped harmonic oscillator. The
-Herglotz principle delivers in its promise: we have just derived the equations of motion
-of a fundamentally non-conservative system from a variational problem!
+Herglotz principle delivers on its promise: we have just derived the equations of motion
+of a fundamentally non-conservative system from a variational problem! This also clarifies
+why we called the action dependence a dissipation term: the coefficient \( \gamma \) is
+related to the damping of the system and governs the rate at which energy is lost after
+every cycle. 
 
-\section{The Herglotz problem as a constrained optimisation problem}
+\section{The Herglotz problem as constrained optimisation}
 We have derived the Herglotz equations, so it would seem we have already solved the theory
 of action-dependent Lagrangians. However, general relativity is a field theory, so if we
 wish to understand an action-dependent variant of it we have to know the form the Herglotz
@@ -95,13 +100,19 @@ What's more, this equation is no longer an ODE in field theory, but rather it be
 PDE. PDEs are notoriously much more difficult to solve thant ODEs, so we would like a way
 to circumvent this issue. 
 
-We can achieve this if we frame the Herglotz problem as a constrained optimisation
-problem. Not only that, we also get a much clearer and more elegant formulation. We
-describe what this looks like for mehcanics. First, instead of considering paths in
-spacetime, \( q^\mu \colon [a,b] \to M \), we enlarge the configuration space with one
-extra quantity, which we will call \( z \). At this point \( z \) simply tracks a quantity
-that changes along the path, but we will later require that \( z \) actually match the
-action of the path at each time. This will be the constraint. 
+The idea we describe in what follows is being developed by Manuel Lainz, a PhD student at
+ICMAT. This is currently in a preprint stage, to which I have been graciously given
+access.  It is part of broader ongoing research on the mathematics underpinning the theory
+of action-dependent field theory. This approach is a more elegant way of deriving the
+Herglotz equations, but as we will see, it also allows one to perform a direct variation
+of the action even for second-order theories such as general relativity.
+
+The fundmanetal insight comes from framing the Herglotz problem as a constrained
+optimisation problem.  We describe what this looks like for mehcanics. First, instead of
+considering paths in spacetime, \( q^\mu \colon [a,b] \to M \), we enlarge the
+configuration space with one extra quantity, which we will call \( z \). At this point \(
+z \) simply tracks a quantity that changes along the path, but we will later require that
+\( z \) actually match the action of the path at each time. This will be the constraint. 
 
 So, we have paths of the form \( (q^\mu, z) \colon [a,b] \to M \times \R \). We define a
 functional on these paths as
@@ -127,13 +138,14 @@ Say\( (q^\mu, z) \) is a trajectory that satisfies \cref{eq:constraint mechanics
 So, for paths that satisfy the constraint, the functional \( S \) is indeed the
 action functional, understood as the integral of the Lagrangian along the path.
 
+\subsection{Lagrangian multipliers}
 This is all well and good, but how does one actually go about solving a constrained
 optimisation problem? It turns out, we can use an infinite dimensional analog of Lagrange
 multipliers to turn this into a regular optimisation problem to which we can apply the
 tools of the calculus of variations. 
 
 Recall, given some function \( f \colon \R^n \to \R \), \( x \in \R^n \) is an extremum of
-\( f \) subject to \( m \) constraints \( g_k \colon \R^n \to \R \) ---i.e. \( g_k(x) = 0
+\( f \) subject to \( m \) constraints \( G_k \colon \R^n \to \R \) ---i.e. \( g_k(x) = 0
 \) --- if and only if there exist numbers \( \lambda_k \in \R \) such that
 \( x \) is an extremum of the function
 \begin{equation} \label{eq:lagrange multipliers}
@@ -145,22 +157,27 @@ and infinitely many constraints. In our case, the function we are trying to find
 extrema of is the functional \( S \). Our constraints are parameterised by \( t \in [a,b]
 \):
 \begin{equation*}
-	g_t[q^\mu, z] = \dot{z}(t) - L(q^\mu(t), \dot{q}^\mu(t), z(t)).
+	G_t[q^\mu, z] = \dot{z}(t) - L(q^\mu(t), \dot{q}^\mu(t), z(t)).
 \end{equation*}
 Thus, replacing sums with integrals in \cref{eq:lagrange multipliers}, the extrema of
 \cref{eq:action functional unconstrained} subject to \cref{eq:constraint mechanics} will
 be those that extremise the following functional: 
 \begin{align} \label{eq:lagrange multiplier action}
-	\tilde{S}[q^\mu, z] & = S[q^\mu, z] - \int_a^b \lambda_t g_t[q^\mu, z] \ud t \nonumber \\
-											& = \int_a^b \dot{z}(t) \ud t - \int_a^b \lambda_t\big[\dot{z}(t) -
-											L(q^\mu(t), \dot{q}^\mu(t), z(t))\big] \ud t \nonumber \\
-											& = \int_a^b (1 - \lambda_t) \dot{z}(t) + \lambda_t\big(L(q^\mu(t),
-											\dot{q}^\mu(t), z(t))\big) \ud t.
+	\tilde{S}[q^\mu, z, \lambda] & = S[q^\mu, z] - \int_a^b \lambda_t g_t[q^\mu, z] \ud t
+	\nonumber \\
+															 & = \int_a^b \dot{z}(t) \ud t - \int_a^b \lambda_t\big[\dot{z}(t) -
+		L(q^\mu(t), \dot{q}^\mu(t), z(t))\big] \ud t \nonumber \\ & = \int_a^b (1 - \lambda_t)
+		\dot{z}(t) + \lambda_t\big(L(q^\mu(t), \dot{q}^\mu(t), z(t))\big) \ud t.
 \end{align}
 A couple of observations. First, we are thinking of the Lagrange multipliers as real
 numbers parameterised by \( t \), but we could equivalently think of them as a function of
-\( t \) and write \( \lambda(t) \) instead of \( \lambda_t \). We will do this. Secondly,
-and more importantly, if we write the integrand of \cref{eq:lagrange multiplier action} as
+\( t \) and write \( \lambda(t) \) instead of \( \lambda_t \). We will do this.
+Additionally, we introduced \( \lambda \) as a dynamical variable of the action
+functional. When we take the variation of the action with respect to \( \lambda \) we will
+actually recover the constraint. 
+
+\subsection{Deriving the Herglotz equations}
+If we write the integrand of \cref{eq:lagrange multiplier action} as
 \begin{equation*}
 	\tilde{L}(q^\mu(t), \dot{q}^\mu(t), z(t), \dot{z}(t)) = \big(1 - \lambda(t)\big) \dot{z}(t) +
 	\lambda(t)\big(L(q^\mu(t), \dot{q}^\mu(t), z(t))\big)
@@ -193,6 +210,13 @@ and after substituting in \cref{eq:euler-lagrange multiplier} and dividing throu
 \end{equation}
 which are exactly the Herglotz equations. 
 
+Let us for completeness write down the equation that results from taking the variation
+with respect to \( \lambda \), which is
+\begin{equation*}
+	-\dot{z}(t) + L\left(q^\mu(t), \dot{q}^\mu(t), z(t)\right) = 0
+\end{equation*}
+which is exactly the constraint. 
+
 \section{Action-dependent field theory}
 We have seen how to derive the Herglotz equations in a more elegant way using Lagrange
 multipliers. More importantly, we have written down a modified Lagrangian which gives rise
@@ -215,22 +239,33 @@ it is a \( (0,2) \) tensor field. In almost all that follows we will assume \( \
 a vector field, but the results we find transfer to tensors of other rank. Of
 course \( \phi \) depends on spacetime, which we will sometimes write explicitly as \(
 \phi^a(x^\mu) \). As a convention, we will use latin indices for the indices of the field,
-and reserve greek indices for spacetime coordinates. 
+and reserve greek indices for spacetime coordinates. The Einstein summation convention is
+assumed to be in place unless otherwise stated. 
 
-The Lagrangian of a field theory is a function of the field and of its derivatives.
-It is not, however, a function of real values, but rather an \( n \)-dimensional ---where
-\( n \) is the dimension of spacetime---, differential form, also known as a top form.
-This is because, the action is defined as the integral of the Lagrangian over some region
-of spacetime, and the objects we can integrate over spacetime are precisely the top forms.
+The Lagrangian of a field theory is a function of the field and of its derivatives. If it
+only contains first derivatives the theory is called a \emph{first order theory}. General
+relativity is actually a second order theory, as we will discuss later. However, most of
+the following discussion still applies to general relativity. 
 
-It turns out, however, that any two top forms differ only by an overall factor, i.e., given two
-top forms \( \omega_1 \) and \( \omega_2 \), there exists a scalar function of spacetime
-\( M \) such that \( \omega_1 = f\omega_2 \). This means, that if we think of the
-Lagrangian as some top form \( \L \), once we pick a distinguished top form there is a
-unique scalar function \( L \) such that \( \L = L \omega \). This distinguished top form
-will in most cases be the top form induced by the coordinates we are working in, which we
-will write as \( \d^nx \). Sometimes we will use Lagrangian density to refer to \( \L \)
-and Lagrangian to refer to \( L \). 
+The Lagrangian in field theory does not take value in the real numbers. To define the
+action we must integrate the Lagrangian, but as opposed to in mechanics where one
+integrates over time, in field theory this integration is performed over a patch of
+spacetime. Because spacetime is in general a curved manifold we will need to use the
+language of differential forms, which are the objects that can be integrated over
+manifolds. In general, a differential \( k \)-form\footnote{A differential \( k \)-form is
+a \( k \)-multilinear alternating form that acts on tangent vectors} can be integrated
+over a manifold of dimension \( k \). So if spacetime has dimension \( n \), the
+Lagrangian has to be a differential \( n \)-form, alsow known as a top form. 
+
+With some care, however, we can still think of the Lagrangian as a function with real
+values.  It turns out that any two top forms differ only by an overall factor, i.e., given
+two top forms \( \omega_1 \) and \( \omega_2 \), there exists a unique scalar function \(
+f \colon M \to \R \) spacetime \( M \) such that \( \omega_1 = f\omega_2 \). So what this
+means is that, for a given Lagrangian \( \L \), once we pick a distinguished
+top form there is a unique scalar function \( L \) such that \( \L = L \omega \). This
+distinguished top form will in most cases be the top form induced by the coordinates we
+are working in, which we will write as \( \d^nx \). Sometimes we will use Lagrangian
+density to refer to \( \L \) and Lagrangian to refer to \( L \). 
 
 The setup in classical field theory is as follows. Given some Lagrangian, which encodes
 the system we are studying, we define the action functional on all the possible field
@@ -245,9 +280,8 @@ Using the calculus of variations one can show that the stationary configurations
 action functional satisfy the Euler-Lagrange equations of field theory
 \begin{equation*}
 	\frac{\partial L}{\partial \phi^a} - \partial_\mu \frac{\partial L}{\partial
-	(\partial_\mu \phi ^a)} = 0
+	(\partial_\mu \phi ^a)} = 0. 
 \end{equation*}
-where a summation convention is implied over \( \mu \). 
 
 \subsection{The action flux}
 How do we generalise this to an action dependent Lagrangian? The most naive approach would
@@ -268,23 +302,57 @@ unconstrained} for field theory should be
 \begin{equation*}
 	S[\phi^a, z] = \int_{\partial D} z.
 \end{equation*}
+
 What kind of obejct should \( z \) be then? \( \partial D \) has dimension \( n-1 \), so
 \( z \) has to be something we can integrate over an \( (n-1) \)-dimensional manifold,
-i.e. a differential \( (n-1) \)-form. As it turns out, \( (n-1) \)-forms behave almost
-like vector fields. Specifically, by expanding in the basis \( \ud x_\mu \) we have \( z =
-z^\mu \ud x_\mu \). Thus, what \( z \) represents is the action flux. We encode this in a
-constraint perfectly analogous to \cref{eq:constraint mechanics},
+i.e. a differential \( (n-1) \)-form. Strictly speaking, then, \( z \) is an object with
+\( n-1 \) lower indices. In the case of 4-dimensional spacetime, \( z \) would have 3
+antisymmetrised indices:
+\begin{equation*} 
+	z = z_{[\mu\nu\eta]} \ud x^{\mu} \wedge \d x^\nu \wedge \d x^\eta.
+\end{equation*}
+As it turns out, \( (n-1) \)-forms can be identified with vector fields. The idea is that
+instead of labeling the components of \( z \) by three indices, we label them by the
+missing index. Some signs appear because of the antisymmetry, which are encoded by the
+Levi-Civita symbol:
+\begin{equation*}
+	z^\mu = \epsilon^{\mu\nu\eta\alpha} z_{[\nu\eta\alpha]}. 
+\end{equation*}
+So we have the identity
+\begin{equation*} 
+	z = z^\mu \ud x_\mu = z_{[\mu\nu\eta]} \ud x^{\mu} \wedge \d x^\nu \wedge \d x^\eta.
+\end{equation*}
+where
+\begin{equation*}
+	\ud x^\mu = \epsilon_{\mu\nu\eta\alpha} \ud x^{\nu} \wedge \d x^\eta \wedge \d x^\alpha.
+\end{equation*}
+But \( z \) is \emph{not} a vector, since its components do not transform as the
+components of a vector, but rather as the components of a 3-form. This is very similar to
+the distinction between vectors and pseudo-vectors in 3-space. 
+
+Let's have a closer look at what \( z \) represents. We know that \( \int_{\partial D} z
+\) has dimensions of action. The volume element of \( \partial D \) in natural units has
+dimensions of \( \text{length}^3 \), so the components of \( z \) have dimensions of \(
+\text{action}/\text{length}^3 \). This means that \( z \) is the \emph{action flux}. From
+Stokes' theorem,
+\begin{equation*}
+	S[\phi^a, z^\mu] = \int_{\partial D} z = \partial_D \ud z,
+\end{equation*}
+so \( \ud z \) has to be the action density, i.e. the Lagrangian. The constraint we want
+to impose is therefore 
 \begin{equation} \label{eq:constraint field theory}
-	\ud z(x^\mu) = \L(\phi^a(x^\mu), \partial_\mu \phi^a(x^\mu), z^\mu(x^\mu)).
+	\ud z(x^\mu) = \L(\phi^a(x^\mu), \partial_\mu \phi^a(x^\mu), z^\mu(x^\mu))
 \end{equation}
+analogous to \cref{eq:constraint mechanics}. 
+
 \( \ud z \) is the exterior derivative of \( z \), which is a top form, so this equality
 makes sense. In coordinates it is easy to show that \( \ud z = \partial_\nu z^\nu \ud^n x
 \), so that \cref{eq:constraint field theory} reads in coordinates as
 \begin{equation} \label{eq:constraint field theory coordinates}
 	\partial_\nu z^\nu (x^\mu) = L(\phi^a(x^\mu), \partial_\mu \phi^a(x^\mu)).
 \end{equation}
-This expresses the fact that \( \ud z \) has to be the action density. Indeed, for field
-configurations that satisfy this constraint then one has, applying Stokes' theorem
+For field configurations that satisfy this constraint then one has, applying Stokes'
+theorem
 \begin{equation*}
 	S[\phi^a, z^\mu] = \int_{\partial D} z = \int_D \ud z = \int_D \L(\phi^a, \partial_\mu
 	\phi^a, z^\mu). 
@@ -301,13 +369,22 @@ unconstrained one using Lagrange multipliers. The expanded action, in analogy wi
 	\phi^a, z^\nu) = \int_D \ud^n x \big[ (1 - \lambda) \partial_\mu z^\mu + \lambda L(\phi^a,
 	\partial_\mu \phi^a, z^\nu) \big]
 \end{equation}
-Note that the Lagrange multiplier \( \lambda \) is a function of spacetime. Let us write
-down the integrand of \cref{eq:expanded action field theory} as an expanded Lagrangian:
+Note that the Lagrange multiplier \( \lambda \) is a function of spacetime. Like in
+mechanics, the Lagrange multiplier is technically also a dynamical quantity, but variation
+with respect to it just gives back the constraint. Let us write down the integrand of
+\cref{eq:expanded action field theory} as an expanded Lagrangian:
 \begin{equation} \label{eq:expanded lagrangian field theory}
 	\tilde{\L}(\phi^a, \partial_\mu \phi^a, z^\nu, \partial_\mu z^\nu) = \tilde{L}(\phi^a,
 	\partial_\mu \phi^a, z^\nu, \partial_\mu z^\nu)\ud^n x = \big[ (1 - \lambda)
 	\partial_\mu z^\mu + \lambda L(\phi^a, \partial_\mu \phi^a, z^\nu) \big] \ud^n x.
 \end{equation}
+The Euler-Lagrange equations for this Lagrangian are the Herglotz equations for the
+theory. We write them down in the next section. Note that they are actually the Herglotz
+equations for a first-order field theory. If the theory is second order then the correct
+equations are the second-order Euler-Lagrange equations, which include additional terms.
+Alternatively, we could still perform a direct variation of the action to get the field
+equations, without worrying about the order of the theory. This is the procedure we will
+follow in the next chapter. 
 
 \subsection{The Herglotz equations for field theory}
 Finally, we can derive the Herglotz equations for field theory from the expanded
@@ -338,247 +415,5 @@ through by \( \lambda \) we arrive at the field theoretical Herglotz equations
 	L}{\partial(\partial_\mu \phi^a)} + \frac{\partial L}{\partial z^\mu} \frac{\partial
 L}{\partial(\partial_\mu \phi^a)} = 0. 
 \end{equation}
-
-
-% \section{Action dependent Lagrangian}
-% The standard formulations of classical mechanics, the Lagrangian and Hamiltonian
-% formalisms, can be used to describe and study a great variety of physical systems.
-% Nevertheless, all of them exhibit \emph{conservative} behaviour. Even the simplest non
-% conservative systems, i.e. dissipative, cannot be described by means of a standard Lagrangian or
-% Hamiltonian. One way of describing non conservative systems by means of a variational
-% principle is through \emph{action-dependent lagrangians}. This theory was originally
-% studied by Herglotz.
-
-% Recall that in ordinary classical mechanics, one models particle trajectories as
-% smooth paths in some configuration manifold, \( M \), which generally represents space in
-% Newtonian mechanics and spacetime in relativity, i.e. trajectories are of the
-% form \( q \colon [t_0, t_1] \to M \). The Lagrangian \( L \) is introduced as a function on the
-% velocity phase space, \( TM \), i.e. \( L \colon TM \to \R \), with which the action
-% functional is defined as the integral
-% \begin{equation*}
-% 	S[q] = \int_{t_0}^{t_1} L(q^\mu(t) , \dot{q}^\mu(t)) \ud t. 
-% \end{equation*}
-% The Principle of Least Action is the statement that physical trajectories correspond to
-% extrema of the action functional. The condition of being an extremum of the action can be
-% equivalently formulated, by means of the calculus of variations, in terms of the
-% well-known Euler-Lagrange equations. 
-
-% In this new framework we expand the configuration space with a new variable, and consider
-% paths \( (q,z) \colon [t_0, t_1] \to M \times \R \). The new action functional is 
-% \begin{equation}\label{eq:contact action 1}
-% 	S[q,z] = z(t_1) - z(t_0).
-% \end{equation}
-% Physical trajectories will be those that extremise \( S \) \emph{subject to the
-% constraint} \( \dot{z}(t) = L(q^\mu(t), \dot{q(t)}, z(t)) \). We see that if a path
-% satisfies this constraint then \cref{eq:contact action 1} becomes
-% \begin{equation}\label{eq:contact action 2}
-% 	S[q,z] = z(t_1) - z(t_0) = \int_{t_0}^{t_1} \dot{z}(t) = \int_{t_0}^{t_1} L(q^\mu(t),
-% 	\dot{q}^\mu(t), z(t))
-% \end{equation}
-% which makes clear why this is an action dependent Lagrangian: \( z \) represents the
-% change in action along the path. And if \( L \) is independent of \( z \) then
-% \cref{eq:contact action 2} just reduces to the usual action from Lagrangian mechanics. 
-
-% Now, it is not obvious how to solve this variational problem, since it is now a
-% constrained optimisation problem. However, using Lagrange multipliers, it can be shown
-% that extrema of this action will satisfy the so-called Herglotz equations:
-% \begin{equation}\label{eq:herglotz}
-%  	\frac{\d}{\d t}\frac{\partial L}{\partial \dot{q}^\mu} - \frac{\partial L}{\partial
-%  	q^\mu} - \frac{\partial L}{\partial z} \frac{\partial L}{\partial \dot{q}^\mu} = 0
-% \end{equation}
-% These differential equations are the action dependent analog to the Euler-Lagrange
-% equations, and notice that, as expected, if \( L \) is independent of \( z \) then the
-% Herglotz equations reduce to Euler-Lagrange. 
-
-% To see that this is useful to describe physical phenomena, consider the following action
-% dependent Lagrangian:
-% \begin{equation*}
-% 	L(q, \dot{q}, z) = \frac{1}{2}m\dot{q}^2 - \frac{1}{2}m\omega^2 q^2 - \gamma z. 
-% \end{equation*}
-% The Herglotz equation for this Lagrangian is
-% \begin{equation*}
-% 	m\ddot{q} + m\omega^2 q + \gamma m \dot{q} = 0  
-% \end{equation*}
-% which one recognises as the equation of motion of a damped harmonic oscillator.
-
-% The main takeaway is that this is a way of describing non conservative systems by means of
-% a variational principle. 
-
-% \section{Action dependent field theory}
-% Our aim is to study what general relativity looks like when formulated in this new
-% framework. However, general relativity is a field theory, so we need to introduce more
-% complex mathematical machinery to understand the generalisation of contact lagrangians to
-% field theory. 
-
-% The modern way of formulating field theory is in the language of bundles and
-% sections. 
-
-% \section{The action density}
-% We have established that the natural space in which the values of a field and its
-% derivative is the jet bundle. Therefore, in analogy with mechanics, one would naturally
-% introduce the Lagrangian as a functional over this space, \( L \colon J^1 \pi \to \R \).
-% However this is not quite right. Recall, the action functional is defined as an integral
-% of the lagrangian over spacetime. thus, we want whatever kind of object the Lagrangian is
-% to be something we can integrate. This means that \( n \)-forms over \( M \) must somehow
-% come into play. The right form of the Lagrangian is actually a function of the form \( \L
-% \colon J^1\pi \to \ext^n T^\ast M \). If this is the case, then given a certain field
-% configuration \( \phi \in \Gamma(\pi) \), \( \L \circ j^1 \phi \) is actually an element
-% of \( \Omega^n(M) \), an \( n \)-form. With this in hand, the action functional for fields
-% is defined as 
-% \begin{equation*}
-% 	S[\phi] = \int_{M} \L \circ j^1\phi. 
-% \end{equation*}
-
-% Now we follow the same path we did before to introduce an action dependence in the
-% Lagrangian. We must somehow enlarge the domain of the Lagrangian to encode the action
-% dependence. This role was played by the \( z \) before. By defintion, the action was given
-% by the difference \( z(t_1) - z(t_0) \). This can be interpreted as the integral of \( z
-% \) over the boundary of the region of parameter space. So, roughly speaking, we need
-% something we can integrate over \( \partial M \). Because the dimension of \( \partial M
-% \) is one less than \( M \), we need an \( n-1 \)-form. The expanded domain for the
-% Lagrangian is going to be \( J^1 \pi \otimes_M \ext^{n-1} T^\ast M \). A section of this
-% bundle is therefore a field configuration \( \phi \) as well as an \( n-1 \)-form \( z \).
-% The action functional is defined as
-% \begin{equation*}
-% 	S[\phi, z] = \int_{\partial M} z.
-% \end{equation*}
-% We wish to find extrema of this functional subject to the condition that \( z \) be
-% actually related to the Lagrangian. This is captured by the requirement \( \ud z = \L \).
-
-
-
-% \section{Bundles, sections and jets}
-% Field theory studies the dynamics of fields, which are, in the broadest sense, quantities
-% that vary from point to point in space (or spacetime). The fundamental example is a scalar
-% field, which is the assignment of a real value to each point in space (or spacetime). In
-% more precise mathematical terms, if \( M \) denotes spacetime (thought of as a manifold with a
-% pseudo-Riemannian metric, as is standard in general relativity), then a scalar field is a
-% smooth map \( \phi \colon M \to \R \). However, if we think of a field with vector values,
-% for instance, it is not enough to define it as a map \( X \colon M \to \R^4 \), at
-% least not if we want our theory to be covariant. Indeed, we think of a vector field as an
-% assignment of a vector at each point in spacetime which is tangent to that point. Thus,
-% the proper definition of a vector field is as a map \( X \colon M \to TM \), where \( TM
-% \) is the tangent bundle of \( M \), together with the condition \( X(p) \in T_pM \),
-% which is just the requirement that \( X(p) \) be tangent to \( p \). This condition makes
-% \( X \) a \emph{section} of \( TM \). If \( \tau_M \colon TM \to M \) is the map which
-% takes a tangent vector to its basepoint, then \( X \) being a section of \( TM \) is
-% equivalent to \( \tau_{TM} \circ X = \id_M \). 
-
-% This idea points us in the right direction for a more appropriate definition of fields. We
-% introduce the idea of a \emph{fiber bundle}, which is a projection map \( E
-% \xrightarrow{\pi} M \), such that for every \( p \in M \), \( \pi^{-1}(p) \) is
-% diffeomorphic to some fixed manifold \( F \). \( \pi^{-1}(p) \) is called the fibre over
-% \( p \), and \( F \) is the typical fibre of the bundle. What is happening here is that \(
-% E \) is the result of attaching a copy of \( F \) at each point of \( M \). If one
-% attempts to draw this, taking \( M  \) to be 2 dimensional and \( F \) 1 dimensional, the
-% result is something that looks much like a hair brush, where the copies of \( F \) are the
-% bristles, or fibres, hence the terminology. \( M \) is known as the \emph{base space}, \( E \)
-% receives the name \emph{total space}. 
-
-% For a more concrete picture, let's see what this looks like in coordinates. Consider a
-% coordinate system \( x^\mu \) for \( M \), where \( \mu \) runs over the dimension of
-% \( M \) ---which will be 4 if \( M \) is spacetime---, and a coordinate system \( u^\alpha
-% \) for the typical fibre \( F \), where \( \alpha \) runs over the dimension of \( F \).
-% Then points in the total space \( E \) can be labeled by \( (x^\mu, u^\alpha) \). For
-% example, in the tangent bundle, these coordinates label the base point of a vector and its
-% components with respect to a basis (which is generally taken to be basis induced by the
-% coordinates in physics). 
-
-% \subsection{Fields as sections of bundles}
-
-
-
-
-% In classical mechanics, the Lagrangian is defined as a function on the velocity phase
-% space of the system, i.e. the tangent bundle of the configuration space \( TM \), \( L
-% \colon TM \to \R \). With the Lagrangian in hand, one defines the action functional as
-% \begin{equation*}
-% 	S[\gamma] = \int_a^b L(\gamma(t), \dot{\gamma}(t)) \ud t. 
-% \end{equation*}
-
-% The precise generalisation of the Lagrangian to classical field theory is a bit more
-% difficult. For one, whatever the Lagrangian is, it has to be something we can integrate
-% over our parameter space, which in general will be a manifold. In the case of general
-% relativity, the parameter space is space-time, for example. This  means it has to be
-% related to a top form on the parameter space. The precise language to formulate this idea
-% is the language of jet bundles. In general, a suitable way to think of fields is as
-% sections of some bundle \( E \xrightarrow{\pi} M \), where \( M \) is the parameter space
-% and the typical fibre of the bundle is the space in which the field takes values. Then,for
-% a first order theory, the Lagrangian \( \L \) is a bundle morphism from the first jet bundle \(
-% J^1\pi \) to the bundle \( \ext^n T^\ast M \). Then, for a section \( \phi \) of \( \pi
-% \), \( \L \circ j^1 \phi \) is a section of \( \ext^n T^\ast M \), i.e., a top form over
-% \( M \). We can then define the action functional as
-% \begin{equation*}
-% 	S[\phi] = \int_M \L \circ j^1 \phi
-% \end{equation*}
-
-
-
-% In field theory, the Lagrangian is no longer just a real-valued function, since it is
-% something we have to integrate over the parameter space, which is spacetime in the context
-% of general relativity. The object we need is going to be a top form. Specifically, if we
-% are studying the dynamics of sections of some bundle \( E \xrightarrow{\pi} M \), the
-% Lagrangian density \( \L \), or sometimes just the Lagrangian, is a bundle morphism \( \L
-% \colon J^1\pi \to \ext^n T^\ast M \), where \( n \) is the dimension of the parameter
-% space \( M \). That \( \L \) is a bundle morphism means that for any \( j_p^1 \phi \in
-% J^1_p \pi \), \( \L(j_p^1 \phi) \in \wedge^n T^\ast_p M \), or, more succintly, that \(
-% \wedge^n \tau_M^\ast \circ \L = \pi_1 \). 
-
-% When we introduce contact geometry into the picture one has to enlarge the source space
-% for the Lagrangian, it is now a bundle morphism of the form
-% \begin{equation*}
-% 	\L \colon J^1\pi \oplus_M \ext^{n-1}T^\ast M \to \ext^{n} T^\ast M. 
-% \end{equation*}
-% The domain is the Whitney sum of the first jet bundle, where the field and its first
-% derivatives live, and of the bundle of \( n-1 \) forms over \( M \), where the action
-% density lives. In coordinates, the points in \( J^1\pi \) can be described as \( (x^\mu,
-% u^\alpha, u^\alpha_\mu) \). The points of \( \ext^{n-1}T^\ast M \) can be described in
-% coordinates by \( z^\mu \). Indeed, \( \ext^{n-1} T^\ast M \) and \( T^\ast M \) both are
-% vector bundles of dimension \( n \) over \( M \), so they are isomorphic. Indeed, writing
-% \( \d^n x \) for \( \d^1x \wedge \cdots \wedge \d^n x \), we define
-% \begin{equation*}
-% 	\ast \ud x_\mu = (-1)^\mu \frac{\partial}{\partial x^\mu} \iprod \d^n x
-% \end{equation*}
-% where no summation is implied over \( \mu \). The \( \ast \ud x_\mu \) are a basis of the
-% \( n-1 \) forms. Then we can write for any \( z \in \ext^{n-1} T^\ast M \), \( z = z^\mu
-% \ast \d x_\mu \). 
-
-% For general relativity, we are interested in sections of the bundle \( \Sym^2(T^\ast M) \)
-% of symmetric 2-forms over \( M \), specifically the subbundle of nondegenerate symmetric
-% 2-forms, also known as pseudo-Riemannian metrics. The 
-
-% \section{The Herglotz equations as a constrained version of the Euler-Lagrange equations}
-% We know how to find extremal paths of an ordinary action functional, but how do we go
-% about doing so in the presence of a constraint? The standard tool to solve constrained
-% optimisation problems is the Lagrange multiplier theorem. We know how to do this for
-% functions defined on a finite dimensional space. Namely, if \( f \colon \R^n \to \R \),
-% then \( x \in \R^n \) is an extremum of \( f \) subject to \( m \) constraints \( g_k(x) = 0
-% \) if and only if there exist \( \lambda_k \in \R \) such that \( x \) is an extremum of
-% \( f - \sum_{k = 0}^{m} \lambda_k g_k \). Thus, we are able to transform a constrained
-% optimisation problem into an unconstrained one. 
-
-% In our case, the functional we are trying to optimise is the action functional, which is
-% defined on an infinite dimensional space, namely the space of all possible paths. The
-% constraint we are imposing can be written as
-% \begin{equation}
-% 	\dot{z}(t) = L(\gamma(t), \dot{\gamma}(t), z(t))
-% \end{equation}
-% for all \( t \in [0,1] \). Another way to think about it is that we have infinitely many
-% constraints, parameterised by \( t \). It can be shown that, in analogy with the finite
-% dimensional case, extrema of the actiona functional \( S \) subject to this family of
-% constraints are extrema of the modified functional
-% \begin{equation}\label{eq:unconstrained action}
-% 	S_\theta[\gamma, z] = S[\gamma, z] - \int_0^1 \theta(t) \big[\dot{z}(t) - L(\gamma(t),
-% 	\dot{\gamma}(t), z(t))\big] \ud t
-% \end{equation}
-% which, when substituting the action, becomes
-% \begin{equation}\label{eq:unconstrained action}
-% 	S_\theta[\gamma, z] =  \int_0^1 \dot{z}(t) - \theta(t) \big[\dot{z}(t) - L(\gamma(t),
-% 	\dot{\gamma}(t), z(t))\big] \ud t
-% \end{equation}
-
-% The key point here is that this is an unconstrained optimisation problem, so we can
-% directly apply the Euler-Lagrange equations. Doing so yields exactly the Herglotz
-% equations. 
 
 \end{document}
