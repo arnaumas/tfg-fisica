@@ -1,14 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-In this chapter we provide a brief overview of the state of the art of various modified
-theories of gravity geared towards solving problems in cosmology. Specifically, we look at
-a proposed \emph{action-dependent} theory of Einstein gravity. On the other hand, we
-present the current status of the research into the mathematical formulation of
-action-dependent field theories, and how gravitation fits into them. Finally we describe
-how we bring these two ideas together in the present thesis. 
 
-\section{Modified theories of gravity}
 Einstein's theory of general relativity provides a description of gravity as a geometrical
 effect that results from the interplay between the curvature of spacetime and the matter
 that inhabits this spacetime. Its predictions have been tested to a very high degree of
@@ -18,13 +11,12 @@ evidence seems to point in the direction of a modified version of Einstein's the
 are numerous possible avenues for generalisation, \cite{Olmo2020} lists many of the ones
 under current investigation and study. Among them, we will focus on the theory of gravity
 that comes from taking what is known as an \emph{action-dependent} version of the
-Einstein-Hilbert Lagrangian, which is the Lagrangian from which one derives the field
-equations of general relativity. This generalisation operates at the level of the
+Einstein-Hilbert Lagrangian, the Lagrangian from which the field
+equations of general relativity are derived. This has been first developed in
+\cite{Lazo2017}. This generalisation operates at the level of the
 variational principle, so it is not just the addition of ad-hoc terms to the field
-equations. What's more, the framework of action-dependent Lagrangians is not specific to
-general relativity, but actually comes from a more general mathematical theory.
+equations. 
 
-\section{Action-dependent Lagrangians and contact geometry}
 Lagrangian (and Hamiltonian) mechanics can be formulated in the language of symplectic
 geometry. The study of physical systems from this more abstract point of view allows one
 to gain insight into how they operate at a geometric level, and provides a very elegant
@@ -33,29 +25,29 @@ by symplectic geometry are inherently conservative: the theory centers on symmet
 conserved quantities. And yet, not all physical systems are conservative, not by any
 means. It turns out that symplectic geometry has a sister theory, called contact geometry,
 and that it can be used to describe non-conservative (or dissipative systems) from a
-geometric point of view. This has been applied to a great number of areas of physics,
-perhaps one of the more successful one being thermodynamics, see \cite{Gaset2020a,
-Leon2021, Gaset2020} for recent publications in the field. Of interest to us
-is the ongoing effort of adapting the theory to second-order field theory, i.e.
-fields described by Lagrangians that include first and second derivatives of the field.
-General relativity is a second-order field theory, so writing down the equations of a
-dissipative version of it would be one of the first times this is done for a second-order
-theory. 
+geometric point of view. This has been applied to various areas of physics,
+the most notable one being reversible and non-reversible thermodynamics (see
+\cite{Mrugala1991}), as well as other areas such as control theory and cosmology
+(\cite{Lazo2017}). So far, contact geometry is well understood for mechanics, but not so
+much for field theory and even less for higher order field theories. See \cite{Gaset2020a,
+Leon2021, Gaset2020} for recent publications related to ongoing efforts. General
+relativity is a second-order field theory, so writing down the equations of a dissipative
+version of it would be one of the first times this is done for a second-order theory. 
 
-\section{The contribution of this thesis}
 The main contribution of this work is the derivation of the field equations of Einstein
 gravity with an added linear action dependence. This is of interest from the point of view
 of cosmology, since these equations are a starting point from which to make predictions,
-and also from the point of view of theoretical physics, since these equations are the
-equations of a second-order theory. In \cref{ch:herglotz} we will introduce the formalism
-of action-dependent Lagrangians and introduce a new version of the formalism based on
-constrained optimisation which circumvents a number of problems one encounters when
-dealing with field theory. Then, in \cref{ch:einstein} we apply this idea to a modified
-Einstein-Hilbert Lagrangian and derive its field equations by direct variation of the
-action. This Lagrangian has actually already been studied in a recent publication,
-\cite{Lazo2017}, but in \cref{ch:significance} we argue why the equations obtained there
-are not the correct ones, and why the right version are those obtained in the present
-work. 
+and also from the point of view of mathematical physics, since these equations are the
+equations of a second-order theory.
 
+The manuscript is organised as follows: in \cref{ch:herglotz} we will introduce the formalism
+of action-dependent Lagrangians and show how it is a problem of constrained optimisation.
+This is a very recent breakthrough which circumvents many of the problems one encounters
+when dealing with action-depenednet field theories. Then, in \cref{ch:einstein} we apply
+this idea to a modified Einstein-Hilbert Lagrangian and derive its field equations by
+direct variation of the action. This Lagrangian has actually already been studied in a
+recent publication, \cite{Lazo2017}, but in \cref{ch:significance} we argue why the
+equations obtained there are not the correct ones, and why the right version are those
+obtained in the present work. 
 
 \end{document}

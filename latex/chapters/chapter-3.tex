@@ -3,11 +3,11 @@
 \begin{document}
 In this chapter we apply the language and tools developed in the previous chapter to the
 specific case of Einstein gravity. We first describe the Lagrangian from which the Einstein
-field equations come from and then introduce an action-dependent of this Lagrangian and
+field equations come from and then introduce an action-dependent version of this Lagrangian and
 derive its field equations. 
 
 \section{The Einstein-Hilbert Lagrangian}
-As is well-known, the Einstein field equations can be derived by means of a variational
+As is well-known, the Einstein field equations can be obtained from a variational
 principle. The Lagrangian that gives rise to these equations is the Einstein-Hilbert
 Lagrangian. Let's write it down in the language of \cref{sec:lagrangian densities}. The
 Einstein-Hilbert action acts on metrics. Given a metric \( g \), one can construct a
@@ -65,8 +65,9 @@ that \cref{eq:action dependent einstein-hilbert} makes sense. We call this a lin
 dissipation term because it is linear in \( z \). It is also linear in \( \theta \) which
 we will call the dissipation form. If we write \( \theta \) out in some coordinate system
 then \( \theta = \theta_\mu \ud x^\mu \), and its components transform covariantly. In
-natural units, \( \theta \) must have dimensions of length, since then \( \theta \wedge z
-\) has dimensions of \( action/(length)^4 \), i.e. dimensions of action density. 
+natural units, \( \theta \) must have dimensions of \( \text{length}^{-1} \), since then
+\( \theta \wedge z \) has dimensions of \( \text{action}/(\text{length})^4 \), i.e.
+dimensions of action density. 
 
 In coordinates 
 \begin{equation*}
@@ -80,7 +81,7 @@ so \cref{eq:action dependent einstein-hilbert} becomes
 	z^\mu) \ud^4 x. 
 \end{equation}
 This Lagrangian does not quite match the one proposed in eq. (9) of \cite{Lazo2017}. It
-can be shown that in fact the Lagrangian we propose and the one they propose are actualy
+can be shown that in fact the Lagrangian we propose and the one they propose are actually
 the same, just expressed in different coordinates. 
 
 Consider a modified basis for the 3-forms, \( \omega_{g,\mu} = \sqrt{g}
@@ -106,7 +107,7 @@ so, in coordinates
 \begin{equation} \label{eq:constraint coordinates 1}
 	\partial_\mu z^\mu = R\sqrt{g} - \theta_\mu z^\mu. 
 \end{equation}
-If instead we choose the other coordinates for the action flux, we see
+If instead we choose the other basis for the action flux, we see
 \begin{equation*}
 	\ud z = \partial_\mu (\sqrt{g} \zeta^\mu) \ud^4 x = \nabla_\mu \zeta^\mu \sqrt{g}\ud^4x
 	= \nabla_\mu \zeta^\mu \omega_g
@@ -295,7 +296,8 @@ be brought to the form
 	g^{ml} \sqrt{g} \ud^4 x
 \end{align*}
 
-There is still another integral we need to evaluate, namely
+There is still another integral we need to evaluate, the second term in the variation of
+\( R_{ab} \), namely
 \begin{align}
 	\int_D (\partial_n \lambda) g^{nb}\delta{\Gamma^m}_{mb} \sqrt{g} \ud^4 x 
 	& = \tfrac{1}{2} \int_D \lambda \theta_n g^{nb} g^{mk}(\nabla_b \delta g_{mk} + \nabla_m

@@ -1,7 +1,6 @@
 % -------------------
 % PACKAGES
 % Basic font setup
-\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -17,7 +16,7 @@
 \usepackage{tikz-cd}
 \usepackage{siunitx}
 
-\sisetup{detect-family = true}
+\sisetup{detect-family = true, group-minimum-digits = 4}
 
 % TOC Format
 % \usepackage[titles]{tocloft}
@@ -60,6 +59,7 @@
 % -------------------
 % BIBLIOGRAPHY
 \usepackage[style=alphabetic, citestyle=alphabetic]{biblatex}
+\usepackage[english,catalan]{babel}
 \addbibresource{refs.bib}
 
 % -------------------

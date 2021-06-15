@@ -1,8 +1,13 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
+In this chapter we discuss the equations we have obtained and how they compare to those
+appearing in existing publications. We also make the case that the version we have derived
+is the correct one. 
+
+\section{The dissipation tensor}
 Let us recap what we did in the previous chapter. We have shown, by computing the
-variation of the corresponding action, that the field Equations of an Einstein-Hilbert
+variation of the corresponding action, that the field equations of an Einstein-Hilbert
 Lagrangian with linear dissipation, namely
 \begin{equation} 
 	L(g_{ab}, g_{ab,\mu}, g_{ab,\mu\nu}, z^\mu) = R(g_{ab}, g_{ab,\mu}, g_{ab,\mu\nu})
@@ -12,23 +17,43 @@ are
 \begin{equation} 
 	R_{ab} - \tfrac{1}{2}Rg_{ab} - K_{ab} + Kg_{ab} = 0
 \end{equation}
-where \( K_ab \) is the \( (0,2) \) symmetric tensor defined as
+where \( K_{ab} \) is the \( (0,2) \) symmetric tensor defined as
 \begin{equation}
 	K_{ab} = \nabla_{(a}\theta_{b)} + \theta_a\theta_b. 
 \end{equation}
+We will call \( K_{ab} \) the dissipation tensor. 
 
+\( K_{ab} \) is indeed a tensor and this means these equations are actually covariant.
+Let's show this in more detail. 
+
+We could compute the explicit transformation law of the dissipation tensor and see that it
+transforms as a \( (0,2) \) tensor. But a simpler way is writing it out in a
+coordinate-free manner.  Specifically, \( K_{ab} \) are the components of the object \( K
+= \theta \otimes \theta + \nabla \theta \). Indeed, given two vector fields \( X \) and \(
+Y \)
+\begin{align*} 
+	K(X,Y) & = (\theta \otimes \theta)(X,Y) + (\nabla_X \theta)Y \\
+				 & = \theta_a \theta_b X^a Y^b + X^a \nabla_a \theta_b Y^b \\
+				 & = (\theta_a \theta_b + \nabla_{(a}\theta_{b)})X^a Y^b
+\end{align*}
+where in the last step we used that \( \nabla_{a}\theta_b = \nabla_{(a}\theta_{b)} \)
+because \( \theta \) is closed. This shows \( K_{ab} \) are the components of a tensor
+since \( \theta \otimes \theta \) and \( \nabla \theta \) are both \( (0,2) \) tensors
+(they are bilinear). 
+
+\section{Non-covariance of existing equations}
 These equations are not the ones obtained in \cite{Lazo2017}. For the same Lagrangian, the
 equations derived are
 \begin{equation} \label{eq:EFE lazo}
 	R_{ab} + \tilde{K}_{ab} - \tfrac{1}{2}g_{ab}(R + \tilde{K}) = 0
 \end{equation}
-where
+where the dissipation tensor they obtained is 
 \begin{equation} \label{eq:}
 	\tilde{K}_{ab} = \theta_m {\Gamma^m}_{ab} - \tfrac{1}{2}\left(\theta_a {\Gamma^m}_{mb} +
 	\theta_b {\Gamma^m}_{am}\right). 
 \end{equation}
-We will make to case as to why these equations are not the correct ones. The first issue
-is that \( \tilde{K}_{ab} \) is not a tensor. To see this, we will compute \(
+We will make the case as to why these equations are not the correct ones. The first issue
+is that \( \tilde{K}_{ab} \) is actually not a tensor. To see this, we will compute \(
 \tilde{K}_{ab} \) in two different coordinate systems and show that it does not transform
 as a \( (0,2) \)-tensor would. 
 
@@ -57,27 +82,12 @@ in which it vanishes and another one in which at least one of its components doe
 other words, the object derived in \cite{Lazo2017} is not coordinate independent so it
 cannot possibly represent meaningful physics. 
 
-On the contrary, the object \( K_{ab} \) that we found in \cref{eq:K} is indeed a tensor.
-We could compute explicitly its transformation law and see that it is the one of a \(
-(0,2) \) tensor. But a simpler way is writing it out in a coordinate-free manner.
-Specifically, \( K_{ab} \) are the components of the object \( K = \theta \otimes \theta +
-\nabla \theta \). Indeed, given two vector fields \( X \) and \( Y \)
-\begin{align*} 
-	K(X,Y) & = (\theta \otimes \theta)(X,Y) + (\nabla_X \theta)Y \\
-				 & = \theta_a \theta_b X^a Y^b + X^a \nabla_a \theta_b Y^b \\
-				 & = (\theta_a \theta_b + \nabla_{(a}\theta_{b)})X^a Y^b
-\end{align*}
-where in the last step we used that \( \nabla_{a}\theta_b = \nabla_{(a}\theta_{b)} \)
-because \( \theta \) is closed. This shows \( K_{ab} \) are the components of a tensor
-since \( \theta \otimes \theta \) and \( \nabla \theta \) are both \( (0,2) \) tensors
-(they are bilinear). 
-
 There is another reason that indicates that the equations in \cite{Lazo2017} are not the
 correct ones. When we wrote down the Herglotz equations for the harmonic oscillator with
 linear dissipation we obtained equations linear in the dissipation coefficient (see
 \cref{eq:damped harmonic oscillator}). However, the Lagrangian for this system is first
 order, whereas, as we had already discussed, the Einstein-Hilbert Lagrangian is actually
-second order. The equations of motion for a second order Lagrangian with linear
+second order. The equations of motion for a specific second order Lagrangian with linear
 dissipation, called the damped Pais-Uhlenbeck oscillator, are derived in \cite{Leon2021a},
 and they are in fact not linear in the dissipation coefficient, but rather quadratic. In
 our case, the dissipation form plays the role of the dissipation coefficient so by analogy

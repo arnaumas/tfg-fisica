@@ -2,19 +2,19 @@
 
 \begin{document}
 In this chapter we develop the theory of \emph{action-dependent Lagrangians}. The main appeal of
-this formalism is that it allows the description of non-conservative systems in terms of a
+this formalism is that it allows for the description of non-conservative systems in terms of a
 variational principle, which is in general not possible with standard Lagrangian
 mechanics. The problem of finding the stationary paths of the action given by a Lagrangian
 of this sort is known as the Herglotz problem. The main difficulty of this variational
 problem is that, as opposed to the standard variational problem of Lagrangian mechanics,
-is a constrained optimisation problem. One way to approach this problem is the use of
-Lagrange multipliers. We show how this leads to the equations of motions for this kind of
-systems, the Herglotz equations, and how it can also be applied to field theory to derive
-the field theoretical Herglotz equations. 
+it is an implicit optimisation problem. One way to approach this problem is the use of
+Lagrange multipliers. We show how this leads to the equations of motion for this kind of
+systems, known as the Herglotz equations, and how it can also be applied to field theory
+to derive the field theoretical Herglotz equations. 
 
 \section{The implicit formulation of the Herglotz problem}
 Let's briefly describe what we will refer to as the \emph{implicit formulation of the
-Herglotz problem}, as presented in \cite{Lazo2018}. Let us first clarify what we mean by
+Herglotz problem}, as presented in \cite{Lazo2018}. First we clarify what we mean by
 an action-dependent Lagrangian. The idea is to consider the action as a dynamical quantity
 that changes along the path, and then allow the Lagrangian to depend on it. Naively, we
 would write the following. Starting with some path \( q^\mu \colon [a,b] \to M \) in some
@@ -29,7 +29,7 @@ sense since we are defining \( S \) on the left-hand side, and it appears on the
 right-hand side! We can turn this expression into something sensible if we add the time
 dependence of the action on the left-hand side, so that we write
 \begin{equation}\label{eq:action integral equation}
-	S[q^\mu](t) = \int_a^t L(q^\mu(s), \dot{q}^\mu(s), S[q^\mu](s)) \ud s
+	S[q^\mu](t) = \int_a^t L(q^\mu(\tau), \dot{q}^\mu(\tau), S[q^\mu](\tau)) \ud \tau
 \end{equation}
 and if we differentiate with respect to time we actually get an ODE for \( S[q^\mu] \)!
 Indeed
@@ -46,8 +46,7 @@ the difference of values of \( S \):
 What we have here is a functional which, for every path, is defined by an ODE. To find the
 stationary paths of this functional we would, in principle, have to solve
 \cref{eq:action ode} for any possible path and among all of them find which ones yield
-extrema. This is the \emph{Herglotz variational problem}. This approach is in general not
-feasible. However, just like the variational problem of classical Lagrangian mechanics can
+extrema. This is the \emph{Herglotz variational problem}. However, just like the variational problem of classical Lagrangian mechanics can
 be turned into a set of ODEs, the Euler-Lagrange equations, so can the Herglotz problem be
 turned into a set of ODEs. These are known as the Herglotz equations, which can be written
 down as
@@ -64,8 +63,8 @@ See \cite{Lazo2018} or \S 3.2 of \cite{Leon2021} for a detailed derivation of th
 equations following the implicit approach. 
 
 \subsection{Example: the damped harmonic oscillator}
-Before we move forward, let's see what kind of equations of motion we get from the
-Herglotz equations. The simplest action-dependence we can introduce ---other than no
+Before we move forward, let's see what the Herglotz equations look like for a particular
+system. The simplest action-dependence we can introduce ---other than no
 action-dependence at all, of course--- is a term linear in \( z \). We will call this
 linear dissipation for reasons that will become clear in a moment. Let's see what happens
 when we add this term to the simple harmonic oscillator. Explicitly, consider the
@@ -97,17 +96,19 @@ equations take for field theory. If we try to apply the implicit method to field
 run into a number of problems. For one, it is just not very elegant. The action functional
 is defined implicitly through an ordinary differential equation, one for every path.
 What's more, this equation is no longer an ODE in field theory, but rather it becomes a
-PDE. PDEs are notoriously much more difficult to solve thant ODEs, so we would like a way
+PDE. PDEs are notoriously much more difficult to solve than ODEs, so we would like a way
 to circumvent this issue. 
 
 The idea we describe in what follows is being developed by Manuel Lainz, a PhD student at
 ICMAT. This is currently in a preprint stage, to which I have been graciously given
 access.  It is part of broader ongoing research on the mathematics underpinning the theory
-of action-dependent field theory. This approach is a more elegant way of deriving the
-Herglotz equations, but as we will see, it also allows one to perform a direct variation
-of the action even for second-order theories such as general relativity.
+of action-dependent field theory. As it was originally introduced, it was a more elegant
+way to derive the Herglotz equations from a variational principle, but actually it also
+provides a method of writing down second-order Herglotz equations by taking a direct
+variation of the action. This is how we will be able to calculate the field equations of
+action-dependent gravity, which is a second-order theory.
 
-The fundmanetal insight comes from framing the Herglotz problem as a constrained
+The fundamental insight comes from framing the Herglotz problem as a constrained
 optimisation problem.  We describe what this looks like for mehcanics. First, instead of
 considering paths in spacetime, \( q^\mu \colon [a,b] \to M \), we enlarge the
 configuration space with one extra quantity, which we will call \( z \). At this point \(
@@ -122,7 +123,7 @@ functional on these paths as
 so \( S \) is just the change in \( z \) along the trajectory. This functional as it
 stands has no stationary paths, since we can find trajectories with arbitrarily large
 changes in \( z \), both positive and negative. So we constrain the possible paths.
-Namely, we require that \( z \) actually represent the action. So we try to find the paths
+Namely, we require that \( z \) actually represent the action. We try to find the paths
 that extremise \( S \) only among those that satisfy the constraint
 \begin{equation}\label{eq:constraint mechanics}
 	\dot{z}(t) = L(q^\mu(t), \dot{q}^\mu(t), z(t)),
@@ -130,7 +131,7 @@ that extremise \( S \) only among those that satisfy the constraint
 where \( L \) is the action-dependent Lagrangian that describes the system.  Notice that
 this is very similar to \cref{eq:action ode}. 
 
-Say\( (q^\mu, z) \) is a trajectory that satisfies \cref{eq:constraint mechanics}. Then 
+Say \( (q^\mu, z) \) is a trajectory that satisfies \cref{eq:constraint mechanics}. Then 
 \begin{equation*}
 	S[q^\mu, z] = z(a) - z(b) = \int_a^b \dot{z}(t) \ud t = \int_a^b L(q^\mu(t),
 	\dot{q}^\mu(t), z(t)) \ud t. 
@@ -145,7 +146,7 @@ multipliers to turn this into a regular optimisation problem to which we can app
 tools of the calculus of variations. 
 
 Recall, given some function \( f \colon \R^n \to \R \), \( x \in \R^n \) is an extremum of
-\( f \) subject to \( m \) constraints \( G_k \colon \R^n \to \R \) ---i.e. \( g_k(x) = 0
+\( f \) subject to \( m \) constraints \( G_k \colon \R^n \to \R \) ---i.e. \( G_k(x) = 0
 \) --- if and only if there exist numbers \( \lambda_k \in \R \) such that
 \( x \) is an extremum of the function
 \begin{equation} \label{eq:lagrange multipliers}
@@ -157,7 +158,7 @@ and infinitely many constraints. In our case, the function we are trying to find
 extrema of is the functional \( S \). Our constraints are parameterised by \( t \in [a,b]
 \):
 \begin{equation*}
-	G_t[q^\mu, z] = \dot{z}(t) - L(q^\mu(t), \dot{q}^\mu(t), z(t)).
+	G_t[q^\mu, z] = \dot{z}(t) - L(q^\mu(t), \dot{q}^\mu(t), z(t)) = 0.
 \end{equation*}
 Thus, replacing sums with integrals in \cref{eq:lagrange multipliers}, the extrema of
 \cref{eq:action functional unconstrained} subject to \cref{eq:constraint mechanics} will
@@ -211,11 +212,11 @@ and after substituting in \cref{eq:euler-lagrange multiplier} and dividing throu
 which are exactly the Herglotz equations. 
 
 Let us for completeness write down the equation that results from taking the variation
-with respect to \( \lambda \), which is
+with respect to \( \lambda \):
 \begin{equation*}
-	-\dot{z}(t) + L\left(q^\mu(t), \dot{q}^\mu(t), z(t)\right) = 0
+	-\dot{z}(t) + L\left(q^\mu(t), \dot{q}^\mu(t), z(t)\right) = 0,
 \end{equation*}
-which is exactly the constraint. 
+This is exactly the constraint. 
 
 \section{Action-dependent field theory}
 We have seen how to derive the Herglotz equations in a more elegant way using Lagrange
@@ -247,7 +248,7 @@ only contains first derivatives the theory is called a \emph{first order theory}
 relativity is actually a second order theory, as we will discuss later. However, most of
 the following discussion still applies to general relativity. 
 
-The Lagrangian in field theory does not take value in the real numbers. To define the
+The Lagrangian in field theory does not take values in the real numbers. To define the
 action we must integrate the Lagrangian, but as opposed to in mechanics where one
 integrates over time, in field theory this integration is performed over a patch of
 spacetime. Because spacetime is in general a curved manifold we will need to use the
@@ -257,15 +258,15 @@ a \( k \)-multilinear alternating form that acts on tangent vectors} can be inte
 over a manifold of dimension \( k \). So if spacetime has dimension \( n \), the
 Lagrangian has to be a differential \( n \)-form, alsow known as a top form. 
 
-With some care, however, we can still think of the Lagrangian as a function with real
-values.  It turns out that any two top forms differ only by an overall factor, i.e., given
-two top forms \( \omega_1 \) and \( \omega_2 \), there exists a unique scalar function \(
-f \colon M \to \R \) spacetime \( M \) such that \( \omega_1 = f\omega_2 \). So what this
-means is that, for a given Lagrangian \( \L \), once we pick a distinguished
-top form there is a unique scalar function \( L \) such that \( \L = L \omega \). This
-distinguished top form will in most cases be the top form induced by the coordinates we
-are working in, which we will write as \( \d^nx \). Sometimes we will use Lagrangian
-density to refer to \( \L \) and Lagrangian to refer to \( L \). 
+With some care, however, we can still think of the Lagrangian as a function with values
+in the real numbers.  It turns out that any two top forms differ only by an overall
+factor, i.e., given two top forms \( \omega_1 \) and \( \omega_2 \), there exists a unique
+scalar function \( f \colon M \to \R \) such that \( \omega_1 =
+f\omega_2 \). So what this means is that, for a given Lagrangian \( \L \), once we pick a
+distinguished top form \( \omega \) there is a unique scalar function \( L \) such that \( \L = L
+\omega \). This distinguished top form will in most cases be the top form induced by the
+coordinates we are working in, which we will write as \( \d^nx \). Sometimes we will use
+Lagrangian density to refer to \( \L \) and Lagrangian to refer to \( L \). 
 
 The setup in classical field theory is as follows. Given some Lagrangian, which encodes
 the system we are studying, we define the action functional on all the possible field
@@ -331,12 +332,12 @@ components of a vector, but rather as the components of a 3-form. This is very s
 the distinction between vectors and pseudo-vectors in 3-space. 
 
 Let's have a closer look at what \( z \) represents. We know that \( \int_{\partial D} z
-\) has dimensions of action. The volume element of \( \partial D \) in natural units has
-dimensions of \( \text{length}^3 \), so the components of \( z \) have dimensions of \(
-\text{action}/\text{length}^3 \). This means that \( z \) is the \emph{action flux}. From
-Stokes' theorem,
+\) has dimensions of action. The volume element of \( \partial D \) in natural units
+(setting \( c = 1\)) has dimensions of \( \text{length}^3 \), so the components of \( z \)
+have dimensions of \( \text{action}/\text{length}^3 \). This means that \( z \) is the
+\emph{action flux}. From Stokes' theorem,
 \begin{equation*}
-	S[\phi^a, z^\mu] = \int_{\partial D} z = \partial_D \ud z,
+	S[\phi^a, z^\mu] = \int_{\partial D} z = \int_D \ud z,
 \end{equation*}
 so \( \ud z \) has to be the action density, i.e. the Lagrangian. The constraint we want
 to impose is therefore 
@@ -361,7 +362,7 @@ So we have arrived at the right formulation of the Herglotz variational problem 
 theory.
 
 \subsection{Constrained optimisation in field theory}
-So just like before, we will turn this constrained optimisation problem into an
+Just like before, we will turn this constrained optimisation problem into an
 unconstrained one using Lagrange multipliers. The expanded action, in analogy with
 \cref{eq:lagrange multiplier action} will be
 \begin{equation}\label{eq:expanded action field theory}
@@ -400,6 +401,9 @@ So, rearranging,
 \begin{equation} \label{eq:euler lagrange multiplier field theory}
 	\partial_\nu \lambda = - \lambda \frac{\partial L}{\partial z^\nu}. 
 \end{equation}
+This equation actually has implications for the type of action dependence that is allowed
+in \( L \). We will see it again later on in the context of relativity as it forces the
+dissipation form to be closed. 
 
 And for the values of the field
 \begin{equation*}

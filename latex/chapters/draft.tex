@@ -1,0 +1,212 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Action dependent Lagrangian}
+The standard formulations of classical mechanics, the Lagrangian and Hamiltonian
+formalisms, can be used to describe and study a great variety of physical systems.
+Nevertheless, all of them exhibit \emph{conservative} behaviour. Even the simplest non
+conservative systems, i.e. dissipative, cannot be described by means of a standard Lagrangian or
+Hamiltonian. One way of describing non conservative systems by means of a variational
+principle is through \emph{action-dependent lagrangians}. This theory was originally
+studied by Herglotz.
+
+Recall that in ordinary classical mechanics, one models particle trajectories as
+smooth paths in some configuration manifold, \( M \), which generally represents space in
+Newtonian mechanics and spacetime in relativity, i.e. trajectories are of the
+form \( q \colon [t_0, t_1] \to M \). The Lagrangian \( L \) is introduced as a function on the
+velocity phase space, \( TM \), i.e. \( L \colon TM \to \R \), with which the action
+functional is defined as the integral
+\begin{equation*}
+	S[q] = \int_{t_0}^{t_1} L(q^\mu(t) , \dot{q}^\mu(t)) \ud t. 
+\end{equation*}
+The Principle of Least Action is the statement that physical trajectories correspond to
+extrema of the action functional. The condition of being an extremum of the action can be
+equivalently formulated, by means of the calculus of variations, in terms of the
+well-known Euler-Lagrange equations. 
+
+In this new framework we expand the configuration space with a new variable, and consider
+paths \( (q,z) \colon [t_0, t_1] \to M \times \R \). The new action functional is 
+\begin{equation}\label{eq:contact action 1}
+	S[q,z] = z(t_1) - z(t_0).
+\end{equation}
+Physical trajectories will be those that extremise \( S \) \emph{subject to the
+constraint} \( \dot{z}(t) = L(q^\mu(t), \dot{q(t)}, z(t)) \). We see that if a path
+satisfies this constraint then \cref{eq:contact action 1} becomes
+\begin{equation}\label{eq:contact action 2}
+	S[q,z] = z(t_1) - z(t_0) = \int_{t_0}^{t_1} \dot{z}(t) = \int_{t_0}^{t_1} L(q^\mu(t),
+	\dot{q}^\mu(t), z(t))
+\end{equation}
+which makes clear why this is an action dependent Lagrangian: \( z \) represents the
+change in action along the path. And if \( L \) is independent of \( z \) then
+\cref{eq:contact action 2} just reduces to the usual action from Lagrangian mechanics. 
+
+Now, it is not obvious how to solve this variational problem, since it is now a
+constrained optimisation problem. However, using Lagrange multipliers, it can be shown
+that extrema of this action will satisfy the so-called Herglotz equations:
+\begin{equation}\label{eq:herglotz}
+ 	\frac{\d}{\d t}\frac{\partial L}{\partial \dot{q}^\mu} - \frac{\partial L}{\partial
+ 	q^\mu} - \frac{\partial L}{\partial z} \frac{\partial L}{\partial \dot{q}^\mu} = 0
+\end{equation}
+These differential equations are the action dependent analog to the Euler-Lagrange
+equations, and notice that, as expected, if \( L \) is independent of \( z \) then the
+Herglotz equations reduce to Euler-Lagrange. 
+
+To see that this is useful to describe physical phenomena, consider the following action
+dependent Lagrangian:
+\begin{equation*}
+	L(q, \dot{q}, z) = \frac{1}{2}m\dot{q}^2 - \frac{1}{2}m\omega^2 q^2 - \gamma z. 
+\end{equation*}
+The Herglotz equation for this Lagrangian is
+\begin{equation*}
+	m\ddot{q} + m\omega^2 q + \gamma m \dot{q} = 0  
+\end{equation*}
+which one recognises as the equation of motion of a damped harmonic oscillator.
+
+The main takeaway is that this is a way of describing non conservative systems by means of
+a variational principle. 
+
+\section{Action dependent field theory}
+Our aim is to study what general relativity looks like when formulated in this new
+framework. However, general relativity is a field theory, so we need to introduce more
+complex mathematical machinery to understand the generalisation of contact lagrangians to
+field theory. 
+
+The modern way of formulating field theory is in the language of bundles and
+sections. 
+
+\section{The action density}
+We have established that the natural space in which the values of a field and its
+derivative is the jet bundle. Therefore, in analogy with mechanics, one would naturally
+introduce the Lagrangian as a functional over this space, \( L \colon J^1 \pi \to \R \).
+However this is not quite right. Recall, the action functional is defined as an integral
+of the lagrangian over spacetime. thus, we want whatever kind of object the Lagrangian is
+to be something we can integrate. This means that \( n \)-forms over \( M \) must somehow
+come into play. The right form of the Lagrangian is actually a function of the form \( \L
+\colon J^1\pi \to \ext^n T^\ast M \). If this is the case, then given a certain field
+configuration \( \phi \in \Gamma(\pi) \), \( \L \circ j^1 \phi \) is actually an element
+of \( \Omega^n(M) \), an \( n \)-form. With this in hand, the action functional for fields
+is defined as 
+\begin{equation*}
+	S[\phi] = \int_{M} \L \circ j^1\phi. 
+\end{equation*}
+
+Now we follow the same path we did before to introduce an action dependence in the
+Lagrangian. We must somehow enlarge the domain of the Lagrangian to encode the action
+dependence. This role was played by the \( z \) before. By defintion, the action was given
+by the difference \( z(t_1) - z(t_0) \). This can be interpreted as the integral of \( z
+\) over the boundary of the region of parameter space. So, roughly speaking, we need
+something we can integrate over \( \partial M \). Because the dimension of \( \partial M
+\) is one less than \( M \), we need an \( n-1 \)-form. The expanded domain for the
+Lagrangian is going to be \( J^1 \pi \otimes_M \ext^{n-1} T^\ast M \). A section of this
+bundle is therefore a field configuration \( \phi \) as well as an \( n-1 \)-form \( z \).
+The action functional is defined as
+\begin{equation*}
+	S[\phi, z] = \int_{\partial M} z.
+\end{equation*}
+We wish to find extrema of this functional subject to the condition that \( z \) be
+actually related to the Lagrangian. This is captured by the requirement \( \ud z = \L \).
+
+
+
+\section{Bundles, sections and jets}
+Field theory studies the dynamics of fields, which are, in the broadest sense, quantities
+that vary from point to point in space (or spacetime). The fundamental example is a scalar
+field, which is the assignment of a real value to each point in space (or spacetime). In
+more precise mathematical terms, if \( M \) denotes spacetime (thought of as a manifold with a
+pseudo-Riemannian metric, as is standard in general relativity), then a scalar field is a
+smooth map \( \phi \colon M \to \R \). However, if we think of a field with vector values,
+for instance, it is not enough to define it as a map \( X \colon M \to \R^4 \), at
+least not if we want our theory to be covariant. Indeed, we think of a vector field as an
+assignment of a vector at each point in spacetime which is tangent to that point. Thus,
+the proper definition of a vector field is as a map \( X \colon M \to TM \), where \( TM
+\) is the tangent bundle of \( M \), together with the condition \( X(p) \in T_pM \),
+which is just the requirement that \( X(p) \) be tangent to \( p \). This condition makes
+\( X \) a \emph{section} of \( TM \). If \( \tau_M \colon TM \to M \) is the map which
+takes a tangent vector to its basepoint, then \( X \) being a section of \( TM \) is
+equivalent to \( \tau_{TM} \circ X = \id_M \). 
+
+This idea points us in the right direction for a more appropriate definition of fields. We
+introduce the idea of a \emph{fiber bundle}, which is a projection map \( E
+\xrightarrow{\pi} M \), such that for every \( p \in M \), \( \pi^{-1}(p) \) is
+diffeomorphic to some fixed manifold \( F \). \( \pi^{-1}(p) \) is called the fibre over
+\( p \), and \( F \) is the typical fibre of the bundle. What is happening here is that \(
+E \) is the result of attaching a copy of \( F \) at each point of \( M \). If one
+attempts to draw this, taking \( M  \) to be 2 dimensional and \( F \) 1 dimensional, the
+result is something that looks much like a hair brush, where the copies of \( F \) are the
+bristles, or fibres, hence the terminology. \( M \) is known as the \emph{base space}, \( E \)
+receives the name \emph{total space}. 
+
+For a more concrete picture, let's see what this looks like in coordinates. Consider a
+coordinate system \( x^\mu \) for \( M \), where \( \mu \) runs over the dimension of
+\( M \) ---which will be 4 if \( M \) is spacetime---, and a coordinate system \( u^\alpha
+\) for the typical fibre \( F \), where \( \alpha \) runs over the dimension of \( F \).
+Then points in the total space \( E \) can be labeled by \( (x^\mu, u^\alpha) \). For
+example, in the tangent bundle, these coordinates label the base point of a vector and its
+components with respect to a basis (which is generally taken to be basis induced by the
+coordinates in physics). 
+
+\subsection{Fields as sections of bundles}
+
+
+
+
+In classical mechanics, the Lagrangian is defined as a function on the velocity phase
+space of the system, i.e. the tangent bundle of the configuration space \( TM \), \( L
+\colon TM \to \R \). With the Lagrangian in hand, one defines the action functional as
+\begin{equation*}
+	S[\gamma] = \int_a^b L(\gamma(t), \dot{\gamma}(t)) \ud t. 
+\end{equation*}
+
+The precise generalisation of the Lagrangian to classical field theory is a bit more
+difficult. For one, whatever the Lagrangian is, it has to be something we can integrate
+over our parameter space, which in general will be a manifold. In the case of general
+relativity, the parameter space is space-time, for example. This  means it has to be
+related to a top form on the parameter space. The precise language to formulate this idea
+is the language of jet bundles. In general, a suitable way to think of fields is as
+sections of some bundle \( E \xrightarrow{\pi} M \), where \( M \) is the parameter space
+and the typical fibre of the bundle is the space in which the field takes values. Then,for
+a first order theory, the Lagrangian \( \L \) is a bundle morphism from the first jet bundle \(
+J^1\pi \) to the bundle \( \ext^n T^\ast M \). Then, for a section \( \phi \) of \( \pi
+\), \( \L \circ j^1 \phi \) is a section of \( \ext^n T^\ast M \), i.e., a top form over
+\( M \). We can then define the action functional as
+\begin{equation*}
+	S[\phi] = \int_M \L \circ j^1 \phi
+\end{equation*}
+
+
+
+In field theory, the Lagrangian is no longer just a real-valued function, since it is
+something we have to integrate over the parameter space, which is spacetime in the context
+of general relativity. The object we need is going to be a top form. Specifically, if we
+are studying the dynamics of sections of some bundle \( E \xrightarrow{\pi} M \), the
+Lagrangian density \( \L \), or sometimes just the Lagrangian, is a bundle morphism \( \L
+\colon J^1\pi \to \ext^n T^\ast M \), where \( n \) is the dimension of the parameter
+space \( M \). That \( \L \) is a bundle morphism means that for any \( j_p^1 \phi \in
+J^1_p \pi \), \( \L(j_p^1 \phi) \in \wedge^n T^\ast_p M \), or, more succintly, that \(
+\wedge^n \tau_M^\ast \circ \L = \pi_1 \). 
+
+When we introduce contact geometry into the picture one has to enlarge the source space
+for the Lagrangian, it is now a bundle morphism of the form
+\begin{equation*}
+	\L \colon J^1\pi \oplus_M \ext^{n-1}T^\ast M \to \ext^{n} T^\ast M. 
+\end{equation*}
+The domain is the Whitney sum of the first jet bundle, where the field and its first
+derivatives live, and of the bundle of \( n-1 \) forms over \( M \), where the action
+density lives. In coordinates, the points in \( J^1\pi \) can be described as \( (x^\mu,
+u^\alpha, u^\alpha_\mu) \). The points of \( \ext^{n-1}T^\ast M \) can be described in
+coordinates by \( z^\mu \). Indeed, \( \ext^{n-1} T^\ast M \) and \( T^\ast M \) both are
+vector bundles of dimension \( n \) over \( M \), so they are isomorphic. Indeed, writing
+\( \d^n x \) for \( \d^1x \wedge \cdots \wedge \d^n x \), we define
+\begin{equation*}
+	\ast \ud x_\mu = (-1)^\mu \frac{\partial}{\partial x^\mu} \iprod \d^n x
+\end{equation*}
+where no summation is implied over \( \mu \). The \( \ast \ud x_\mu \) are a basis of the
+\( n-1 \) forms. Then we can write for any \( z \in \ext^{n-1} T^\ast M \), \( z = z^\mu
+\ast \d x_\mu \). 
+
+For general relativity, we are interested in sections of the bundle \( \Sym^2(T^\ast M) \)
+of symmetric 2-forms over \( M \), specifically the subbundle of nondegenerate symmetric
+2-forms, also known as pseudo-Riemannian metrics. The 
+
+
+\end{document}
