@@ -1,0 +1,87 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+
+\input{commands.tex}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{graphicx}
+\graphicspath{{figs/}{../figs/}}
+
+\usepackage{amsmath, amssymb, mathtools}
+
+\hypersetup{
+	urlcolor = {red!50!blue},
+	linktoc = page
+}
+
+\title[Action-dependent gravitation]{\bfseries{A variational derivation of the field
+equations of an action-dependent Einstein-Hilbert Lagrangian}}
+\author[Arnau Mas]{Arnau Mas}
+\institute[]{\footnotesize{\itshape{Supervised by}} \\ Dr Jordi Gaset}
+\date[UAB, Jun 27th 2021]{\small Universitat Autònoma de Barcelona \\ June 27th 2021}
+\titlegraphic{\includegraphics[scale=0.1]{logo-uab}}
+
+% Theme settings
+\usetheme{Madrid}
+\usecolortheme[named=MidnightBlue]{structure}
+\useoutertheme[subsection=false]{miniframes}
+\useinnertheme{circles}
+
+% Move miniframes to footline
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{mini frame in other subsection}{}
+\makeatletter
+\setbeamertemplate{footline}
+  {%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+      \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}{section in head/foot}
+    \vskip2pt\insertnavigation{\paperwidth}\vskip4pt
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+  \end{beamercolorbox}
+  }
+\makeatother
+
+% Add logo to title
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+    \begin{beamercolorbox}[sep=0.5ex,wd=\paperwidth,leftskip=.2cm,rightskip=0cm]{frametitle}%
+      \usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle
+      \hfill
+      \raisebox{-0.3\height}{\includegraphics[scale = 0.04]{logo-uab-blanc}}
+    \end{beamercolorbox}%
+}
+
+\begin{document}
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+\AtBeginSection[]{
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+
+\AtEndDocument{
+	\begin{frame}[plain]
+		\titlepage
+	\end{frame}
+}
+
+\section{Introduction}
+\begin{frame}
+	AAA
+\end{frame}
+
+
+\end{document}
