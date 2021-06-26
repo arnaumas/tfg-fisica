@@ -133,13 +133,13 @@ this is very similar to \cref{eq:action ode}.
 
 Say \( (q^\mu, z) \) is a trajectory that satisfies \cref{eq:constraint mechanics}. Then 
 \begin{equation*}
-	S[q^\mu, z] = z(a) - z(b) = \int_a^b \dot{z}(t) \ud t = \int_a^b L(q^\mu(t),
+	S[q^\mu, z] = z(b) - z(a) = \int_a^b \dot{z}(t) \ud t = \int_a^b L(q^\mu(t),
 	\dot{q}^\mu(t), z(t)) \ud t. 
 \end{equation*}
 So, for paths that satisfy the constraint, the functional \( S \) is indeed the
 action functional, understood as the integral of the Lagrangian along the path.
 
-\subsection{Lagrangian multipliers}
+\subsection{Lagrange multipliers}
 This is all well and good, but how does one actually go about solving a constrained
 optimisation problem? It turns out, we can use an infinite dimensional analog of Lagrange
 multipliers to turn this into a regular optimisation problem to which we can apply the
@@ -164,7 +164,7 @@ Thus, replacing sums with integrals in \cref{eq:lagrange multipliers}, the extre
 \cref{eq:action functional unconstrained} subject to \cref{eq:constraint mechanics} will
 be those that extremise the following functional: 
 \begin{align} \label{eq:lagrange multiplier action}
-	\tilde{S}[q^\mu, z, \lambda] & = S[q^\mu, z] - \int_a^b \lambda_t g_t[q^\mu, z] \ud t
+	\tilde{S}[q^\mu, z, \lambda] & = S[q^\mu, z] - \int_a^b \lambda_t G_t[q^\mu, z] \ud t
 	\nonumber \\
 															 & = \int_a^b \dot{z}(t) \ud t - \int_a^b \lambda_t\big[\dot{z}(t) -
 		L(q^\mu(t), \dot{q}^\mu(t), z(t))\big] \ud t \nonumber \\ & = \int_a^b (1 - \lambda_t)
