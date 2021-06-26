@@ -2,15 +2,25 @@
 
 \input{commands.tex}
 
+\newcommand{\highlight}[2]{\colorbox{#1}{\( \displaystyle #2 \)}}
+
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{cancel}
+
+\usepackage[style=alphabetic, citestyle=alphabetic]{biblatex}
+\usepackage[english]{babel}
+\addbibresource{refs.bib}
 
 \usepackage{graphicx}
 \graphicspath{{figs/}{../figs/}}
 
 \usepackage{amsmath, amssymb, mathtools}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{2}
+\usefonttheme[onlymath]{serif}
 
 \hypersetup{
 	urlcolor = {red!50!blue},
@@ -72,16 +82,463 @@ equations of an action-dependent Einstein-Hilbert Lagrangian}}
 \end{frame}
 }
 
+
 \AtEndDocument{
 	\begin{frame}[plain]
 		\titlepage
 	\end{frame}
 }
 
-\section{Introduction}
+
 \begin{frame}
-	AAA
+	\frametitle{Outline}
+	\tableofcontents
 \end{frame}
 
+\section{Introduction}
+\begin{frame}
+	\frametitle{Background}
+	\begin{itemize}
+		\pause
+		\item Modified theories of gravity: \( f(R) \), Brans-Dicke, etc. to answer questions
+			from cosmology
+			\pause
+		\item Action-dependent Lagrangian mechanics: variational formulation of dissipative
+			systems, applied in many other fields (thermodynamics, control theory).
+	\end{itemize}
+	\pause
+	\textbf{Idea:} what does an action-dependent version of Einstein gravity look like?
+\end{frame}
+
+\begin{frame}
+	\frametitle{Work done}
+	\begin{itemize}
+		\pause
+		\item	Writing down the equations of action-dependent GR has two main challenges: it
+			is a field theory and it is a \emph{second order} field theory. 
+			\pause
+		\item	An attempt was made in \cite{Lazo2018}, but we claim the equations found there
+			are not the correct ones. We will use an alternative formulation of the
+			action-dependent theory which allows us to treat second order theories. 
+	\end{itemize}
+
+\end{frame}
+
+\section{The Herglotz variational problem}
+\begin{frame}
+	\frametitle{Herglotz problem: implicit version}
+	If we allow the Lagrangian to depend on the action, then we have
+	\begin{equation*}
+		S[q^\mu](t) = \int_a^t L(q^\mu(\tau), \dot{q}^\mu(\tau), S[q^\mu](\tau)) \ud \tau
+	\end{equation*}
+	\pause and differentiating
+	\begin{equation*}
+		\dot{S}[q^\mu](t) = L(q^\mu(t), \dot{q}^\mu(t), S[q^\mu](t)).
+	\end{equation*}
+	\pause So, solve this ODE for any given trajectory and then find which paths are extrema of \(
+	S[q^\mu](a) - S[q^\mu](b) \). \pause Not very elegant! 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Herglotz problem: constrained version}
+	Consider expanded trajectories \( q^\mu, z \), so \( z \) tracks \emph{some quantity}
+	along the path. \pause If we want \( z \) to be the change in action then we require
+	\begin{equation*}
+		\dot{z}(t) = L(q^\mu(t), \dot{q}^\mu(t), z(t)).
+	\end{equation*}
+	\pause So the action functional becomes
+	\begin{equation*}
+		S[q^\mu, z] = z(b) - z(a).
+	\end{equation*}
+	\pause We want to find the extrema of this functional \pause \emph{subject to the constraint}
+	that \( z \) actually be the action. 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lagrange multipliers}
+	Turns out, finding the extrema subject to the constraint is equivalent to finding the
+	extrema of 
+	\begin{align*}
+		\action<+->{\tilde{S}[q^\mu, z, \lambda] 
+		& = S[q^\mu, z] - \int_a^b \lambda(t)\big[\dot{z}(t) -
+	L(q^\mu(t), \dot{q}^\mu(t), z(t))\big] \ud t \\}
+		\action<+->{& = \int_a^b \dot{z}(t) \ud t - \int_a^b \lambda(t)\big[\dot{z}(t) -
+		L(q^\mu(t), \dot{q}^\mu(t), z(t))\big] \ud t \\}
+		\action<+->{& = \int_a^b (1 - \lambda(t)) \dot{z}(t) + \lambda(t)\big(L(q^\mu(t),
+		\dot{q}^\mu(t), z(t))\big) \ud t.}
+	\end{align*}	
+	\pause The Euler-Lagrange equations of this functional are
+	\begin{equation*}
+		\frac{\partial L}{\partial q^\mu} - \frac{d}{d t}\frac{\partial L}{\partial \dot{q}^\mu}
+		+\frac{\partial L}{\partial \dot{q}^\mu} \frac{\partial L}{\partial z} = 0.
+	\end{equation*}
+	These are the Herglotz equations. 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example: damped harmonic oscillator}
+	The harmonic oscillator with linear action coupling is \pause
+	\begin{equation*}
+		L(q, \dot{q}, z) = \tfrac{1}{2}m\dot{q}^2 - \tfrac{1}{2} m\omega^2 q^2 - \gamma z. 
+	\end{equation*}
+	\pause The equation of motion is \pause
+	\begin{equation*}
+		\ddot{q} + \gamma\dot{q} + \omega^2 q = 0,
+	\end{equation*}
+	which is the equation of a damped harmonic oscillator. 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generalisation to field theory}
+	There is a subtlety when thinking of action-dependent Lagrangians for field theory. We
+	must replace \( z \) by a 3-form \( z = z^\mu \ud x_\mu \) which we call the action
+	flux. \pause The action flux does \emph{not} transform like a vector. 
+
+	\pause The Herglotz equations for field theory are
+	\begin{equation*}
+		\frac{\partial L}{\partial \phi^a} - \partial_\mu \frac{\partial
+			L}{\partial(\partial_\mu \phi^a)} + \frac{\partial L}{\partial z^\mu} \frac{\partial
+		L}{\partial(\partial_\mu \phi^a)} = 0. 
+	\end{equation*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generalisation to field theory}
+	\begin{tabular}{rcc}
+		\toprule
+		& Mechanics & Field theory \\
+		\midrule
+		\pause
+		Action flux & \( z(t) \) & \( z^\mu(x^\nu) \ud x_\mu \) \\
+		\pause
+		Action functional & \( S[q^\mu, z] = z(b) - z(a) \) & \( S[\phi^a,
+		z^\mu] = \int_{\partial D} z \) \\
+		\pause
+		Constraint & \( \dot{z} = L(q^\mu, \dot{q}^\mu, z) \) & \( \ud z = \mathcal{L}(\phi^a,
+		\partial_\mu \phi^a, z^\mu) \) \\
+		\bottomrule 
+	\end{tabular}
+\end{frame}
+
+\section{Action-dependent Einstein gravity}
+\begin{frame}
+	\frametitle{Einstein-Hilbert Lagrangian}
+	Recall the standard Einstein-Hilbert Lagrangian
+	\begin{equation*}
+		\mathcal{L}_{\text{E-H}} = R\omega_g = R \sqrt{g} \ud^4 x
+	\end{equation*}
+	where
+	\begin{equation*}
+		R = g^{ab}R_{ab} = g^{ab}(\partial_m{\Gamma^m}_{ab} - \partial_a {\Gamma^m}_{mb} +
+		{\Gamma^m}_{mn} {\Gamma^n}_{ab} - {\Gamma^m}_{an}{\Gamma^n}_{mb}).
+	\end{equation*}
+	\pause It's second order in \( g \)!
+
+	\pause The Euler-Lagrange equations of this Lagrangian are the Einstein field equations:
+	\begin{equation*}
+		R_{ab} - \tfrac{1}{2}g_{ab}R = 0
+	\end{equation*}
+	10 second order PDEs. 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Action flux coupling}
+	How do we couple the action-flux to the Lagrangian? \pause Simplest is linear coupling,
+	\begin{equation*}
+		\mathcal{L}_\text{E-H}(g_{ab}, g_{ab,\mu}, g_{ab,\mu\nu}, z^\mu) = R\omega_g - \theta
+		\wedge z.
+	\end{equation*}
+	\pause \( \theta \) must be a covector, \( \theta = \theta_\mu \ud x^\mu \), the
+	\emph{dissipation form}. 
+	
+	\pause In coordinates
+	\begin{equation*} 
+		\theta \wedge z = \theta_\mu z^\mu \ud^4 x.
+	\end{equation*}
+
+	\pause This means the constraint is
+	\begin{equation*}
+		\partial_\mu z^\mu = R\sqrt{g} - \theta_\mu z^\mu.
+	\end{equation*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Derivation of the modified field equations}
+	Let's sketch the derivation of the equations. \pause Write out the expanded action
+	\begin{equation*}
+		\tilde{S}[g_{ab}, z^\nu] = \int_D \big[(1-\lambda) \partial_\mu z^\mu +
+		\lambda(R\sqrt{g} - \theta_\mu z^\mu)\big] \ud^4 x.
+	\end{equation*}
+	\pause Let's compute the variation of this:
+	\begin{align*}
+		\delta \tilde{S}[g_{ab}, z^\nu]
+		& = \int_D \big[(1-\lambda) \delta \partial_\mu z^\mu + \lambda(\delta(R\sqrt{g}) -
+		\theta_\mu \delta z^\mu)\big] \ud^4 x  \\
+		\action<+->{& = \alert<+>{\int_D (1 - \lambda) \partial_\mu
+			\delta z^\mu - \lambda \theta_\mu \delta z^\mu \ud^4x}
+		+ \alert<+>{\int_D \lambda \delta(R \sqrt{g}) \ud^4 x}.}
+	\end{align*}
+
+	\pause The variations of the action flux and the metric decouple. 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Variation of the action flux}
+	Integrating by parts in the variation of the action flux, 
+	\only<+-+(2)>{
+		\begin{align*}
+	& \action<+->{\int_D (1 - \lambda) \partial_\mu \delta z^\mu - \lambda
+	\theta_\mu \delta z^\mu \ud^4x \\ }
+	& \action<+>{\quad = \int_{D} \partial_\mu \big((1 - \lambda)\delta z^\mu\big)
+	\ud^4 x + \int_D (\partial_\mu \lambda - \lambda\theta_\mu) \delta z^\mu \ud^4 x}
+		\end{align*}
+	}
+	\only<+->{
+		\begin{align*}
+	& \int_D (1 - \lambda) \partial_\mu \delta z^\mu - \lambda
+	\theta_\mu \delta z^\mu \ud^4x \\ 
+	& \quad = \cancel{\int_{D} \partial_\mu \big((1 - \lambda)\delta z^\mu\big)
+	\ud^4 x} + \int_D (\partial_\mu \lambda - \lambda\theta_\mu) \delta z^\mu \ud^4 x
+		\end{align*}
+	}
+
+	\pause
+	\pause This must vanish for any variation of \( z^\mu \), so it must be
+	\begin{equation*}
+		\partial_\mu \lambda = \lambda \theta_\mu. 
+	\end{equation*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Variation of the metric}
+	The variation of the second integral term gives three terms \pause
+	\begin{equation*}
+		\delta(R\sqrt{g}) = \delta(g^{ab} R_{ab} \sqrt{g}) = \delta g^{ab} R_{ab} \sqrt{g} +
+		g_{ab} \delta R^{ab} \sqrt{g} + g^{ab}R_{ab} \delta\sqrt{g}
+	\end{equation*}
+	\pause So
+	\begin{align*}
+		\action<+->{& \int_D \lambda \delta(R \sqrt{g}) \ud^4 x =\\}
+		\action<+->{& \quad = \int_D \lambda \delta g^{ab} R_{ab} \sqrt{g}
+		\ud^4 x + \int_D \lambda g^{ab} \delta R_{ab} \sqrt{g} \ud^4 x + \int_{D} \lambda R
+	\delta\sqrt{g} \ud^4 x \\}
+		\action<+->{& \quad = \int_D \lambda R_{ab} \delta g^{ab}\sqrt{g}\ud^4x
+		+ \int_D \lambda g^{ab} \delta R_{ab} \sqrt{g} \ud^4 x
+	- \int_D \tfrac{1}{2} \lambda g_{ab}R \delta g^{ab}\sqrt{g}\ud^4x}
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Variation of the metric}
+	\begin{align*}
+		& \int_D \lambda \delta(R \sqrt{g}) \ud^4 x =\\
+		& \quad = \highlight{red!50}{\int_D \lambda R_{ab} \delta g^{ab}\sqrt{g}\ud^4x}
+		+ \int_D \lambda g^{ab} \delta R_{ab} \sqrt{g} \ud^4 x
+		- \highlight{red!50}{\int_D \tfrac{1}{2} \lambda g_{ab}R \delta g^{ab}\sqrt{g}\ud^4x}
+	\end{align*}
+	\pause
+	If \( \lambda \) weren't there, the second term would vanish and we would get the Einstein
+	field equations. To deal with \( \lambda \) we have to integrate by parts twice. 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Variation of the metric}
+	We use 
+	\begin{equation*}
+		g^{ab} \delta R_{ab} = \nabla_n(g^{ab} {\delta\Gamma^n}_{ab} - g^{nb} \delta
+		{\Gamma^m}_{mb})
+	\end{equation*}
+	\pause so integrating by parts
+	\begin{align*}
+		\action<+->{& \int_D \lambda g^{ab}\delta R_{ab} \sqrt{g} \ud^4 x = \\}
+		\action<+->{& \quad = \int_D \lambda \nabla_n(g^{ab} {\delta\Gamma^n}_{ab} - g^{nb} \delta
+			{\Gamma^m}_{mb}) \sqrt{g} \ud^4x \\}
+		\action<+->{& \quad = \int_D \nabla_n \left(\lambda (g^{ab} {\delta\Gamma^n}_{ab} - g^{nb}
+			\delta {\Gamma^m}_{mb})\right) \sqrt{g}\ud^4 x \\}
+		\action<+->{& \qquad - \int_D (\nabla_n \lambda) (g^{ab}
+			{\delta\Gamma^n}_{ab} - g^{nb} \delta {\Gamma^m}_{mb}) \sqrt{g} \ud^4 x \\}
+		\action<+->{& \quad = - \int_D \lambda \theta_n (g^{ab}
+			{\delta\Gamma^n}_{ab} - g^{nb} \delta {\Gamma^m}_{mb}) \sqrt{g} \ud^4 x}
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Variation of the metric}
+	We use 
+	\begin{equation*}
+		g^{ab} \delta R_{ab} = \nabla_n(g^{ab} {\delta\Gamma^n}_{ab} - g^{nb} \delta
+		{\Gamma^m}_{mb})
+	\end{equation*}
+	 so integrating by parts
+	 \begin{align*}
+	& \int_D \lambda g^{ab}\delta R_{ab} \sqrt{g} \ud^4 x = \\
+	& \quad = \int_D \lambda \nabla_n(g^{ab} {\delta\Gamma^n}_{ab} - g^{nb} \delta
+	{\Gamma^m}_{mb}) \sqrt{g} \ud^4x \\
+	& \quad = \int_D \nabla_n \cancel{\left(\lambda (g^{ab} {\delta\Gamma^n}_{ab} - g^{nb}
+	\delta {\Gamma^m}_{mb})\right)} \sqrt{g}\ud^4 x \\
+	& \qquad - \int_D (\nabla_n \lambda) (g^{ab}
+	{\delta\Gamma^n}_{ab} - g^{nb} \delta {\Gamma^m}_{mb}) \sqrt{g} \ud^4 x \\
+	& \quad = - \int_D \lambda \theta_n (g^{ab}
+	{\delta\Gamma^n}_{ab} - g^{nb} \delta {\Gamma^m}_{mb}) \sqrt{g} \ud^4 x
+	 \end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Variation of the metric}
+	We use 
+	\begin{equation*}
+		g^{ab} \delta R_{ab} = \nabla_n(g^{ab} {\delta\Gamma^n}_{ab} - g^{nb} \delta
+		{\Gamma^m}_{mb})
+	\end{equation*}
+	 so integrating by parts
+	 \begin{align*}
+	& \int_D \lambda g^{ab}\delta R_{ab} \sqrt{g} \ud^4 x = \\
+	& \quad = \int_D \lambda \nabla_n(g^{ab} {\delta\Gamma^n}_{ab} - g^{nb} \delta
+	{\Gamma^m}_{mb}) \sqrt{g} \ud^4x \\
+	& \quad = \int_D \nabla_n \cancel{\left(\lambda (g^{ab} {\delta\Gamma^n}_{ab} - g^{nb}
+	\delta {\Gamma^m}_{mb})\right)} \sqrt{g}\ud^4 x \\
+	& \qquad - \int_D \highlight{red!50}{(\nabla_n \lambda)} (g^{ab}
+	{\delta\Gamma^n}_{ab} - g^{nb} \delta {\Gamma^m}_{mb}) \sqrt{g} \ud^4 x \\
+	& \quad = - \int_D \highlight{red!50}{\lambda \theta_n} (g^{ab}
+	{\delta\Gamma^n}_{ab} - g^{nb} \delta {\Gamma^m}_{mb}) \sqrt{g} \ud^4 x
+	 \end{align*}
+\end{frame}
+	
+\begin{frame}
+	\frametitle{Variation of the metric}
+	We use 
+	\begin{equation*}
+		\delta {\Gamma^a}_{bc} = \tfrac{1}{2} g^{am}(\nabla_c \delta g_{bm} + \nabla_b \delta
+		g_{mc} - \nabla_m \delta g_{bc}).
+	\end{equation*}
+	\pause so \( g^{ab}\delta R_{ab} \) splits into 6 terms. \pause We will go through one
+	in detail
+	\begin{align*}
+		\action<+->{& - \tfrac{1}{2}\int_D \lambda \theta_n g^{ab} g^{nk} \nabla_b \delta
+		g_{ak} \sqrt{g} \ud^4 x \\}
+		\action<+->{& \quad = - \tfrac{1}{2}\int_D \lambda \theta_n \nabla_b(g^{ab} g^{nk}
+		\delta g_{ak}) \sqrt{g} \ud^4 x \\}
+		\action<+->{& \quad = -\tfrac{1}{2}\int_D \nabla_b (\lambda \theta_n g^{ab}
+			g^{nk} \delta g_{ak}) \sqrt{g} \ud^4 x + \tfrac{1}{2} \int_D \nabla_b(\lambda
+		\theta_n)(g^{ab}g^{nk}\delta g_{ak}) \sqrt{g} \ud^4 x \\}
+		\action<+->{& \quad = -\int_D \lambda(\theta_b \theta_n + \nabla_b \theta_n) \delta
+		g^{bn} \sqrt{g} \ud^4 x.} 
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Variation of the metric}
+	We use 
+	\begin{equation*}
+		\delta {\Gamma^a}_{bc} = \tfrac{1}{2} g^{am}(\nabla_c \delta g_{bm} + \nabla_b \delta
+		g_{mc} - \nabla_m \delta g_{bc}).
+	\end{equation*}
+	so \( g^{ab}\delta R_{ab} \) splits into 6 terms. We will go through one in detail
+	\begin{align*}
+		& - \tfrac{1}{2}\int_D \lambda \theta_n g^{ab} g^{nk} \nabla_b \delta g_{ak} \sqrt{g}
+		\ud^4 x \\ 
+		& \quad = - \tfrac{1}{2}\int_D \lambda \theta_n \nabla_b(g^{ab} g^{nk} \delta g_{ak})
+		\sqrt{g} \ud^4 x \\
+		& \quad = \cancel{-\tfrac{1}{2}\int_D \nabla_b (\lambda \theta_n g^{ab} g^{nk} \delta g_{ak})
+		\sqrt{g} \ud^4 x} + \tfrac{1}{2} \int_D \nabla_b(\lambda \theta_n)(g^{ab}g^{nk}\delta
+		g_{ak}) \sqrt{g} \ud^4 x \\
+		& \quad = -\int_D \lambda(\theta_b \theta_n + \nabla_b \theta_n) \delta g^{bn} \sqrt{g}
+		\ud^4 x. 
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Final equations}
+	After some calculation, one finds \pause
+	\begin{align*}
+		\delta\tilde{S}[g_{ab}, z^\mu] & = \int_D(\partial_\mu \lambda - \lambda \theta_\mu)
+		\delta z^\mu \ud^4 x \\
+																	 & \quad + \int_D \lambda (R_{ab} - \tfrac{1}{2} Rg_{ab}
+																	 - K_{ab} + Kg_{ab})\delta g^{ab} \sqrt{g} \ud^4 x
+	\end{align*}
+	with \( K_{ab} = \theta_a \theta_b + \nabla_{(a}\theta_{b)} \). 
+
+	\pause The stationary configurations will be those for which this vanishes for any variation,
+	so we arrive at \pause
+	\begin{equation*}
+		R_{ab} - \tfrac{1}{2} Rg_{ab} - K_{ab} + Kg_{ab} = 0.
+	\end{equation*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Final equations}
+	After some calculation, one finds 
+	\begin{align*}
+		\delta\tilde{S}[g_{ab}, z^\mu] & = \int_D(\partial_\mu \lambda - \lambda \theta_\mu)
+		\delta z^\mu \ud^4 x \\
+																	 & \quad + \int_D \lambda (R_{ab} - \tfrac{1}{2} Rg_{ab}
+																	 - K_{ab} + Kg_{ab})\delta g^{ab} \sqrt{g} \ud^4 x
+	\end{align*}
+	with \( K_{ab} = \theta_a \theta_b + \nabla_{(a}\theta_{b)} \). 
+
+	The stationary configurations will be those for which this vanishes for any variation,
+	so we arrive at 
+	\begin{equation*}
+		\highlight{red!50}{R_{ab} - \tfrac{1}{2} Rg_{ab}} - \highlight{blue!50}{K_{ab} + Kg_{ab}
+		= 0}. 
+	\end{equation*}
+\end{frame}
+	
+\section{Significance of the equations}
+\begin{frame}
+	\frametitle{The dissipation tensor}
+	We call the object \( K_{ab} \) the \emph{dissipation tensor}. \pause Coordinate free we can
+	write
+	\begin{equation*}
+		K(X,Y) = (\theta \otimes \theta)(X,Y) + \tfrac{1}{2}\left[(\nabla_X \theta)Y + (\nabla_Y
+		\theta)X\right]
+	\end{equation*}
+	which is a \( (0,2) \) tensor. \pause This means the equations we have derived are covariant.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Problems with existing equations}
+	In \cite{Lazo2017}, the derived equations are
+	\begin{equation*}
+		R_{ab} + \tilde{K}_{ab} - \tfrac{1}{2}g_{ab}(R + \tilde{K}) = 0
+	\end{equation*}
+	where
+	\begin{equation*}
+		\tilde{K}_{ab} = \theta_m {\Gamma^m}_{ab} - \tfrac{1}{2}\left(\theta_a {\Gamma^m}_{mb} +
+		\theta_b {\Gamma^m}_{am}\right). 
+	\end{equation*}
+	\pause \( \tilde{K}_{ab} \) is not a tensor so they are \emph{not} covariant!
+
+	\pause From mechanics, linear action couplings in second order theories lead to terms
+	\emph{quadratic} in the dissipation. \( K_{ab} \) is quadratic in	\( \theta_\mu \), but
+	not \( \tilde{K}_{ab} \). 
+\end{frame}
+
+\section{Conclusions}
+\begin{frame}
+	\frametitle{Conclusions}
+	As a recap \pause
+	\begin{itemize}
+		\item The Herglotz problem can be turned into an unconstrained optimisation problem.
+			\pause
+		\item Because we can write down an action, we can take its variation and deal with
+			secon order theories. \pause
+		\item We have derived the field equations for the Einstein-Hilbert Lagrangian with a
+			linear action flux coupling. \pause 
+		\item The result are a set of equations which are \emph{covariant} and with the
+			expected structure. \pause
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Further work}
+	\pause
+	\begin{itemize}
+		\item What do the solutions look like? \pause
+		\item What happens when we add matter terms? \pause
+		\item What kind of cosmology do we get? \pause
+		\item What happens with different action flux couplings? \pause
+	\end{itemize}
+\end{frame}
 
 \end{document}
