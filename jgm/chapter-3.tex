@@ -2,12 +2,12 @@
 
 \begin{document}
 
-In this chapter we apply the language and tools developed in the previous chapter to the
+In this section we apply the language and tools developed in the previous section to the
 specific case of Einstein gravity. We first describe the Lagrangian from which the Einstein
 field equations come and then introduce an action-dependent version of it and
 derive its field equations. 
 
-\section{The Einstein-Hilbert Lagrangian}
+\subsection{The Einstein-Hilbert Lagrangian}
 As is well-known, the Einstein field equations can be obtained from a variational
 principle. The classical Lagrangian that gives rise to these equations is the Einstein-Hilbert
 Lagrangian. We formulate it in the language of \cref{sec:lagrangian densities}. The field of interest in relativity is the metric on the given spacetime \(M\) ---which we take to be of dimension 4 and orientable from now on---. Hence the bundle of interest to us is a subbundle of the second symmetric power of the cotangent bundle of \( M\), 
@@ -56,7 +56,7 @@ equations in the presence of matter,
 The object \( T_{ab} \) is the energy-momentum tensor and collects all of the terms coming
 from the presence of matter. See \S4 of \cite{Carroll1997} for a detailed derivation.
 
-\section{An action dependent Einstein-Hilbert Lagrangian}
+\subsection{An action dependent Einstein-Hilbert Lagrangian}
 What kind of action dependence can we incorporate into the Einstein-Hilbert Lagrangian?
 The simplest one is a linear dissipation term:
 \begin{equation} \label{eq:action dependent einstein-hilbert}
@@ -112,9 +112,9 @@ In the new coordinates the constraint becomes
 \end{equation}
 which is the same form that appears in Equation (8) of \cite{Lazo2017}. 
 
-\section{Derivation of the field equations}
+\subsection{Derivation of the field equations}
 We now apply the method of Lagrange multipliers, as
-described in previous chapter, to derive a modified version of Einstein's equations. The
+described in previous section, to derive a modified version of Einstein's equations. The
 expanded Lagrangian is
 \begin{equation*}
 \tilde{\L}_\text{E-H} \circ (j^2 g, j^1 z) = \big[(1-\lambda) \partial_\mu z^\mu + \lambda(R\sqrt{g} - \theta_\mu z^\mu)\big] \ud^4
@@ -122,7 +122,7 @@ expanded Lagrangian is
 \end{equation*}
 We will compute the variation of the corresponding expanded action, \(\Tilde{S}(g,z) = \int_D \Tilde{L}_\text{E-H} \circ (j^2g,j^1z)\), with respect to the two dynamical degrees of freedom, \(z\) and \(g\).
 
-\subsection{Variation of the action flux}\label{sec:variationonaction}
+\subsubsection{Variation of the action flux}\label{sec:variationonaction}
 The variation with respect to the action flux is
 \begin{align}
 	\delta \tilde{S}(g, z) & = \int_D \big[(1-\lambda) \delta \partial_\mu z^\mu +
@@ -151,7 +151,7 @@ hence
 \end{equation*}
 and we conclude \( \ud \theta = 0 \) provided \(\lambda\) does not vanish. 
 
-\subsection{Variation of the metric}
+\subsubsection{Variation of the metric}
 We retake the calculation from \cref{eq:variation expanded action}. We may now only consider the last integral, as we can vary \(g\) and \(z\) independently. We will follow the
 derivation in \cite{Carroll1997} for as long as we can. In particular, we take the spacetime \(M\) to be closed, and hence avoid consideration of Gibbons-Hawking-York type boundary terms. Since \( R\sqrt{g} =
 g^{ab}R_{ab}\sqrt{g} \), from the product rule its variation results in three terms:

@@ -1,96 +1,52 @@
-\documentclass[12pt, oneside]{book}
+\documentclass[11pt,a4paper]{article}
 \input{preamble.tex}
 \input{commands.tex}
 
-\title{A variational derivation of the field equations of an action-dependent
+\title{\sffamily \bfseries A variational derivation of the field equations of an action-dependent
 	Einstein-Hilbert Lagrangian}
-\author{Arnau Mas}
-\date{June 2021}
+\author{\sffamily 
+ $^a$Jordi Gaset
+ \thanks{\texttt{jordi.gaset@unir.ne}t\,({ORCID}:\,0000-0001-8796-3149).} ,
+$^b$Arnau Mas Dorca
+\thanks{\texttt{arnau.mas@physik.uni-muenchen.de}\,({ORCID}:\,0000-0003-0532-0938).}.
+\\[1ex]
+\normalsize\itshape\sffamily 
+$^a$Escuela Superior de Ingeniería y Tecnología, Universidad Internacional de La Rioja, Spain.
+\\[1ex]
+\normalsize\itshape\sffamily 
+$^b$ Fakultät für Physik, Ludwig-Maximilians-Universität München
+}
+\date{\sffamily \small June 23, 2022}
 
 \begin{document}
-\begin{titlepage}
-	\setstretch{2.0}
-	\centering \sffamily
-
-	\vspace*{2cm}
-
-	\includegraphics[width = 8cm]{logo-uab}
-
-	\vspace{2cm}
-
-	{\Large \itshape Physics BSc. Undergraduate Thesis} \\
-	{\large \itshape June 2021}
-
-	\vspace{10pt}
-	\hrule
-	\vspace{10pt}
-	{\bfseries \Large A variational derivation of the field equations of an action-dependent
-	Einstein-Hilbert Lagrangian}
-
-	\vspace{10pt}
-	\hrule		
-	\vspace{2cm}
-
-	{\Large Arnau Mas Dorca}
-
-	\vspace{1cm}
-	{\large \itshape Supervised by}
-
-	{\Large Dr Jordi Gaset}
-\end{titlepage}
+\maketitle
 
 \selectlanguage{english}
-\pagestyle{plain}
-\frontmatter
-\hspace{0pt}
-\vfill
 
-\begin{itshape}
-	I want to express deep gratitude to my supervisor Dr Jordi Gaset. This thesis would not
-	have been possible without his generosity with his time and willingness to accomodate
-	my interests. Having weekly discussion meetings has been a very rewarding experience and
-	has made the process of research that much more engaging. 
-
-	I also wish to mention Adrià Marín, who has also been working under Dr Gaset on a
-	related topic and we have had many a productive discussion on our theses. 
-
-	Of course I must also manifest my gratitude to my family for their support and
-	understanding. This work is the capstone to five years of study, the last of which
-	having taken place in the midst of a global pandemic, and I am sure they will be very
-	proud of it. 
-\end{itshape}
-
-\vfill
-\hspace{0pt}
-
-\pagebreak
-\section*{Abstract}
+\begin{abstract}
 We derive the equations of motion of an action-dependent version of the Einstein-Hilbert Lagrangian, as a specific instance of the Herglotz variational problem. Action-dependent Lagrangians lead to dissipative dynamics, which cannot be obtained with the standard method of Lagrangian field theory. First-order theories of this kind are relatively well understood, but examples of singular or higher-order action-dependent field theories are scarce. This work constitutes an example of such a theory. By casting the problem in clear geometric terms we are able to obtain a Lorentz invariant set of equations, which contrasts with previous attempts. 
+\end{abstract}
 
-
+\newpage
 	{\small \sffamily \tableofcontents}
+\newpage
 
-\mainmatter
-\pagestyle{main}
-
-\chapter{Background and motivation}
+\section{Background and motivation}
 \subfile{chapter-1}
 
-\chapter{The Herglotz variational problem}\label{ch:herglotz}
+\section{The Herglotz variational problem}\label{ch:herglotz}
 \subfile{chapter-2}
 
-\chapter{Action-dependent Einstein gravity}\label{ch:einstein}
+\section{Action-dependent Einstein gravity}\label{ch:einstein}
 \subfile{chapter-3}
 
-\chapter{Significance of the equations}\label{ch:significance}
+\section{Significance of the equations}\label{ch:significance}
 \subfile{chapter-4}
 
-\chapter{Conclusions}\label{ch:conclusions}
+\section{Conclusions}\label{ch:conclusions}
 \subfile{chapter-5}
 
-\backmatter
 
-\pagestyle{plain}
 \setquotestyle{english}
 \printbibliography
 

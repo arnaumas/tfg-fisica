@@ -72,23 +72,7 @@ notefont=\normalfont, notebraces={(}{)}, qed=\qedtriangle]{definition}
 \declaretheoremstyle[spaceabove=6pt, spacebelow=6pt, headfont=\bfseries,
 notefont=\normalfont, notebraces={(}{)}, qed=\qedtriangledown]{example}
 
-\declaretheorem[name=Theorem, refname={theorem,theorems}, Refname={Theorem,Theorem},
-numberwithin = chapter ]{theorem}
 
-\declaretheorem[name=Proposition, refname={proposition,propositions},
-Refname={Proposition,Propositions}, numberlike=theorem]{proposition}
-
-\declaretheorem[name=Lemma, refname={lemma,lemmas},
-Refname={Lemma,Lemmas}, numberlike=theorem]{lemma}
-
-\declaretheorem[name=Definition, style=definition, refname={definition,definitions},
-Refname={Definitio,Definitions}, numberlike=theorem]{definition}
-
-\declaretheorem[name=Example, style=example, refname={example,examples},
-Refname={Example,Examples}, numberlike=theorem]{example}
-
-\declaretheorem[name=Remark, style=remark, refname={remark,remarks},
-Refname={Remark,Remarks}, numberlike=theorem]{remark}
 
 % -------------------
 % LAYOUT
@@ -96,17 +80,6 @@ Refname={Remark,Remarks}, numberlike=theorem]{remark}
 \usepackage{titling}
 
 % Pagestyle defintions
-\newpagestyle{main}[\sffamily \footnotesize]{
-	\sethead*{\ifthesection{{\bfseries \thesection} \sectiontitle}{}}{}{{\bfseries Chapter \thechapter.} \chaptertitle}
-	\headrule
-	\footrule
-	\setfoot*{}{}{\thepage}
-}
-\renewpagestyle{plain}[\sffamily \footnotesize]{
-	\footrule
-	\setfoot*{}{}{\thepage}
-}
-\renewpagestyle{empty}{}
 
 % Format of chapter titles
 \titleformat{\chapter}[block]{\sffamily \bfseries \Huge}{\filleft \large Chapter \Huge \thechapter\\}{0pt}{\Huge \titlerule[1pt] \vspace{1ex} \filleft}

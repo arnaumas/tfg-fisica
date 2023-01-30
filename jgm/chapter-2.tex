@@ -2,7 +2,7 @@
 
 \begin{document}
 
-This chapter presents the theory of \emph{action-dependent Lagrangians}. The main appeal of
+This section presents the theory of \emph{action-dependent Lagrangians}. The main appeal of
 this formalism is that it allows for the description of non-conservative systems in terms of a
 variational principle, which is in general not possible with standard Lagrangian
 mechanics. The problem of finding the stationary paths of the action given by a Lagrangian of this sort is known as the Herglotz problem \cite{Herglotz_1930}. The main difficulty of this variational
@@ -19,7 +19,7 @@ This is, to the authors' knowledge, the first time that the equations of motion 
 
 We now present the Herglotz principle for mechanical systems and first order-field theories, and show how the Herglotz equations are derived using the vakonomic method.
 
-\section{The Herglotz variational problem as constrained optimisation}
+\subsection{The Herglotz variational problem as constrained optimisation}
 An action-dependent Lagrangian is defined on the configuration space of the non-dissipative theory expanded with an extra degree of freedom. This additional degree of freedom is on-shell interpreted as the action.
 
 In detail, consider $Q\times\mathbb{R}$, where $Q$ is the configuration space which is enlarged by an extra dimension. The Lagrangian is defined as a function \( L \colon T(Q\times \R) \) that is only zeroth-order on \(z\), that is, if \((q^i, z)\) is a local chart of \(Q\times\R\) and $(q^i,z,\dot{q}^i,\dot z)$ the corresponding local trivialisation of \(T(Q\times \R)\), then \(L\) does not depend on \(\dot{z}\) (or equivalently, \(dL\)  annihilates the vertical vector field \(\frac{\partial}{\partial \dot z}\)). The constraint one imposes is
@@ -81,10 +81,10 @@ and after substituting in \cref{eq:euler-lagrange multiplier} and dividing throu
 \end{equation}
 These are the Herglotz equations.
 
-\section{Action-dependent field theory}
+\subsection{Action-dependent field theory}
 We now introduce the Herglotz problem for field theories and derive the corresponding Herglotz equations.
 
-\subsection{Classical field theory and Lagrangian densities}\label{sec:lagrangian
+\subsubsection{Classical field theory and Lagrangian densities}\label{sec:lagrangian
 densities}
 The passage from mechanics to field theory requires some care. The given data is usually some smooth fiber bundle \( E \) over a base \( M \) of dimension \(n\), which we assume to be orientable and hence endowed with at least a volume form. The base \(M\) is usually, but not always, taken to represent spacetime. Field configurations are sections of this bundle, and the values that the field takes are modelled by the fiber of \( E \). The basic problem is to identify the configurations that are extrema of a given action functional \( S \colon \Gamma(E) \to \R \). The action is usually written as the integral of a Lagrangian over a region \(D \subseteq M\) of the base, i.e. a Lagrangian is some sort of map from field configurations to top forms of $M$, \( \L \colon \Gamma(E) \to \Omega^{n}(M) \), such that
 \begin{equation}
@@ -107,7 +107,7 @@ Using the calculus of variations one can show that the stationary configurations
 \end{equation*}
 These expression make sense given the choice of a local trivialisation of \(E\), \((x^\mu, \phi^a)\), which gives rise to a local trivialisation of \(J^1E\), \((x^\mu, \phi^a, \phi^a_\mu)\). Note that the Einstein summation convention is assumed from this point on, unless otherwise stated.
 
-\subsection{The action flux}
+\subsubsection{The action flux}
 We now wish to generalise this description to account for action dependent Lagrangians. A cursory look at the Herglotz equations would suggest a field theoretic analog of the form 
 \begin{equation}
 	\frac{\partial L}{\partial \phi^a} - \partial_\mu \frac{\partial L}{\partial
@@ -147,7 +147,7 @@ For some bundle \(E \to M\) the corresponding Herglotz problem is formulated in 
 \end{equation*}
 and we can interpret \(S\) as the action. 
 
-\subsection{Constrained optimisation in field theory}
+\subsubsection{Constrained optimisation in field theory}
 Just like before, we turn this constrained optimisation problem into an
 unconstrained one using Lagrange multipliers. The expanded action for a first order Lagrangian, in analogy with
 \cref{eq:lagrange multiplier action}, is
@@ -164,9 +164,14 @@ Let us write down the integrand of
 \end{equation}
 Note that \( \Tilde{\L} \) is now the Lagrangian for a theory defined on the expanded bundle \(J^1E \oplus J^1\bigwedge^{n-1}T^\ast M \to M\), so \( z\) is a dynamical degree of freedom. 
 
-Given that the Lagrangian is of first order, extrema of this action functional will be solutions to the Euler-Lagrange equations for this Lagrangian, which become the Herglotz equations upon imposing the constraint. We write them down in the next section. Nevertheless there is nothing preventing one from calculating the explicit variation of the action, which leads to the equations of motion for a theory of any order. This is the approach we follow in the next chapter.
+Given that the Lagrangian is of first order, extrema of this action functional will be
+solutions to the Euler-Lagrange equations for this Lagrangian, which become the Herglotz
+equations upon imposing the constraint. We write them down in the next section.
+Nevertheless there is nothing preventing one from calculating the explicit variation of
+the action, which leads to the equations of motion for a theory of any order. This is the
+approach we follow in the next section.
 
-\subsection{The Herglotz equations for field theory}
+\subsubsection{The Herglotz equations for field theory}
 Finally, we derive the Herglotz equations for field theory from the expanded
 Lagrangian  in \cref{eq:expanded lagrangian field theory}. The
 equations for the action flux are
