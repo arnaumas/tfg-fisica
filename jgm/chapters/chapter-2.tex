@@ -1,0 +1,204 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+This chapter presents the theory of \emph{action-dependent Lagrangians}. The main appeal of
+this formalism is that it allows for the description of non-conservative systems in terms of a
+variational principle, which is in general not possible with standard Lagrangian
+mechanics. The problem of finding the stationary paths of the action given by a Lagrangian of this sort is known as the Herglotz problem \cite{Herglotz_1930}. The main difficulty of this variational
+problem is that, as opposed to the standard variational problem of Lagrangian mechanics,
+it is an implicit optimisation problem. 
+
+The phase space of an action-dependent Lagrangian theory can be equipped with a contact structure. Hence, from the Hamiltonian point of view, contact geometry is the natural framework in which to describe dissipative dynamics. This is well-understood for mechanics, but not mature enough for field theories, in particular for  second-order theories like the Hilbert-Einstein Lagrangian. This work will focus on the Lagrangian picture and variational methods.
+
+There are several ways of deriving the equations of motion of a Herglotz variational principle in mechanics. The original version, defines a functional on trajectories in terms of the solution to a differential equation determined by the trajectory. We refer to this as the implicit approach. Alternatively, one can implement the action-dependence as a non-holonomic constraint on a standard variational problem defined on a larger configuration space and use standard variational methods. There are two distinct ways of implementing non-holonomic constraints, which are referred to as the vakonomic method and the non-holonomic method. For the Herglotz principle in mechanical systems, they are shown to be equivalent in \cite{de_leon_constrained_2021}, in the sense that they lead to the same equations.
+
+The implicit approach to the Herglotz principle for field theories presents a difficulty because the differential equation that needs to be solved is now a partial differential equation. Nevertheless, this has been successfully done for a particular class of first-order field theories  in \cite{Georgieva, Lazo2018}. Here we instead follow \cite{de_leon_constrained_2021} and use the constrained approach.
+
+This is, to the authors' knowledge, the first time that the equations of motion for a second-order action-dependent field theory have been derived. Hence, although the resulting equations are physically and geometrically sound, they cannot be compared to other results of this sort. This is relevant because, in general, the vakonomic and non-holonomic methods are not equivalent, and only one of them leads to the desired result \cite{Gra2003}. This is clarified by the authors in collaboration with M. Lainz and X. Rivas in \cite{GLMR-2022}. The key result is that when the action dependence is closed then both methods are equivalent.
+
+We now present the Herglotz principle for mechanical systems and first order-field theories, and show how the Herglotz equations are derived using the vakonomic method.
+
+\section{The Herglotz variational problem as constrained optimisation}
+An action-dependent Lagrangian is defined on the configuration space of the non-dissipative theory expanded with an extra degree of freedom. This additional degree of freedom is on-shell interpreted as the action.
+
+In detail, consider $Q\times\mathbb{R}$, where $Q$ is the configuration space which is enlarged by an extra dimension. The Lagrangian is defined as a function \( L \colon T(Q\times \R) \) that is only zeroth-order on \(z\), that is, if \((q^i, z)\) is a local chart of \(Q\times\R\) and $(q^i,z,\dot{q}^i,\dot z)$ the corresponding local trivialisation of \(T(Q\times \R)\), then \(L\) does not depend on \(\dot{z}\) (or equivalently, \(dL\)  annihilates the vertical vector field \(\frac{\partial}{\partial \dot z}\)). The constraint one imposes is
+\begin{equation}\label{eq:constMech}
+\dot{z}=L(q^i,\dot{q}^i,z),
+\end{equation}
+so that for trajectories that satisfy the constraint we have
+\begin{equation}
+z(t) = z(0) + \int_0^t L(q(t), \dot{q}(t), z(t)) \ud t,
+\end{equation}
+and indeed \(z\) tracks the action along the path, as claimed.
+
+Let $\Omega(I,q_a,q_b,s_a)$ be the set of curves $(q,z):I=[a,b]\rightarrow Q\times\mathbb{R}$ such that $q(a)=q_a$, $q(b)=q_b$, $z(a)=s_a$. The Herglotz problem is to determine the extrema of the functional
+\begin{equation*}
+    \begin{aligned}
+        S: \Omega(I,q_a,q_b,s_a) &\longrightarrow \mathbb{R}\\
+        (q,z) &\longmapsto z(a) - z(b),
+    \end{aligned}
+\end{equation*}
+subject to \cref{eq:constMech}. For trajectories that satisy the constraint we have
+\begin{equation}
+    S(q,z) = z(b) - z(a) = \int_a^b L(q(t), \dot{q}(t), z(t)) \ud t,
+\end{equation}
+which resembles the classical expression of the action.
+
+This optimization problem can be formulated equivalently using the method of Lagrange multipliers \cite{de_leon_constrained_2021}. Consider the Lagrangian
+$$
+ \tilde{L}(q,z,\dot q,\dot z)=\dot{z}-\lambda(\dot{z}-L(q,z,\dot q))\,,
+$$
+where $\lambda$ is the Lagrange multiplier. Then the extrema of \(S\) subject to \cref{eq:constMech} will be the unconstrained extrema of:
+\begin{equation}
+    \begin{aligned}
+        \tilde{S}: \Omega(I,q_a,q_b,s_a) &\longrightarrow \mathbb{R}\\
+        (q,z) &\longmapsto \int_a^b \tilde{L}(q(t),\dot{q}(t), z(t),\dot{z}(t)) \ud t\,.
+    \end{aligned}
+\end{equation}
+
+Because we are looking for unconstrained extrema, they will be the solutions of the Euler-Lagrange equations for \(\tilde{L}\). The equation for \(z\) is
+\begin{equation*}
+	0 = \frac{\partial \tilde{L}}{\partial z} - \frac{\d}{\d t} \frac{\partial
+	\tilde{L}}{\partial \dot{z}} = \lambda \frac{\partial L}{\partial z} + \dot{\lambda},
+\end{equation*}
+or equivalently
+\begin{equation} \label{eq:euler-lagrange multiplier}
+	\dot{\lambda} = -\lambda \frac{\partial L}{\partial z}. 
+\end{equation}
+The Euler-Lagrange equations for the other coordinates are
+\begin{equation*}
+	0 = \frac{\partial \tilde{L}}{\partial q^i} - \frac{\d}{\d t} \frac{\partial
+	\tilde{L}}{\partial \dot{q}^i} = \lambda \frac{\partial L}{\partial q^i} -
+	\dot{\lambda}\frac{\partial L}{\partial \dot{q}^i} - \lambda \frac{\d}{\d
+	t}\frac{\partial L}{\partial \dot{q}^i}\,,
+\end{equation*}
+and after substituting in \cref{eq:euler-lagrange multiplier} and dividing through by \(
+\lambda \) one finds
+\begin{equation} \label{eq:lagrange multiplier action}
+	0 = \frac{\partial L}{\partial q^i} - \frac{\d}{\d t} \frac{\partial L}{\partial
+	\dot{q}^i} + \frac{\partial L}{\partial z}\frac{\partial L}{\partial \dot{q}^i}\,.
+\end{equation}
+These are the Herglotz equations.
+
+\section{Action-dependent field theory}
+We now introduce the Herglotz problem for field theories and derive the corresponding Herglotz equations.
+
+\subsection{Classical field theory and Lagrangian densities}\label{sec:lagrangian
+densities}
+The passage from mechanics to field theory requires some care. The given data is usually some smooth fiber bundle \( E \) over a base \( M \) of dimension \(n\), which we assume to be orientable and hence endowed with at least a volume form. The base \(M\) is usually, but not always, taken to represent spacetime. Field configurations are sections of this bundle, and the values that the field takes are modelled by the fiber of \( E \). The basic problem is to identify the configurations that are extrema of a given action functional \( S \colon \Gamma(E) \to \R \). The action is usually written as the integral of a Lagrangian over a region \(D \subseteq M\) of the base, i.e. a Lagrangian is some sort of map from field configurations to top forms of $M$, \( \L \colon \Gamma(E) \to \Omega^{n}(M) \), such that
+\begin{equation}
+    S(\phi) = \int_D \L(\phi).
+\end{equation}
+One of the fundamental constraints on \( \L \) is that it be local, i.e. \( \L(\phi)_p \) should only depend on the value of the field \(\phi\) at \(p\) a finite number of its derivatives at \(p\). In other words, \( \L \) is to be a bundle map from the \( k \)-th jet bundle of \(E\), \(J^kE\), to the bundle of top forms \( \bigwedge^{n}T^\ast M\), in such a way that if \(j^k \phi \in \Gamma(J^kE) \) is the prolongation of some field configuration \(\phi \in \Gamma(E) \) then
+\begin{equation}
+    S(\phi) = \int_D \L \circ j^k\phi.
+\end{equation}
+The integer \(k\) is called the order of the Lagrangian. Volume forms are one-dimensional, which means that for a given choice of coordinates of the base, \( x^\mu\) then there exists a unique \(L\colon J^1E \to \R\) such that, on the coordinate domain,
+\begin{equation}
+     \L \circ j^1\phi = (L\circ j^1\phi) \ud^n x,
+\end{equation}
+where \( \ud^nx \) is the local volume form of \(M  \) induced by the coordinates.
+
+Using the calculus of variations one can show that the stationary configurations of an action functional defined by a first order Lagrangian satisfy the Euler-Lagrange equations of field theory
+\begin{equation*}
+	\frac{\partial L}{\partial \phi^a} - \partial_\mu \frac{\partial L}{\partial
+	\phi^a_\mu} = 0. 
+\end{equation*}
+These expression make sense given the choice of a local trivialisation of \(E\), \((x^\mu, \phi^a)\), which gives rise to a local trivialisation of \(J^1E\), \((x^\mu, \phi^a, \phi^a_\mu)\). Note that the Einstein summation convention is assumed from this point on, unless otherwise stated.
+
+\subsection{The action flux}
+We now wish to generalise this description to account for action dependent Lagrangians. A cursory look at the Herglotz equations would suggest a field theoretic analog of the form 
+\begin{equation}
+	\frac{\partial L}{\partial \phi^a} - \partial_\mu \frac{\partial L}{\partial
+\phi ^a_\mu} + \frac{\partial L}{\partial \phi^a_\mu}\frac{\partial
+L}{\partial z^\mu} = 0. 
+\end{equation}
+This equations are the ones also proposed in the literature \cite{Gaset2020a,Lazo2018,de_leon_multicontact_2022}. The question is then what should the geometric nature of \(z\) be. In the language of bundles we have just introduced, the constraint in \cref{eq:constMech} becomes
+\begin{equation}\label{eq:constraint field theory integral}
+    z(b) - z(a) = \int_{[a,b]}  \L \circ j^kq.
+\end{equation}
+The field theoretic version should then be 
+\begin{equation}
+    \int_{\partial D}z = \int_D  \L \circ j^k\phi,
+\end{equation}
+where $D\subset M$ is an $n$-dimensional submanifold of \(M\) over which we wish to extremise the action. It is now clear that \(z\) must be a form of degree \(n-1\) so that it can be integrated over submanifolds of the base \(M\) of codimension 1. In other words, \(z\) is the action flux. The differential version of \cref{eq:constraint field theory integral} is then
+\begin{equation} \label{eq:constraint field theory}
+\ud z =  \L \circ j^k\phi.
+\end{equation}
+analogous to \cref{eq:constMech}. 
+
+There is, by way of contraction with a volume form, an isomorphism between \((n-1)\)-forms and vector fields, such that the exterior derivative becomes the divergence. In particular, a choice of coordinates \(x^\mu\) on the base induces a trivialisation \((x^\mu,z^\nu)\) on \(\bigwedge^{n-1} T^\ast M\), in such a way that for \(\alpha \in \bigwedge T^\ast _p M\)
+\begin{equation}\label{eq:coordinates flux}
+\alpha_p = z^\nu(\alpha_p) \frac{\partial}{\partial x^\nu} \lrcorner \d^n x,
+\end{equation}
+where the symbol \(\lrcorner \) denotes the contraction of a tangent vector with a form. Then, for a differential form, \(z\), of degree \(n-1\) whose components in these coordinates are \(z^\nu\), it holds that
+\begin{equation}
+    \d z = \partial_\nu z^\nu \d^nx.
+\end{equation}
+This means that the coordinate expression of \cref{eq:constraint field theory} is 
+\begin{equation} \label{eq:constraint field theory coordinates}
+	\partial_\nu z^\nu = L(\phi^a, \phi^a_\mu).
+\end{equation}
+
+For some bundle \(E \to M\) the corresponding Herglotz problem is formulated in the enlarged bundle \(E \oplus \bigwedge^{n-1}T^\ast M \to M \), where \(\oplus\) is the Whitney sum. Consider a Lagrangian of the form \(\L \colon J^kE \oplus \bigwedge^{n-1}T^\ast M \to \bigwedge^n T^\ast M \) (so that crucially \(\L\) does not depend on any of the derivatives of the action flux). The Herglotz problem for field theory is then to find the sections \((\phi,z)\) that extremise the functional \(S(\phi,z) = \int_{\partial  D} z\) subject to the constraint \(\ud z = \L\). If \((\phi, z)\) is one such section then
+\begin{equation*}
+	S(\phi,z) = \int_{\partial D} z = \int_D \ud z = \int_D  \L \circ (j^k \phi, z),
+\end{equation*}
+and we can interpret \(S\) as the action. 
+
+\subsection{Constrained optimisation in field theory}
+Just like before, we turn this constrained optimisation problem into an
+unconstrained one using Lagrange multipliers. The expanded action for a first order Lagrangian, in analogy with
+\cref{eq:lagrange multiplier action}, is
+\begin{equation}\label{eq:expanded action field theory}
+	\tilde{S}(\phi, z) = \int_D \big[(1 - \lambda) \ud z + \lambda \L \circ (j^1\phi,z)\big]
+	= \int_D \ud^n x \big[ (1 - \lambda) \partial_\mu z^\mu + \lambda L(\phi^a,
+	\partial_\mu \phi^a, z^\nu) \big].
+\end{equation}
+Let us write down the integrand of
+\cref{eq:expanded action field theory} as an expanded Lagrangian:
+\begin{equation} \label{eq:expanded lagrangian field theory}
+	\tilde{\L}\circ(j^1\phi, j^1 z) = \tilde{L}(\phi^a, \partial_\mu \phi^a, z^\nu, \partial_\mu z^\nu)\ud^n x = \big[ (1 - \lambda)
+	\partial_\mu z^\mu + \lambda L(\phi^a, \partial_\mu \phi^a, z^\nu) \big] \ud^n x.
+\end{equation}
+Note that \( \Tilde{\L} \) is now the Lagrangian for a theory defined on the expanded bundle \(J^1E \oplus J^1\bigwedge^{n-1}T^\ast M \to M\), so \( z\) is a dynamical degree of freedom. 
+
+Given that the Lagrangian is of first order, extrema of this action functional will be solutions to the Euler-Lagrange equations for this Lagrangian, which become the Herglotz equations upon imposing the constraint. We write them down in the next section. Nevertheless there is nothing preventing one from calculating the explicit variation of the action, which leads to the equations of motion for a theory of any order. This is the approach we follow in the next chapter.
+
+\subsection{The Herglotz equations for field theory}
+Finally, we derive the Herglotz equations for field theory from the expanded
+Lagrangian  in \cref{eq:expanded lagrangian field theory}. The
+equations for the action flux are
+\begin{equation*}
+	0 = \frac{\partial \tilde{L}}{\partial z^\nu} - \partial_\mu \frac{\partial
+	\tilde{L}}{\partial z^\nu_\mu} = \lambda \frac{\partial L}{\partial z^\nu} +
+	\partial_\mu(\lambda \delta_\nu^\mu) = \lambda \frac{\partial L}{\partial z^\nu} +
+	\partial_\nu \lambda,
+\end{equation*}
+where \((x_\mu, z^\nu, z^\nu_\mu)\) is the trivialisation of \(J^1(\bigwedge^{n-1}T^\ast M) \) induced by the choice of coordinates on the base, as defined by \cref{eq:coordinates flux}.
+Rearranging, one obtains
+\begin{equation} \label{eq:euler lagrange multiplier field theory}
+	\partial_\nu \lambda = - \lambda \frac{\partial L}{\partial z^\nu}. 
+\end{equation}
+This equation actually constrains the type of action dependence that is allowed
+in \( L \). We will see later on that in the context of relativity it forces the
+dissipation form to be closed. 
+
+The equations for the field are
+\begin{equation*}
+	0 = \frac{\partial \tilde{L}}{\partial \phi^a} - \partial_\mu \frac{\partial
+	\tilde{L}}{\partial\phi^a_\mu} = \lambda \frac{\partial L}{\partial \phi^a} -
+	(\partial_\mu \lambda) \frac{\partial L}{\partial\phi^a_\mu} - \lambda
+	\partial_\mu \frac{\partial L}{\partial\phi^a_\mu},
+\end{equation*}
+and, after substituting in \cref{eq:euler lagrange multiplier field theory} and dividing
+through by \( \lambda \), we arrive at the field theoretical Herglotz equations
+\begin{equation} \label{eq:herglotz field theory}
+	\frac{\partial L}{\partial \phi^a} - \partial_\mu \frac{\partial
+	L}{\partial\phi^a_\mu} + \frac{\partial L}{\partial z^\mu} \frac{\partial
+L}{\partial\phi^a_\mu} = 0. 
+\end{equation}
+
+
+\end{document}

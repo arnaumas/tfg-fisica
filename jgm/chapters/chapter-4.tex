@@ -1,0 +1,74 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+In this chapter we discuss the equations we have obtained and how they compare to those
+appearing in existing publications. We also make the case that the version we have derived
+is a more adequate version. 
+
+\section{The dissipation tensor}
+Let us recap what we did in the previous chapter. We have shown, by computing the
+variation of the corresponding action, that the field equations of an Einstein-Hilbert
+Lagrangian with linear dissipation, namely
+\begin{equation} 
+	L(g_{ab}, \partial_\mu g_{ab}, \partial_\mu \partial_\nu g_{ab}, z^\mu) = R(g_{ab}, \partial_\mu g_{ab}, \partial_\mu \partial_\nu g_{ab})
+	\sqrt{g} - \theta_\mu z^\mu,
+\end{equation}
+are
+\begin{equation}\label{eq:EFE with dissipation}
+   R_{ab} - \tfrac{1}{2}Rg_{ab} - K_{ab} + Kg_{ab} = 0,
+\end{equation}
+where \( K_{ab} \) are the components of the \( (0,2) \) symmetric tensor
+\begin{equation}
+	\mathbf{K} = \nabla \theta + \theta \otimes \theta.
+\end{equation}
+We will call \( K \) the dissipation tensor. Since the first two terms of \cref{eq:EFE with dissipation} have zero divergence (they are the components of the Einstein tensor), it must be the case that, on-shell, the divergence of the second two terms also vanishes. This imposes a constraint on the space of solutions to \cref{eq:modified EFE}, which depends on the dissipation form $\theta$. Namely,
+\begin{equation}
+\nabla_a\left(g^{ab}K_{bc}-n\delta^a_cK\right)=0
+\end{equation}
+
+This means, that if we add a matter term to the Lagrangian, the resulting  tensor in the field equations may not be conserved.
+
+This means, that if we were to couple a matter term to \cref{eq:action dependent einstein-hilbert}, its energy-momentum tensor need not in general have zero divergence. Specifically, what must have zero divergence will be a combination of the energy-momentum tensors of the matter fields and terms containing the dissipation 1-form. Nevertheless, further investigation is required to determine the precise way in which the dissipation tensor governs the non-conservation of other quantities.
+
+\section{Non-covariance of existing equations}
+These equations are not the ones obtained in \cite{Lazo2017}. For the same Lagrangian, the
+equations derived are
+\begin{equation} \label{eq:EFE lazo}
+	R_{ab} + \tilde{K}_{ab} - \tfrac{1}{2}g_{ab}(R + \tilde{K}) = 0,
+\end{equation}
+where $\tilde{K}=g^{ab}\tilde{K}_{ab}$, and $\tilde{K}_{ab}$ is 
+\begin{equation} \label{eq:}
+	\tilde{K}_{ab} = \theta_m {\Gamma^m}_{ab} - \tfrac{1}{2}\left(\theta_a {\Gamma^m}_{mb} +
+	\theta_b {\Gamma^m}_{am}\right). 
+\end{equation}
+These cannot possibly represent the components of a tensor. Very explicitly,  for the flat Minkowski metric, their
+expression in Cartesian coordinates is 0. If they represented the components of a tensor then they would also vanish for any other choice of coordinates for the flat metric. Nevertheless, in spherical coordinates one computes
+\begin{align*}
+	{\Gamma^r}_{\theta\theta} & = -r & {\Gamma^\theta}_{r\theta} & = \frac{1}{r} &
+	{\Gamma^\phi}_{r\phi} & = \frac{1}{r} \\
+	{\Gamma^r}_{\phi\phi} & = -r \sin{\theta}^2 & {\Gamma^\theta}_{\phi\phi} & =
+	-\sin{\theta}\cos{\theta} & {\Gamma^\phi}_{\theta\phi} & = \frac{1}{\tan{\theta}}. 
+\end{align*}
+Which means, for example,
+\begin{equation*}
+	\tilde{K}_{tr} = 0 - \tfrac{1}{2}(\theta_t {\Gamma^m}_{mr} + 0) =
+	-\frac{\theta_t}{2r},
+\end{equation*}
+which is certainly non-zero if \( \theta_t \) does not vanish. Hence the object derived in \cite{Lazo2017} is not coordinate independent so it
+cannot possibly represent meaningful physics. 
+
+There is another fact that points to the equations in \cite{Lazo2017} not being what one would expect as the Herglotz equations coming from a second-order action-dependent Lagrangian. The Herglotz equations for the harmonic oscillator with
+linear dissipation lead to equations linear in the dissipation coefficient (\cite{Gaset2020b}). However, the Lagrangian for this system is first
+order, whereas, as we had already discussed, the Einstein-Hilbert Lagrangian is actually
+second order. There is a second order Lagrangian with linear
+dissipation, called the damped Pais-Uhlenbeck oscillator, whose equations of motion are derived in \cite{Leon2021a}. These are in fact not linear in the dissipation coefficient, but rather quadratic. In
+our case, the dissipation form plays the role of the dissipation coefficient, and indeed, \(\mathbf{K}\) is quadratic in it. The equations in \cite{Lazo2017} instead lack a quadratic term.
+
+One can pinpoint the exact reason for the problems with \cref{eq:EFE lazo}. One of the
+simplifying assumptions made in their derivation was to only consider certain terms of the Ricci curvature.
+Specifically, the Ricci curvature consists of four terms. Two of them are contractions of
+the Christoffel symbols with themselves, the other two are derivatives of the Christoffel
+symbols. In the classical case, without dissipation, one can show that the second two terms are actually a divergence, so they do not contribute to the variation of the Einstein-Hilbert action and the resulting equations remain unchanged (see \cite{Gaset2018,Maria2015}). For an action-dependent theory, however, adding a divergence to the unexpanded Lagrangian does not lead, in general, to the same equations \cite{inverse,Lazo2021}. 
+
+
+\end{document}

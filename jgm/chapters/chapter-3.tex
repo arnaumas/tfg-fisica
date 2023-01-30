@@ -1,0 +1,331 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+In this chapter we apply the language and tools developed in the previous chapter to the
+specific case of Einstein gravity. We first describe the Lagrangian from which the Einstein
+field equations come and then introduce an action-dependent version of it and
+derive its field equations. 
+
+\section{The Einstein-Hilbert Lagrangian}
+As is well-known, the Einstein field equations can be obtained from a variational
+principle. The classical Lagrangian that gives rise to these equations is the Einstein-Hilbert
+Lagrangian. We formulate it in the language of \cref{sec:lagrangian densities}. The field of interest in relativity is the metric on the given spacetime \(M\) ---which we take to be of dimension 4 and orientable from now on---. Hence the bundle of interest to us is a subbundle of the second symmetric power of the cotangent bundle of \( M\), 
+\begin{equation}
+    S^2 T^\ast M \to M.
+\end{equation}
+Specifically it is the subbundle determined by the condition of non-degeneracy. We denote it by \( G(M) \to M \).  
+
+As advertised, the theory of general relativity is a second-order theory, which means that the Einstein-Hilbert Lagrangian must be a bundle map from \( J^2 G(M)\) to \(\bigwedge^n T^\ast M \). Specifically, given a metric \( g \in \Gamma(G(M)) \),
+\begin{equation} \label{eq:EH lagrangian}
+     \L_\text{E-H} \circ j^2 g = R(g) \omega_g.
+\end{equation}
+Here we use \( \omega_ g \) to denote the volume form determined by \(g\), which in a choice of coordinates  \(x^\mu\) becomes
+\begin{equation}
+    \sqrt{g} \d^4 x,
+\end{equation}
+where \( \sqrt{g} \) is the square root of the absolute value of the determinant of the expression of the metric in the coordinates \(x^\mu\). 
+The other factor, \(R(g)\), is the scalar curvature of \(g\), which is defined as the trace of the Ricci tensor:
+\begin{equation}
+    R(g) = \tr(g^{-1} \Ric(g)).
+\end{equation}
+The Ricci tensor is of type \((0,2) \), so by contracting with \(g^{-1}\), the metric induced on \(T^\ast M\), we obtain a \((1,1)\) tensor, whose trace is well-defined. The coordinate expression of the components of the Ricci tensor, \(R_{ab}\), is
+\begin{equation} \label{eq:ricci tensor}
+	R_{ab} = \partial_m{\Gamma^m}_{ab} - \partial_a {\Gamma^m}_{mb} + {\Gamma^m}_{mn}
+	{\Gamma^n}_{ab} - {\Gamma^m}_{an}{\Gamma^n}_{mb},
+\end{equation}
+where \( \Gamma_{ab}^c \) are the Christoffel symbols of the Levi-Civita connection determined by \(g\). These contain first derivatives of the metric, so \( R_{ab} \) and
+hence \( R \) contain second derivatives of the metric, and the Einstein-Hilbert Lagrangian is indeed of second order.
+
+The Einstein-Hilbert action is therefore
+\begin{equation} \label{eq:EH action}
+	S_{\text{E-H}}(g) = \int_D \L_\text{E-H} \circ j^2g = \int_D R
+	\sqrt{g}\ud^4x,
+\end{equation}
+for some domain \(D\) on which the integral is finite. 
+A variation of this action leads one to the Einstein field equations 
+\begin{equation} \label{eq:EFE vacuum}
+	R_{ab} - \tfrac{1}{2}g_{ab}R = 0. 
+\end{equation}
+More precisely, these are the Einstein field equations in a vacuum, since one can add
+various matter terms to the Einstein-Hilbert Lagrangian which lead to the Einstein
+equations in the presence of matter,
+\begin{equation} \label{eq:EFE matter}
+	R_{ab} - \tfrac{1}{2}g_{ab}R = T_{ab}. 
+\end{equation}
+The object \( T_{ab} \) is the energy-momentum tensor and collects all of the terms coming
+from the presence of matter. See \S4 of \cite{Carroll1997} for a detailed derivation.
+
+\section{An action dependent Einstein-Hilbert Lagrangian}
+What kind of action dependence can we incorporate into the Einstein-Hilbert Lagrangian?
+The simplest one is a linear dissipation term:
+\begin{equation} \label{eq:action dependent einstein-hilbert}
+	\L_{\text{E-H}} \circ (j^2 g,z) = R\omega_g - \theta \wedge z. 
+\end{equation}
+Now \( \L_{\text{E-H}} \) is defined on the expanded bundle, \( G(M) \oplus \bigwedge^3T^\ast M \to M \). Hence \( \theta \) must be a 1-form on \(M\), which we will refer to as the \emph{dissipation form}.
+
+The coordinate expression of this dissipation term is
+\begin{equation*}
+	\theta \wedge z = (\theta_\mu \ud x^\mu) \wedge \left(z^\nu \frac{\partial}{\partial x^\nu}\lrcorner \ud^4 x\right) = \theta_\mu z^\nu \ud
+	x^\mu \wedge \left(\frac{\partial}{\partial x^\nu}\lrcorner \ud^4 x\right) = \theta_\mu z^\mu \ud^4x
+\end{equation*}
+where once again we use the coordinates defined in \cref{eq:coordinates flux}. Then \cref{eq:action dependent einstein-hilbert} becomes 
+\begin{equation}\label{eq:action dependent EH coordinates 1}
+	\L_{\text{E-H}} \circ (j^2g, z) = (R\sqrt{g} - \theta_\mu
+	z^\mu) \ud^4 x. 
+\end{equation}
+This Lagrangian does not exactly match the one proposed in Equation (9) of \cite{Lazo2017}. The discrepancy is down to a different choice of coordinates. Indeed, in the previous computation we used the isomorphism between \(\Omega^3(M)\) and \(\Gamma(TM)\) induced by contracting with \(\d^4x\). Instead we may contract with the volume form induced by the metric, \(\omega_g\). Let \(\zeta^\mu\) be the components of \(z\) in this new choice of coordinates, i.e.
+\begin{equation*}
+	z = \zeta^\mu \frac{\partial}{\partial x^\mu} \lrcorner \omega_{g} = \zeta^\mu \sqrt{g} \frac{\partial}{\partial x^\mu} \lrcorner \ud^4x,
+\end{equation*}
+which implies \( z^\mu = \sqrt{g} \zeta^\mu \). In these new coordinates \cref{eq:action dependent EH coordinates 1} looks like
+\begin{equation}\label{eq:action dependent EH coordinates 2}
+	\L_{\text{E-H}} \circ (j^2g, z) = (R\sqrt{g} - \theta_\mu
+	\zeta^\mu \sqrt{g}) \ud^4 x = (R - \theta_\mu \zeta^\mu)\omega_g.
+\end{equation}
+This is the Lagrangian proposed in Equation (9) of \cite{Lazo2017}. 
+
+We now write down the constraint in \cref{eq:constraint field theory} for this Lagrangian.
+In the original coordinates for the action flux we have
+\begin{equation*}
+	\ud z = \partial_\mu z^\mu \ud^4 x,
+\end{equation*}
+so
+\begin{equation} \label{eq:constraint coordinates 1}
+	\partial_\mu z^\mu = R\sqrt{g} - \theta_\mu z^\mu. 
+\end{equation}
+In the other set of coordinates, induced by contracting with \(\omega_g\), one sees
+\begin{equation*}
+	\ud z = \partial_\mu (\sqrt{g} \zeta^\mu) \ud^4 x = \nabla_\mu \zeta^\mu \sqrt{g}\ud^4x
+	= \nabla_\mu \zeta^\mu \omega_g,
+\end{equation*}
+where \( \nabla \) is the covariant derivative induced by \( g \). We have made use of a
+useful identity about the divergence:
+\begin{equation} \label{eq:divergence identity}
+	\nabla_\mu X^\mu = \frac{1}{\sqrt{g}} \partial_\mu (\sqrt{g}X^\mu).
+\end{equation}
+This is the statement that the divergence induced by the volume form of a metric coincides with the trace of the covariant derivative. 
+
+In the new coordinates the constraint becomes
+\begin{equation} \label{eq:constraint coordinates 2}
+	\nabla_\mu \zeta^\mu = R - \theta_\mu \zeta^\mu,
+\end{equation}
+which is the same form that appears in Equation (8) of \cite{Lazo2017}. 
+
+\section{Derivation of the field equations}
+We now apply the method of Lagrange multipliers, as
+described in previous chapter, to derive a modified version of Einstein's equations. The
+expanded Lagrangian is
+\begin{equation*}
+\tilde{\L}_\text{E-H} \circ (j^2 g, j^1 z) = \big[(1-\lambda) \partial_\mu z^\mu + \lambda(R\sqrt{g} - \theta_\mu z^\mu)\big] \ud^4
+	x.
+\end{equation*}
+We will compute the variation of the corresponding expanded action, \(\Tilde{S}(g,z) = \int_D \Tilde{L}_\text{E-H} \circ (j^2g,j^1z)\), with respect to the two dynamical degrees of freedom, \(z\) and \(g\).
+
+\subsection{Variation of the action flux}\label{sec:variationonaction}
+The variation with respect to the action flux is
+\begin{align}
+	\delta \tilde{S}(g, z) & = \int_D \big[(1-\lambda) \delta \partial_\mu z^\mu +
+\lambda(\delta(R\sqrt{g}) - \theta_\mu \delta z^\mu)\big] \ud^4 x \notag \\						& = \int_D (1 - \lambda) \partial_\mu \delta z^\mu -
+			\lambda \theta_\mu \delta z^\mu \ud^4x + \int_D \lambda
+			\delta(R \sqrt{g}) \ud^4 x \notag \\
+& = \int_{D} \partial_\mu \big((1 -
+		\lambda)\delta z^\mu\big) \ud^4 x + \int_D (\partial_\mu \lambda
+		- \lambda\theta_\mu) \delta z^\mu \ud^4 x + \int_D \lambda
+		\delta(R \sqrt{g}) \ud^4 x \label{eq:variation expanded
+										action}. 
+\end{align}
+The first integral is a boundary term coming from an integration by parts. It vanishes
+if we assume the variations vanish at the boundary of \( D \). If the action is stationary then its variation must vanish for any variation of the fields. This means that the second term of \cref{eq:variation expanded action} must vanish, since in particular we may choose not to vary the metric. Hence, the quantity inside the brackets must vanish, since it vanishes when integrated against any variation. Therefore
+\begin{equation} \label{eq:action flux variation}
+	\partial_\mu \lambda = \lambda\theta_\mu.
+\end{equation}
+In other words, \( \ud \lambda = \lambda \theta \). As we had advertised before, this forces the dissipation form \(\theta\) to be closed, as
+\begin{equation*}
+	\ud(\lambda \theta) = \ud \lambda \wedge \theta + \lambda \ud \theta = \lambda \theta
+	\wedge \theta + \lambda \ud \theta = \lambda \ud \theta,
+\end{equation*}
+hence
+\begin{equation*}
+	\lambda \ud \theta = \ud(\lambda \theta) = \ud^2 \lambda = 0,
+\end{equation*}
+and we conclude \( \ud \theta = 0 \) provided \(\lambda\) does not vanish. 
+
+\subsection{Variation of the metric}
+We retake the calculation from \cref{eq:variation expanded action}. We may now only consider the last integral, as we can vary \(g\) and \(z\) independently. We will follow the
+derivation in \cite{Carroll1997} for as long as we can. In particular, we take the spacetime \(M\) to be closed, and hence avoid consideration of Gibbons-Hawking-York type boundary terms. Since \( R\sqrt{g} =
+g^{ab}R_{ab}\sqrt{g} \), from the product rule its variation results in three terms:
+\begin{equation}\label{eq:variation of scalar curvature}
+	\int_D \lambda \delta(R \sqrt{g}) \ud^4 x = \int_D \lambda \delta g^{ab} R_{ab} \sqrt{g}
+	\ud^4 x + \int_D \lambda g^{ab} \delta R_{ab} \sqrt{g} \ud^4 x + \int_{D} \lambda R
+	\delta\sqrt{g} \ud^4 x
+\end{equation}
+The first term is already in the form required to apply the fundamental theorem of the
+calculus of variations. For the third one uses the standard result
+\begin{equation*}
+	\delta \sqrt{g} = -\tfrac{1}{2}\sqrt{g} g_{ab} \delta g^{ab}.
+\end{equation*}
+The first and third terms of \cref{eq:variation of scalar curvature} can be combined into
+\begin{equation}\label{eq:variation vacuum}
+	\int_D \lambda (R_{ab} - \tfrac{1}{2} Rg_{ab}) \delta g^{ab} \sqrt{g} \ud^4 x.
+\end{equation}
+In the standard derivation of Einstein's equations, one shows that the middle integral of
+\cref{eq:variation of scalar curvature} actually vanishes, so that if \cref{eq:variation
+vacuum} is to vanish for any variation \( \delta g_{ab} \), or equivalently for any
+variation of the inverse metric \( \delta g^{ab} \), the integrand of \cref{eq:variation vacuum} itself must
+vanish. This gives Einstein's equations. In the presence of \( \lambda \), however, the
+middle integral does not vanish and contributes additional terms to the
+equations.
+
+We compute the variation of the middle integral in \cref{eq:variation of scalar curvature}.  The variation of the Ricci curvature can be shown to be
+\begin{equation}\label{eq:variation ricci curvature}
+	g^{ab} \delta R_{ab} = g^{ab}(\nabla_m \delta{\Gamma^m}_{ab} - \nabla_a \delta
+	{\Gamma^m}_{mb}) = \nabla_n(g^{ab} {\delta\Gamma^n}_{ab} - g^{nb} \delta
+	{\Gamma^m}_{mb})\,,
+\end{equation}
+so
+\begin{equation*}
+	\int_D \lambda g^{ab}\delta R_{ab} \sqrt{g} \ud^4 x = \int_D \lambda \nabla_n(g^{ab}
+	{\delta\Gamma^n}_{ab} - g^{nb} \delta {\Gamma^m}_{mb}) \sqrt{g} \ud^4x,
+\end{equation*}
+and if \( \lambda \) weren't there this integral would vanish because of the divergence
+theorem and the fact that the variations vanish on the boundary of \( D \). In the
+presence of \( \lambda \) we perform an integration by parts:
+\begin{align*}
+	& \int_D \lambda g^{ab}\delta R_{ab} \sqrt{g} \ud^4 x = \\
+	& \quad = \int_D \lambda \nabla_n(g^{ab} {\delta\Gamma^n}_{ab} - g^{nb} \delta
+	{\Gamma^m}_{mb}) \sqrt{g} \ud^4x \\
+	& \quad = \int_D \nabla_n \left(\lambda (g^{ab} {\delta\Gamma^n}_{ab} - g^{nb}
+	\delta {\Gamma^m}_{mb})\right) \sqrt{g}\ud^4 x - \int_D (\nabla_n \lambda) (g^{ab}
+	{\delta\Gamma^n}_{ab} - g^{nb} \delta {\Gamma^m}_{mb}) \sqrt{g} \ud^4 x. 
+\end{align*}
+The first integral vanishes because it is the integral of a divergence and the variations
+vanish on the boundary of \( D \). The second integral is where the additional terms will
+come from. We split it into two terms. 
+
+The variation of the Christoffel symbols can be shown to be
+\begin{equation} \label{eq:variation christoffel symbols}
+	\delta {\Gamma^a}_{bc} = \tfrac{1}{2} g^{am}(\nabla_c \delta g_{bm} + \nabla_b \delta
+	g_{mc} - \nabla_m \delta g_{bc}).
+\end{equation}
+Using this and \cref{eq:action flux variation} (since \( \nabla_n \lambda = \partial_n
+\lambda \)) we compute for the first integral
+\begin{equation}\label{eq:first three terms}
+	-\int_D (\nabla_n \lambda) g^{ab} \delta{\Gamma^n}_{ab} \sqrt{g} \ud^4 x = -
+	\tfrac{1}{2} \int_D \lambda\theta_n g^{ab} g^{nk}(\nabla_b \delta g_{ak} + \nabla_a
+	\delta g_{kb} - \nabla_k \delta g_{ab}) \sqrt{g} \ud^4 x. 
+\end{equation}
+The presence of \( g^{ab} \) means the indices \( a \) and \( b \) are symmetrised, so
+\begin{equation*}
+	g^{ab} \nabla_b \delta g_{ak} = g^{ab} \nabla_a \delta g_{kb}. 
+\end{equation*}
+This means \cref{eq:first three terms} simplifies to
+\begin{align}
+	&	-\int_D (\nabla_n \lambda) g^{ab} \delta{\Gamma^n}_{ab} \sqrt{g} \ud^4 x = \notag \\
+	& \quad = - \int_D \lambda \theta_n g^{ab}g^{nk} \nabla_b \delta g_{ak} \sqrt{g} \ud^4 x
+	+ \tfrac{1}{2} \int_D \lambda \theta_n g^{ab}g^{nk} \nabla_k \delta g_{ab} \sqrt{g}
+	\ud^4 x \notag \\
+	& \quad = - \int_D \lambda \theta_n \nabla_b (g^{ab}g^{nk} \delta g_{ak}) \sqrt{g} \ud^4 x
+	+ \tfrac{1}{2} \int_D \lambda \theta_n \nabla_k (g^{ab}g^{nk}\delta g_{ab}) \sqrt{g}
+	\ud^4 x. \label{eq:two integrals}
+\end{align}
+Let's perform an integration by parts for the first integral. Introducing the shorthand \( X^{bn} = g^{ab}g^{nk}\delta g_{ak} \), we compute
+\begin{equation*}
+	\nabla_c(\lambda\theta_n X^{bn}) = \nabla_c(\lambda \theta_n)X^{bn} + \lambda \theta_n
+	\nabla_c X^{bn},
+\end{equation*}
+so
+\begin{align*}
+	-\int_D \lambda \theta_n \nabla_b (g^{ab}g^{nk} \delta g_{ak})\sqrt{g}\ud^4x 
+	& = - \int_D \lambda \theta_n \nabla_bX^{bn} \sqrt{g} \ud^4 x \\
+	& = - \int_D \nabla_b(\lambda \theta_n X^{bn})\sqrt{g}\ud^4x + \int_{D}
+	\nabla_b(\lambda\theta_n)X^{bn}\sqrt{g}\ud^4x. 
+\end{align*}
+The first integral is the integral of a divergence, so it vanishes. We are left with the
+second which we can expand into
+\begin{align*}
+	\int_D \nabla_b(\lambda \theta_n) X^{bn}\sqrt{g}\ud^4 x 
+	& = \int_D (\theta_n \partial_b \lambda + \lambda \nabla_b\theta_n)(g^{ab}g^{nk}\delta
+	g_{ak})\sqrt{g} \ud^4 x \\
+	& = \int_D \lambda(\theta_b\theta_n +
+	\nabla_b\theta_n)(g^{ab}g^{nk}\delta g_{ak})\sqrt{g}\ud^4 x.
+\end{align*}
+As a last step, we use the identity
+\begin{equation*}
+	\delta g^{ab} = - g^{am}g^{bn} \delta g_{mn}
+\end{equation*}
+to write our integral as a variation with respect to the inverse metric.
+\begin{align*}
+	\int_D \lambda(\theta_b\theta_n + \nabla_b\theta_n)(g^{ab}g^{nk}\delta
+	g_{ak})\sqrt{g}\ud^4 x 
+	& = -\int_D \lambda(\theta_b\theta_n + \nabla_b \theta_n)\delta g^{bn} \sqrt{g} \ud^4 x. 
+\end{align*}
+
+Without going through the details again, the other integral in \cref{eq:two integrals} can
+be brought to the form
+\begin{align*} 
+	\tfrac{1}{2} \int_D \lambda \theta_n \nabla_k (g^{ab}g^{nk}\delta g_{ab}) \sqrt{g} \ud^4
+	x 
+	& = - \tfrac{1}{2} \int_D \nabla_k(\lambda \theta_n) g^{ab}g^{nk}\delta g_{ab} \sqrt{g}
+	\ud^4 x \\
+	& = \tfrac{1}{2} \int_D \lambda(\theta_k\theta_n + \nabla_k\theta_n) g^{ab}g^{nk}
+	g_{ma}g_{lb}\delta g^{ml} \sqrt{g}\ud^4 x \\
+	& = \tfrac{1}{2}\int_D \lambda g^{nk}(\theta_k\theta_n + \nabla_k \theta_n)g_{ml} \delta
+	g^{ml} \sqrt{g} \ud^4 x.
+\end{align*}
+
+There is still another integral we need to evaluate, the second term in the variation of
+\( R_{ab} \), namely
+\begin{align}
+	\int_D (\partial_n \lambda) g^{nb}\delta{\Gamma^m}_{mb} \sqrt{g} \ud^4 x 
+	& = \tfrac{1}{2} \int_D \lambda \theta_n g^{nb} g^{mk}(\nabla_b \delta g_{mk} + \nabla_m
+	\delta g_{kb} - \nabla_k \delta g_{mb}) \sqrt{g} \ud^4 x. 
+\end{align}
+Because \( m \) and \( k \) are symmetrised, the second and third terms cancel, leaving
+us with
+\begin{align}
+	\tfrac{1}{2}\int_D \lambda \theta_n g^{nb}g^{mk}\nabla_b \delta g_{mk} \sqrt{g} \ud^4 x
+	& = - \tfrac{1}{2} \int_D \nabla_b(\lambda \theta_n) g^{nb}g^{mk} \delta g_{mk} \sqrt{g}
+	\ud^4 x \\
+	& = \tfrac{1}{2} \int_D \lambda(\theta_b\theta_n + \nabla_b
+	\theta_n)g^{nb}g^{mk}g_{am}g_{lk}\delta g^{al} \sqrt{g} \ud^4 x \\
+	& = \tfrac{1}{2} \int_D \lambda g^{nb}(\theta_b \theta_n + \nabla_b \theta_n)
+	g_{al} \delta g^{al} \sqrt{g} \ud^4 x. 
+\end{align}
+
+We have calculated all the integrals we need. Before we put them all together, let us make
+the following observation:
+\begin{equation*}
+	\nabla_a \theta_b = \partial_a \theta_b - {\Gamma^m}_{ab} \theta_m = \partial_b \theta_a
+	- {\Gamma^m}_{ba} \theta_m = \nabla_b \theta_a,
+\end{equation*}
+which uses the fact that \( \theta \) must be closed. We may therefore define the following (0,2) symmetric tensor
+\begin{equation} \label{eq:K}
+\mathbf{K} = \theta \otimes \theta + \nabla \theta,
+\end{equation}
+whose components are
+\begin{equation}
+	K_{ab} = \theta_a\theta_b + \frac12\left(\nabla_{a}\theta_{b}+\nabla_{b}\theta_{a}\right) = \theta_a\theta_b + \nabla_{(a}\theta_{b)}=\theta_a\theta_b + \nabla_{a}\theta_{b},
+\end{equation}
+where parentheses surrounding indices indicate symmetrisation. 
+All three expressions are equal because $\nabla_a \theta_b= \nabla_b \theta_a$. Nevertheless, we will use the second one to make the symmetry of the indices explicit. So, after liberal relabeling of indices, we find that \cref{eq:variation expanded action}
+becomes
+\begin{equation} \label{eq:final variation of action}
+	\delta\tilde{S}[g_{ab}, z^\mu] = \int_D(\partial_\mu \lambda - \lambda \theta_\mu)
+	\delta z^\mu \ud^4 x + \int_D \lambda (R_{ab} - \tfrac{1}{2} Rg_{ab} - K_{ab} +
+	Kg_{ab})\delta g^{ab} \sqrt{g} \ud^4 x,
+\end{equation}
+with \( K_{ab} \) defined as in \cref{eq:K} and \( K = g^{mn}K_{mn} \) its trace. 
+
+Applying the fundamental theorem of the calculus of variations, the action will be
+stationary if and only if the integrands of both terms vanish. From the first integral we
+get \cref{eq:action flux variation}, which we have already used. And from the second one
+we get the modified Einstein field equations
+\begin{equation} \label{eq:modified EFE}
+	R_{ab} - \tfrac{1}{2}Rg_{ab} - K_{ab} + Kg_{ab} = 0.
+\end{equation}
+
+These equations coincide with the ones derived in \cite{Lazo2021}.
+
+
+\end{document}
