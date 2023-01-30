@@ -1,0 +1,1458 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{baker_strong_2017}{article}{}
+      \name{author}{6}{}{%
+        {{hash=b60439dff9cb20a8e11913ed43e7ae88}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b0b125073975f4b54263d5d82ff0f959}{%
+           family={Bellini},
+           familyi={B\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=42402e510611703ffcbc1c3fc720aae3}{%
+           family={Ferreira},
+           familyi={F\bibinitperiod},
+           given={P.\bibnamedelimi G.},
+           giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=298c2e7ee8bb8b4557a9632790af9dca}{%
+           family={Lagos},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c28fb421a79a147a1633e2f12ad8bcc1}{%
+           family={Noller},
+           familyi={N\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fbad040d2b2e630de3e36d78f2d2e39b}{%
+           family={Sawicki},
+           familyi={S\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{c2fbdef1d110eba540a8f16e8f93c637}
+      \strng{fullhash}{82b15322fc7b491428151f9616ece888}
+      \strng{bibnamehash}{c2fbdef1d110eba540a8f16e8f93c637}
+      \strng{authorbibnamehash}{c2fbdef1d110eba540a8f16e8f93c637}
+      \strng{authornamehash}{c2fbdef1d110eba540a8f16e8f93c637}
+      \strng{authorfullhash}{82b15322fc7b491428151f9616ece888}
+      \field{labelalpha}{Bak+17}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{25}
+      \field{title}{Strong {Constraints} on {Cosmological} {Gravity} from {GW170817} and {GRB} {170817A}}
+      \field{volume}{119}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.119.251301
+      \endverb
+    \endentry
+    \entry{Bravetti2019}{article}{}
+      \name{author}{1}{}{%
+        {{hash=207fbc9a1d6838a27d83912ec8f88b94}{%
+           family={Bravetti},
+           familyi={B\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific Pub Co Pte Lt}%
+      }
+      \strng{namehash}{207fbc9a1d6838a27d83912ec8f88b94}
+      \strng{fullhash}{207fbc9a1d6838a27d83912ec8f88b94}
+      \strng{bibnamehash}{207fbc9a1d6838a27d83912ec8f88b94}
+      \strng{authorbibnamehash}{207fbc9a1d6838a27d83912ec8f88b94}
+      \strng{authornamehash}{207fbc9a1d6838a27d83912ec8f88b94}
+      \strng{authorfullhash}{207fbc9a1d6838a27d83912ec8f88b94}
+      \field{labelalpha}{Bra19}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Geometric Methods in Modern Physics}
+      \field{number}{supp01}
+      \field{title}{{Contact geometry and thermodynamics}}
+      \field{volume}{16}
+      \field{year}{2019}
+      \field{pages}{1940003}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1142/s0219887819400036
+      \endverb
+    \endentry
+    \entry{Carroll1997}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a21efd7d6f43a778b4bd8bd5cf50c950}{%
+           family={Carroll},
+           familyi={C\bibinitperiod},
+           given={Sean\bibnamedelima M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a21efd7d6f43a778b4bd8bd5cf50c950}
+      \strng{fullhash}{a21efd7d6f43a778b4bd8bd5cf50c950}
+      \strng{bibnamehash}{a21efd7d6f43a778b4bd8bd5cf50c950}
+      \strng{authorbibnamehash}{a21efd7d6f43a778b4bd8bd5cf50c950}
+      \strng{authornamehash}{a21efd7d6f43a778b4bd8bd5cf50c950}
+      \strng{authorfullhash}{a21efd7d6f43a778b4bd8bd5cf50c950}
+      \field{labelalpha}{Car97}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{These notes represent approximately one semester's worth of lectures on introductory general relativity for beginning graduate students in physics. Topics include manifolds, Riemannian geometry, Einstein's equations, and three applications: gravitational radiation, black holes, and cosmology.}
+      \field{annotation}{Comment: 238 pages, numerous figures. Individual chapters, and potentially updated versions, can be found at http://itp.ucsb.edu/{\textasciitilde}carroll/notes/}
+      \field{note}{arXiv: gr-qc/9712019}
+      \field{title}{Lecture {Notes} on {General} {Relativity}}
+      \field{year}{1997}
+      \keyw{General Relativity and Quantum Cosmology,Astrophysics,High Energy Physics - Theory}
+    \endentry
+    \entry{ciaglia_contact_2018}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ddf36cd2f4a5e459f86636aac992fb78}{%
+           family={Ciaglia},
+           familyi={C\bibinitperiod},
+           given={F.\bibnamedelimi M.},
+           giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=5a7712d071af00d312a3c62f245feb0f}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c51c8cb4e0dfc50065053fb2ac438ad1}{%
+           family={Marmo},
+           familyi={M\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7c45169ea07baf71f5075eaa84fbca1}
+      \strng{fullhash}{a7c45169ea07baf71f5075eaa84fbca1}
+      \strng{bibnamehash}{a7c45169ea07baf71f5075eaa84fbca1}
+      \strng{authorbibnamehash}{a7c45169ea07baf71f5075eaa84fbca1}
+      \strng{authornamehash}{a7c45169ea07baf71f5075eaa84fbca1}
+      \strng{authorfullhash}{a7c45169ea07baf71f5075eaa84fbca1}
+      \field{labelalpha}{CCM18}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Physics}
+      \field{title}{Contact manifolds and dissipation, classical and quantum}
+      \field{volume}{398}
+      \field{year}{2018}
+      \field{pages}{159\bibrangedash 179}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1016/j.aop.2018.09.012
+      \endverb
+      \keyw{Contact manifold,Dissipation,General linear group,GKLS equation,Hamiltonian mechanics,Lagrangian mechanics,Nonlinear Schrödinger equation}
+    \endentry
+    \entry{Gaset2020}{article}{}
+      \name{author}{5}{}{%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=dd0a9f40c24cba43e8d12aea22c7de73}{%
+           family={Gràcia},
+           familyi={G\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=679dab3a5704b29a83eea38d6898889e}{%
+           family={Muñoz-Lecanda},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Miguel\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=5fc1283470a51ae75348cae007149616}{%
+           family={Rivas},
+           familyi={R\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=485ddaf93085864edc6b243e6197566a}{%
+           family={Román-Roy},
+           familyi={R\bibinithyphendelim R\bibinitperiod},
+           given={Narciso},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{fullhash}{083cf88277a52540d6abe53d5752e510}
+      \strng{bibnamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authorbibnamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authornamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authorfullhash}{083cf88277a52540d6abe53d5752e510}
+      \field{extraname}{1}
+      \field{labelalpha}{Gas+20}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{Comment: 26 pp. Minor corrections. The bibliography has been updated}
+      \field{journaltitle}{Annals of Physics}
+      \field{month}{3}
+      \field{title}{A contact geometry framework for field theories with dissipation}
+      \field{volume}{414}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{168092}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.aop.2020.168092
+      \endverb
+      \keyw{Mathematical Physics,High Energy Physics - Theory,Mathematics - Differential Geometry,53C15,53D10,58A10,70S05,70S10,35R01}
+    \endentry
+    \entry{Gaset2020b}{article}{}
+      \name{author}{5}{}{%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=dd0a9f40c24cba43e8d12aea22c7de73}{%
+           family={Gràcia},
+           familyi={G\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=679dab3a5704b29a83eea38d6898889e}{%
+           family={Muñoz-Lecanda},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Miguel\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=5fc1283470a51ae75348cae007149616}{%
+           family={Rivas},
+           familyi={R\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=485ddaf93085864edc6b243e6197566a}{%
+           family={Román-Roy},
+           familyi={R\bibinithyphendelim R\bibinitperiod},
+           given={Narciso},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{fullhash}{083cf88277a52540d6abe53d5752e510}
+      \strng{bibnamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authorbibnamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authornamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authorfullhash}{083cf88277a52540d6abe53d5752e510}
+      \field{extraname}{2}
+      \field{labelalpha}{Gas+20}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extraalpha}{2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Geometric Methods in Modern Physics}
+      \field{month}{5}
+      \field{number}{06}
+      \field{title}{New contributions to the {Hamiltonian} and {Lagrangian} contact formalisms for dissipative mechanical systems and their symmetries}
+      \field{volume}{17}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{2050090}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1142/S0219887820500905
+      \endverb
+      \keyw{Mathematical Physics,High Energy Physics - Theory,37J55,53D10,70H05,70H33,70G45,70G65,70H03}
+    \endentry
+    \entry{Gaset2020a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=dd0a9f40c24cba43e8d12aea22c7de73}{%
+           family={Gràcia},
+           familyi={G\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=679dab3a5704b29a83eea38d6898889e}{%
+           family={Muñoz-Lecanda},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Miguel\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=5fc1283470a51ae75348cae007149616}{%
+           family={Rivas},
+           familyi={R\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=485ddaf93085864edc6b243e6197566a}{%
+           family={Román-Roy},
+           familyi={R\bibinithyphendelim R\bibinitperiod},
+           given={Narciso},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{fullhash}{083cf88277a52540d6abe53d5752e510}
+      \strng{bibnamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authorbibnamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authornamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authorfullhash}{083cf88277a52540d6abe53d5752e510}
+      \field{extraname}{3}
+      \field{labelalpha}{Gas+21}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Reports on Mathematical Physics}
+      \field{number}{3}
+      \field{title}{A {K}-contact {Lagrangian} formulation for nonconservative field theories}
+      \field{volume}{87}
+      \field{year}{2021}
+      \field{pages}{347\bibrangedash 368}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1016/S0034-4877(21)00041-0
+      \endverb
+    \endentry
+    \entry{GLMR-2022}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e4226ffb6fc7223fedc176fc08387722}{%
+           family={Lainz},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=285fed0cfb91131a3ef2aef05751ef11}{%
+           family={Mas},
+           familyi={M\bibinitperiod},
+           given={Arnau},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5fc1283470a51ae75348cae007149616}{%
+           family={Rivas},
+           familyi={R\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{fullhash}{daed8fa690d2acfa533d851b205e3f32}
+      \strng{bibnamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authorbibnamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authornamehash}{d65692aeae7bffb5f690ecc3aae8497f}
+      \strng{authorfullhash}{daed8fa690d2acfa533d851b205e3f32}
+      \field{extraname}{4}
+      \field{labelalpha}{Gas+22}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{arXiv:2211.17058 [math-ph]}
+      \field{title}{The {Herglotz} variational principle for dissipative field theories}
+      \field{urlday}{16}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2211.17058
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2211.17058
+      \endverb
+    \endentry
+    \entry{geiges_introduction_2008}{book}{}
+      \name{author}{1}{}{%
+        {{hash=72ed0165cf29bee226502a859633f51c}{%
+           family={Geiges},
+           familyi={G\bibinitperiod},
+           given={Hansjorg},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{72ed0165cf29bee226502a859633f51c}
+      \strng{fullhash}{72ed0165cf29bee226502a859633f51c}
+      \strng{bibnamehash}{72ed0165cf29bee226502a859633f51c}
+      \strng{authorbibnamehash}{72ed0165cf29bee226502a859633f51c}
+      \strng{authornamehash}{72ed0165cf29bee226502a859633f51c}
+      \strng{authorfullhash}{72ed0165cf29bee226502a859633f51c}
+      \field{labelalpha}{Gei08}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-511-61143-8}
+      \field{title}{An {Introduction} to {Contact} {Topology}}
+      \field{year}{2008}
+      \verb{doi}
+      \verb 10.1017/CBO9780511611438
+      \endverb
+    \endentry
+    \entry{grabowska_geometric_2022}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9675f679b99f8925f9f3df21ca38a570}{%
+           family={Grabowska},
+           familyi={G\bibinitperiod},
+           given={Katarzyna},
+           giveni={K\bibinitperiod}}}%
+        {{hash=32776f5f899b53108bf75bcf14cfb941}{%
+           family={Grabowski},
+           familyi={G\bibinitperiod},
+           given={Janusz},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{1c7283c82555bde2efbf516406483b2f}
+      \strng{fullhash}{1c7283c82555bde2efbf516406483b2f}
+      \strng{bibnamehash}{1c7283c82555bde2efbf516406483b2f}
+      \strng{authorbibnamehash}{1c7283c82555bde2efbf516406483b2f}
+      \strng{authornamehash}{1c7283c82555bde2efbf516406483b2f}
+      \strng{authorfullhash}{1c7283c82555bde2efbf516406483b2f}
+      \field{labelalpha}{GG22}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Physics A: Mathematical and Theoretical}
+      \field{number}{43}
+      \field{title}{A geometric approach to contact {Hamiltonians} and contact {Hamilton}–{Jacobi} theory}
+      \field{urlday}{20}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{55}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \field{pages}{435204}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1751-8121/ac9adb
+      \endverb
+    \endentry
+    \entry{Georgieva}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1a1d7d19c9e6748107d690da93106e2d}{%
+           family={Georgieva},
+           familyi={G\bibinitperiod},
+           given={Bogdana},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5b6b1bd9d4016e2653222daa8f90926d}{%
+           family={Guenther},
+           familyi={G\bibinitperiod},
+           given={Ronald},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a235ca5f22179b1a062a08dc0dfbad85}{%
+           family={Bodurov},
+           familyi={B\bibinitperiod},
+           given={Theodore},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2728520379f07424444d6a311351eb49}
+      \strng{fullhash}{2728520379f07424444d6a311351eb49}
+      \strng{bibnamehash}{2728520379f07424444d6a311351eb49}
+      \strng{authorbibnamehash}{2728520379f07424444d6a311351eb49}
+      \strng{authornamehash}{2728520379f07424444d6a311351eb49}
+      \strng{authorfullhash}{2728520379f07424444d6a311351eb49}
+      \field{labelalpha}{GGB03}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Physics}
+      \field{number}{9}
+      \field{title}{Generalized variational principle of {Herglotz} for several independent variables. {First} {Noether}-type theorem}
+      \field{volume}{44}
+      \field{year}{2003}
+      \field{pages}{3911\bibrangedash 3927}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1063/1.1597419
+      \endverb
+    \endentry
+    \entry{GasetMarin}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6eb2680718e4607bf44b4c7c05a7320f}{%
+           family={Marín-Salvador},
+           familyi={M\bibinithyphendelim S\bibinitperiod},
+           given={Adrià},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ff67caa163b794d2ab1a57a5d9d250ee}
+      \strng{fullhash}{ff67caa163b794d2ab1a57a5d9d250ee}
+      \strng{bibnamehash}{ff67caa163b794d2ab1a57a5d9d250ee}
+      \strng{authorbibnamehash}{ff67caa163b794d2ab1a57a5d9d250ee}
+      \strng{authornamehash}{ff67caa163b794d2ab1a57a5d9d250ee}
+      \strng{authorfullhash}{ff67caa163b794d2ab1a57a5d9d250ee}
+      \field{labelalpha}{GM22}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Geometric Methods in Modern Physics}
+      \field{number}{10}
+      \field{title}{Application of {Herglotz}’s variational principle to electromagnetic systems with dissipation}
+      \field{volume}{19}
+      \field{year}{2022}
+      \field{pages}{2250156}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1142/S0219887822501560
+      \endverb
+    \endentry
+    \entry{Gra2003}{article}{}
+      \name{author}{3}{}{%
+        {{hash=dd0a9f40c24cba43e8d12aea22c7de73}{%
+           family={Gràcia},
+           familyi={G\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=a3e43415e8e5f2fc27d3391ab384c66d}{%
+           family={Marín-Solano},
+           familyi={M\bibinithyphendelim S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=679dab3a5704b29a83eea38d6898889e}{%
+           family={Muñoz-Lecanda},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Miguel\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c7358b127ff2a456f6e02ef8c4ba061}
+      \strng{fullhash}{5c7358b127ff2a456f6e02ef8c4ba061}
+      \strng{bibnamehash}{5c7358b127ff2a456f6e02ef8c4ba061}
+      \strng{authorbibnamehash}{5c7358b127ff2a456f6e02ef8c4ba061}
+      \strng{authornamehash}{5c7358b127ff2a456f6e02ef8c4ba061}
+      \strng{authorfullhash}{5c7358b127ff2a456f6e02ef8c4ba061}
+      \field{labelalpha}{GMM03}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Rep. Math. Phys.}
+      \field{note}{\url{https://doi.org/10.1016/S0034-4877(03)80006-X}}
+      \field{number}{1}
+      \field{title}{{Some geometric aspects of variational calculus in constrained systems}}
+      \field{volume}{{\bf 51}}
+      \field{year}{2003}
+      \field{pages}{127\bibrangedash 148}
+      \range{pages}{22}
+    \endentry
+    \entry{goto_contact_2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=af9a3c1afa05596b221bc8aac7212f26}{%
+           family={Goto},
+           familyi={G\bibinitperiod},
+           given={Shin\bibnamedelima Itiro},
+           giveni={S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{af9a3c1afa05596b221bc8aac7212f26}
+      \strng{fullhash}{af9a3c1afa05596b221bc8aac7212f26}
+      \strng{bibnamehash}{af9a3c1afa05596b221bc8aac7212f26}
+      \strng{authorbibnamehash}{af9a3c1afa05596b221bc8aac7212f26}
+      \strng{authornamehash}{af9a3c1afa05596b221bc8aac7212f26}
+      \strng{authorfullhash}{af9a3c1afa05596b221bc8aac7212f26}
+      \field{labelalpha}{Got16}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Physics}
+      \field{note}{arXiv: 1512.00950v2}
+      \field{number}{10}
+      \field{title}{Contact geometric descriptions of vector fields on dually flat spaces and their applications in electric circuit models and nonequilibrium statistical mechanics}
+      \field{volume}{57}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1063/1.4964751
+      \endverb
+    \endentry
+    \entry{Gaset2018}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=485ddaf93085864edc6b243e6197566a}{%
+           family={Román-Roy},
+           familyi={R\bibinithyphendelim R\bibinitperiod},
+           given={Narciso},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{fullhash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{bibnamehash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{authorbibnamehash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{authornamehash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{authorfullhash}{cf8c728f29f91708b92a0de39692ee15}
+      \field{extraname}{1}
+      \field{labelalpha}{GR18}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Physics}
+      \field{number}{3}
+      \field{title}{{Multisymplectic unified formalism for Einstein-Hilbert gravity}}
+      \field{volume}{59}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.1063/1.4998526
+      \endverb
+    \endentry
+    \entry{gaset2019}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=485ddaf93085864edc6b243e6197566a}{%
+           family={Román-Roy},
+           familyi={R\bibinithyphendelim R\bibinitperiod},
+           given={Narciso},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{fullhash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{bibnamehash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{authorbibnamehash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{authornamehash}{cf8c728f29f91708b92a0de39692ee15}
+      \strng{authorfullhash}{cf8c728f29f91708b92a0de39692ee15}
+      \field{extraname}{2}
+      \field{labelalpha}{GR19}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geometric Mechanics}
+      \field{number}{3}
+      \field{title}{New symplectic approach to the Metric-Affine (Einstein-Palatini) action for gravity}
+      \field{volume}{11}
+      \field{year}{2019}
+      \field{pages}{361\bibrangedash 396}
+      \range{pages}{36}
+      \verb{doi}
+      \verb 10.3934/jgm.2019019
+      \endverb
+    \endentry
+    \entry{Herglotz_1930}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a630d46b77f7a07bfb2fa28f565403f5}{%
+           family={Herglotz},
+           familyi={H\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a630d46b77f7a07bfb2fa28f565403f5}
+      \strng{fullhash}{a630d46b77f7a07bfb2fa28f565403f5}
+      \strng{bibnamehash}{a630d46b77f7a07bfb2fa28f565403f5}
+      \strng{authorbibnamehash}{a630d46b77f7a07bfb2fa28f565403f5}
+      \strng{authornamehash}{a630d46b77f7a07bfb2fa28f565403f5}
+      \strng{authorfullhash}{a630d46b77f7a07bfb2fa28f565403f5}
+      \field{labelalpha}{Her30}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Lectures at the University of Göttingen}
+      \field{title}{Berührungstransformationen}
+      \field{year}{1930}
+    \endentry
+    \entry{Lazo2017}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f442aeca4054993b2a3f9b1641b4afbb}{%
+           family={Lazo},
+           familyi={L\bibinitperiod},
+           given={Matheus\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=716ef4efb6fa62924a9d7a7d4e510e6b}{%
+           family={Paiva},
+           familyi={P\bibinitperiod},
+           given={Juilson},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c9fef51368c5ad94b52ab2cba16234bb}{%
+           family={Amaral},
+           familyi={A\bibinitperiod},
+           given={João\bibnamedelimb T.\bibnamedelimi S.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=1e1f3af8ff1bdf4b2d0dc8c0dbfa0290}{%
+           family={Frederico},
+           familyi={F\bibinitperiod},
+           given={Gastão\bibnamedelimb S.\bibnamedelimi F.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{102f9dcf7053ff877058d48188a162ea}
+      \strng{fullhash}{32d84075104cbc60f0383dd9493faef7}
+      \strng{bibnamehash}{102f9dcf7053ff877058d48188a162ea}
+      \strng{authorbibnamehash}{102f9dcf7053ff877058d48188a162ea}
+      \strng{authornamehash}{102f9dcf7053ff877058d48188a162ea}
+      \strng{authorfullhash}{32d84075104cbc60f0383dd9493faef7}
+      \field{extraname}{1}
+      \field{labelalpha}{Laz+17}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In the present work, we propose an action principle for action-dependent Lagrangians by generalizing the Herglotz variational problem for several independent variables. This action principle enables us to formulate Lagrangian densities for nonconservative fields. In particular, from a Lagrangian depending linearly on the action, we obtain generalized Einstein field equations for nonconservative gravity and analyze some consequences of their solutions for cosmology and gravitational waves. We show that the nonconservative part of the field equations depends on a constant cosmological four-vector. Depending on this four-vector, the theory displays damped/amplified gravitational waves and an accelerating Universe without dark energy.}
+      \field{journaltitle}{Physical Review D}
+      \field{number}{10}
+      \field{shorttitle}{Action principle for action-dependent {Lagrangians} toward nonconservative gravity}
+      \field{title}{Action principle for action-dependent {Lagrangians} toward nonconservative gravity: {Accelerating} universe without dark energy}
+      \field{volume}{95}
+      \field{year}{2017}
+      \field{pages}{101501}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.95.101501
+      \endverb
+    \endentry
+    \entry{Lazo2018}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f442aeca4054993b2a3f9b1641b4afbb}{%
+           family={Lazo},
+           familyi={L\bibinitperiod},
+           given={Matheus\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=716ef4efb6fa62924a9d7a7d4e510e6b}{%
+           family={Paiva},
+           familyi={P\bibinitperiod},
+           given={Juilson},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c9fef51368c5ad94b52ab2cba16234bb}{%
+           family={Amaral},
+           familyi={A\bibinitperiod},
+           given={João\bibnamedelimb T.\bibnamedelimi S.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=1e1f3af8ff1bdf4b2d0dc8c0dbfa0290}{%
+           family={Frederico},
+           familyi={F\bibinitperiod},
+           given={Gastão\bibnamedelimb S.\bibnamedelimi F.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Institute of Physics}%
+      }
+      \strng{namehash}{102f9dcf7053ff877058d48188a162ea}
+      \strng{fullhash}{32d84075104cbc60f0383dd9493faef7}
+      \strng{bibnamehash}{102f9dcf7053ff877058d48188a162ea}
+      \strng{authorbibnamehash}{102f9dcf7053ff877058d48188a162ea}
+      \strng{authornamehash}{102f9dcf7053ff877058d48188a162ea}
+      \strng{authorfullhash}{32d84075104cbc60f0383dd9493faef7}
+      \field{extraname}{2}
+      \field{labelalpha}{Laz+18}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{Journal of Mathematical Physics}
+      \field{number}{3}
+      \field{shorttitle}{An action principle for action-dependent {Lagrangians}}
+      \field{title}{An action principle for action-dependent {Lagrangians}: {Toward} an action principle to non-conservative systems}
+      \field{volume}{59}
+      \field{year}{2018}
+      \field{pages}{032902}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1063/1.5019936
+      \endverb
+    \endentry
+    \entry{Leon2021a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=863fdecd95a1ea46e2a597cdfac4e3ed}{%
+           family={León},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a70372a3aaa52cd0265eefe518f39c37}{%
+           family={Laínz},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=679dab3a5704b29a83eea38d6898889e}{%
+           family={Muñoz-Lecanda},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Miguel\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=485ddaf93085864edc6b243e6197566a}{%
+           family={Román-Roy},
+           familyi={R\bibinithyphendelim R\bibinitperiod},
+           given={Narciso},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{fullhash}{c69952ebf4e22418afa43902eb559b19}
+      \strng{bibnamehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{authorbibnamehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{authornamehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{authorfullhash}{c69952ebf4e22418afa43902eb559b19}
+      \field{extraname}{1}
+      \field{labelalpha}{Leó+21}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{Comment: 39 pp. Minor changes. References updated}
+      \field{journaltitle}{Annals of Physics}
+      \field{title}{Higher-order contact mechanics}
+      \field{volume}{425}
+      \field{year}{2021}
+      \field{pages}{168396}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.aop.2021.168396
+      \endverb
+      \keyw{Mathematical Physics,High Energy Physics - Theory,Primary: 37J55,53D10,70G75,70H50. Secondary: 37J05,70G45,70H03,70H05}
+    \endentry
+    \entry{de_leon_multicontact_2022}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=863fdecd95a1ea46e2a597cdfac4e3ed}{%
+           family={León},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=32d1b542e7699cae7ac20e37c392cc25}{%
+           family={Muñoz-Lecanda},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Miguel\bibnamedelima Carlos},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=5fc1283470a51ae75348cae007149616}{%
+           family={Rivas},
+           familyi={R\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=485ddaf93085864edc6b243e6197566a}{%
+           family={Román-Roy},
+           familyi={R\bibinithyphendelim R\bibinitperiod},
+           given={Narciso},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{fullhash}{497998121853d70ec5142c9e5f707b01}
+      \strng{bibnamehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{authorbibnamehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{authornamehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{authorfullhash}{497998121853d70ec5142c9e5f707b01}
+      \field{extraname}{2}
+      \field{labelalpha}{Leó+22}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{arXiv:2209.08918 [hep-th, physics:math-ph]}
+      \field{title}{Multicontact formulation for non-conservative field theories}
+      \field{year}{2022}
+    \endentry
+    \entry{cocontact}{article}{}
+      \name{author}{5}{}{%
+        {{hash=863fdecd95a1ea46e2a597cdfac4e3ed}{%
+           family={León},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=dd0a9f40c24cba43e8d12aea22c7de73}{%
+           family={Gràcia},
+           familyi={G\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+        {{hash=679dab3a5704b29a83eea38d6898889e}{%
+           family={Muñoz-Lecanda},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Miguel\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=5fc1283470a51ae75348cae007149616}{%
+           family={Rivas},
+           familyi={R\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{fullhash}{0a297b0f22373a40b53a2d9477c8a3ee}
+      \strng{bibnamehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{authorbibnamehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{authornamehash}{b44ead089033e477e715ebd37c03297d}
+      \strng{authorfullhash}{0a297b0f22373a40b53a2d9477c8a3ee}
+      \field{extraname}{3}
+      \field{labelalpha}{Leó+22}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extraalpha}{2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Monatshefte für Mathematik}
+      \field{title}{Time-dependent contact mechanics}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.1007/s00605-022-01767-1
+      \endverb
+    \endentry
+    \entry{inverse}{article}{}
+      \name{author}{3}{}{%
+        {{hash=863fdecd95a1ea46e2a597cdfac4e3ed}{%
+           family={León},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=fa7bbb56973ab2d7e2c7e48bb1aa6b10}{%
+           family={Gaset},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e4226ffb6fc7223fedc176fc08387722}{%
+           family={Lainz},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{69d16917bed6ce55eb14f0143c56864a}
+      \strng{fullhash}{69d16917bed6ce55eb14f0143c56864a}
+      \strng{bibnamehash}{69d16917bed6ce55eb14f0143c56864a}
+      \strng{authorbibnamehash}{69d16917bed6ce55eb14f0143c56864a}
+      \strng{authornamehash}{69d16917bed6ce55eb14f0143c56864a}
+      \strng{authorfullhash}{69d16917bed6ce55eb14f0143c56864a}
+      \field{labelalpha}{LGL22}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geometry and Physics}
+      \field{title}{Inverse problem and equivalent contact systems}
+      \field{volume}{176}
+      \field{year}{2022}
+      \field{pages}{104500}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.geomphys.2022.104500
+      \endverb
+      \keyw{Inverse problem,Equivalent Lagrangians,Contact geometry}
+    \endentry
+    \entry{Lainz2019}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e4226ffb6fc7223fedc176fc08387722}{%
+           family={Lainz},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=863fdecd95a1ea46e2a597cdfac4e3ed}{%
+           family={León},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{dceaed0e0377d886321cfc117574a172}
+      \strng{fullhash}{dceaed0e0377d886321cfc117574a172}
+      \strng{bibnamehash}{dceaed0e0377d886321cfc117574a172}
+      \strng{authorbibnamehash}{dceaed0e0377d886321cfc117574a172}
+      \strng{authornamehash}{dceaed0e0377d886321cfc117574a172}
+      \strng{authorfullhash}{dceaed0e0377d886321cfc117574a172}
+      \field{labelalpha}{LL19}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we study Hamiltonian systems on contact manifolds, which is an appropriate scenario to discuss dissipative systems. We prove a coisotropic reduction theorem similar to the one in symplectic mechanics.}
+      \field{journaltitle}{Journal of Mathematical Physics}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Contact {Hamiltonian} {Systems}}
+      \field{volume}{60}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{pages}{102902}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1063/1.5096475
+      \endverb
+      \keyw{Mathematics - Symplectic Geometry,Mathematical Physics,37J55,70H05,53D10}
+    \endentry
+    \entry{Leon2019}{article}{}
+      \name{author}{2}{}{%
+        {{hash=863fdecd95a1ea46e2a597cdfac4e3ed}{%
+           family={León},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=e4226ffb6fc7223fedc176fc08387722}{%
+           family={Lainz},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{fullhash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{bibnamehash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{authorbibnamehash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{authornamehash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{authorfullhash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \field{extraname}{1}
+      \field{labelalpha}{LL19}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extraalpha}{2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Geometric Methods in Modern Physics}
+      \field{number}{10}
+      \field{title}{Singular {Lagrangians} and precontact {Hamiltonian} systems}
+      \field{urlday}{15}
+      \field{urlmonth}{6}
+      \field{urlyear}{2022}
+      \field{volume}{16}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{1950158}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1142/S0219887819501585
+      \endverb
+    \endentry
+    \entry{Leon2021}{article}{}
+      \name{author}{2}{}{%
+        {{hash=863fdecd95a1ea46e2a597cdfac4e3ed}{%
+           family={León},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=e4226ffb6fc7223fedc176fc08387722}{%
+           family={Lainz},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{fullhash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{bibnamehash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{authorbibnamehash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{authornamehash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \strng{authorfullhash}{a55b4640af85c3b23d9c1ceadbb8e225}
+      \field{extraname}{2}
+      \field{labelalpha}{LL21}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Contact Hamiltonian dynamics is a subject that has still a short history, but with relevant applications in many areas: thermodynamics, cosmology, control theory, and neurogeometry, among others. In recent years there has been a great effort to study this type of dynamics both in theoretical aspects and in its potential applications in geometric mechanics and mathematical physics. This paper is intended to be a review of some of the results that the authors and their collaborators have recently obtained on the subject.}
+      \field{annotation}{Comment: arXiv admin note: text overlap with arXiv:1911.05409, arXiv:1904.11429}
+      \field{journaltitle}{arXiv:2011.05579 [math-ph]}
+      \field{month}{2}
+      \field{note}{arXiv: 2011.05579}
+      \field{title}{A review on contact {Hamiltonian} and {Lagrangian} systems}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \keyw{Mathematical Physics,37J55,70H20,37J60,70H45,70H33,53D20}
+    \endentry
+    \entry{de_leon_constrained_2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=863fdecd95a1ea46e2a597cdfac4e3ed}{%
+           family={León},
+           familyi={L\bibinitperiod},
+           given={Manuel\bibnamedelima de},
+           giveni={M\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=e4226ffb6fc7223fedc176fc08387722}{%
+           family={Lainz},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=679dab3a5704b29a83eea38d6898889e}{%
+           family={Muñoz-Lecanda},
+           familyi={M\bibinithyphendelim L\bibinitperiod},
+           given={Miguel\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=5f4835e5e7d92d356ad8b5e7016dec6e}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=16f701e0cf6c31513b8deb18cfd7f752}{%
+           family={Barbaresco},
+           familyi={B\bibinitperiod},
+           given={Frédéric},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{39b8296833880d76d28659b2146c5c53}
+      \strng{fullhash}{39b8296833880d76d28659b2146c5c53}
+      \strng{bibnamehash}{39b8296833880d76d28659b2146c5c53}
+      \strng{authorbibnamehash}{39b8296833880d76d28659b2146c5c53}
+      \strng{authornamehash}{39b8296833880d76d28659b2146c5c53}
+      \strng{authorfullhash}{39b8296833880d76d28659b2146c5c53}
+      \strng{editorbibnamehash}{7357b6339291245555210e1699b25aad}
+      \strng{editornamehash}{7357b6339291245555210e1699b25aad}
+      \strng{editorfullhash}{7357b6339291245555210e1699b25aad}
+      \field{labelalpha}{LLM21}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Geometric {Science} of {Information}}
+      \field{isbn}{978-3-030-80208-0 978-3-030-80209-7}
+      \field{note}{Series Title: Lecture Notes in Computer Science}
+      \field{title}{The {Herglotz} {Principle} and {Vakonomic} {Dynamics}}
+      \field{volume}{12829}
+      \field{year}{2021}
+      \field{pages}{183\bibrangedash 190}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/978-3-030-80209-7_21
+      \endverb
+    \endentry
+    \entry{Mrugala1991}{article}{}
+      \name{author}{4}{}{%
+        {{hash=18c4eb93b9ffd09f60bfce2d923a1cf1}{%
+           family={Mrugala},
+           familyi={M\bibinitperiod},
+           given={Ryszard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0d9c46441e83b6d8590cc303c4d506d0}{%
+           family={Nulton},
+           familyi={N\bibinitperiod},
+           given={James\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=c43e6750f0c15de53a662bd7006e7e0c}{%
+           family={Christian\bibnamedelima Schön},
+           familyi={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=96b82dd7a74330735a89c5392d2ba0d8}{%
+           family={Salamon},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{2011f9a5b01a1d97dad417f5cdf369d7}
+      \strng{fullhash}{dc3a9e8a68269e5e2ca5a983b62d8602}
+      \strng{bibnamehash}{2011f9a5b01a1d97dad417f5cdf369d7}
+      \strng{authorbibnamehash}{2011f9a5b01a1d97dad417f5cdf369d7}
+      \strng{authornamehash}{2011f9a5b01a1d97dad417f5cdf369d7}
+      \strng{authorfullhash}{dc3a9e8a68269e5e2ca5a983b62d8602}
+      \field{labelalpha}{Mru+91}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Reports on Mathematical Physics}
+      \field{number}{1}
+      \field{title}{Contact structure in thermodynamic theory}
+      \field{volume}{29}
+      \field{year}{1991}
+      \field{pages}{109\bibrangedash 121}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/0034-4877(91)90017-H
+      \endverb
+    \endentry
+    \entry{Olmo2020}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a46e715fe03c68620e454a60e06a9591}{%
+           family={Olmo},
+           familyi={O\bibinitperiod},
+           given={Gonzalo\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=dc78762f2cc927555f6f1b4d4dc71bbb}{%
+           family={Rubiera-Garcia},
+           familyi={R\bibinithyphendelim G\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod}}}%
+        {{hash=a24fd593440e474b8b57a58374b0c015}{%
+           family={Wojnar},
+           familyi={W\bibinitperiod},
+           given={Aneta},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{535c06ecb265f1b495d79d016155d2c8}
+      \strng{fullhash}{535c06ecb265f1b495d79d016155d2c8}
+      \strng{bibnamehash}{535c06ecb265f1b495d79d016155d2c8}
+      \strng{authorbibnamehash}{535c06ecb265f1b495d79d016155d2c8}
+      \strng{authornamehash}{535c06ecb265f1b495d79d016155d2c8}
+      \strng{authorfullhash}{535c06ecb265f1b495d79d016155d2c8}
+      \field{labelalpha}{ORW20}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{journaltitle}{Physics Reports}
+      \field{shorttitle}{Stellar structure models in modified theories of gravity}
+      \field{title}{Stellar structure models in modified theories of gravity: lessons and challenges}
+      \field{volume}{876}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 75}
+      \range{pages}{75}
+      \verb{doi}
+      \verb 10.1016/j.physrep.2020.07.001
+      \endverb
+      \keyw{General Relativity and Quantum Cosmology,Astrophysics - Solar and Stellar Astrophysics,High Energy Physics - Theory}
+    \endentry
+    \entry{Lazo2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0726ba56cd8b742d869f000ebc0d3d3a}{%
+           family={Paiva},
+           familyi={P\bibinitperiod},
+           given={Juilson\bibnamedelimb A.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=f442aeca4054993b2a3f9b1641b4afbb}{%
+           family={Lazo},
+           familyi={L\bibinitperiod},
+           given={Matheus\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=246acffbeae83fdf5e0b185435801f4c}{%
+           family={Zanchin},
+           familyi={Z\bibinitperiod},
+           given={Vilson\bibnamedelima T.},
+           giveni={V\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{dde85ab47400eb291a3051025e04d8fe}
+      \strng{fullhash}{dde85ab47400eb291a3051025e04d8fe}
+      \strng{bibnamehash}{dde85ab47400eb291a3051025e04d8fe}
+      \strng{authorbibnamehash}{dde85ab47400eb291a3051025e04d8fe}
+      \strng{authornamehash}{dde85ab47400eb291a3051025e04d8fe}
+      \strng{authorfullhash}{dde85ab47400eb291a3051025e04d8fe}
+      \field{labelalpha}{PLZ22}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{12}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{title}{Generalized nonconservative gravitational field equations from Herglotz action principle}
+      \field{volume}{105}
+      \field{year}{2022}
+      \field{pages}{124023}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.105.124023
+      \endverb
+    \endentry
+    \entry{Maria2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c209dbec1e8ba749defd84119d1fb1ec}{%
+           family={Rosado\bibnamedelima María},
+           familyi={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=c0108b7e4ce9e0f48e8a37ac403df650}{%
+           family={Muñoz\bibnamedelima Masqué},
+           familyi={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8317661cbbefe98fc945884145bba45}
+      \strng{fullhash}{b8317661cbbefe98fc945884145bba45}
+      \strng{bibnamehash}{b8317661cbbefe98fc945884145bba45}
+      \strng{authorbibnamehash}{b8317661cbbefe98fc945884145bba45}
+      \strng{authornamehash}{b8317661cbbefe98fc945884145bba45}
+      \strng{authorfullhash}{b8317661cbbefe98fc945884145bba45}
+      \field{labelalpha}{RM18}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annali di Matematica Pura ed Applicata}
+      \field{number}{2}
+      \field{title}{Second-order {Lagrangians} admitting a first-order {Hamiltonian} formalism}
+      \field{volume}{197}
+      \field{year}{2018}
+      \field{pages}{357\bibrangedash 397}
+      \range{pages}{41}
+      \verb{doi}
+      \verb 10.1007/s10231-017-0683-y
+      \endverb
+    \endentry
+    \entry{Simoes2020}{article}{}
+      \name{author}{4}{}{%
+        {{hash=efb73b5450db540cec30e7803f4f5aaa}{%
+           family={Simoes},
+           familyi={S\bibinitperiod},
+           given={Alexandre\bibnamedelima Anahory},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=863fdecd95a1ea46e2a597cdfac4e3ed}{%
+           family={León},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=a144077d27dc9d026fe439b7375f065d}{%
+           family={Valcázar},
+           familyi={V\bibinitperiod},
+           given={Manuel\bibnamedelima Lainz},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=019c1a0eeba8b3b52fa54e167a667bce}{%
+           family={Diego},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima Martín},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Royal Society}%
+      }
+      \strng{namehash}{cda1eb12cb7eef3287751d52512ae4c3}
+      \strng{fullhash}{2da32a110bffd2ab0235baa8a19bbaca}
+      \strng{bibnamehash}{cda1eb12cb7eef3287751d52512ae4c3}
+      \strng{authorbibnamehash}{cda1eb12cb7eef3287751d52512ae4c3}
+      \strng{authornamehash}{cda1eb12cb7eef3287751d52512ae4c3}
+      \strng{authorfullhash}{2da32a110bffd2ab0235baa8a19bbaca}
+      \field{labelalpha}{Sim+20}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}
+      \field{number}{2241}
+      \field{title}{{Contact geometry for simple thermodynamical systems with friction}}
+      \field{volume}{476}
+      \field{year}{2020}
+      \field{pages}{20200244}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1098/rspa.2020.0244
+      \endverb
+    \endentry
+    \entry{Sloan}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7155d55df4984d8583efa41612bc66fb}{%
+           family={Sloan},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{7155d55df4984d8583efa41612bc66fb}
+      \strng{fullhash}{7155d55df4984d8583efa41612bc66fb}
+      \strng{bibnamehash}{7155d55df4984d8583efa41612bc66fb}
+      \strng{authorbibnamehash}{7155d55df4984d8583efa41612bc66fb}
+      \strng{authornamehash}{7155d55df4984d8583efa41612bc66fb}
+      \strng{authorfullhash}{7155d55df4984d8583efa41612bc66fb}
+      \field{labelalpha}{Slo21}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{4}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{title}{New action for cosmology}
+      \field{volume}{103}
+      \field{year}{2021}
+      \field{pages}{043524}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.103.043524
+      \endverb
+    \endentry
+    \entry{Vey_2015}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d1ab40581f47b189bf49391230b49a36}{%
+           family={Vey},
+           familyi={V\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{IOP} Publishing}%
+      }
+      \strng{namehash}{d1ab40581f47b189bf49391230b49a36}
+      \strng{fullhash}{d1ab40581f47b189bf49391230b49a36}
+      \strng{bibnamehash}{d1ab40581f47b189bf49391230b49a36}
+      \strng{authorbibnamehash}{d1ab40581f47b189bf49391230b49a36}
+      \strng{authornamehash}{d1ab40581f47b189bf49391230b49a36}
+      \strng{authorfullhash}{d1ab40581f47b189bf49391230b49a36}
+      \field{labelalpha}{Vey15}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Classical and Quantum Gravity}
+      \field{number}{9}
+      \field{title}{Multisymplectic formulation of vielbein gravity: I. De Donder{–}Weyl formulation, Hamiltonian (n-1)-forms}
+      \field{volume}{32}
+      \field{year}{2015}
+      \field{pages}{095005}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/0264-9381/32/9/095005
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
